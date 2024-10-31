@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador de Datos</title>
+    <title>Buscador de obras del TCE SXXI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #dfdfdf7e;
         }
     
         h1 {
@@ -56,7 +56,7 @@
         }
     
         th {
-            background-color: #4CAF50;
+            background-color: #dd0d0dc5;
             color: white;
             cursor: pointer;
         }
@@ -96,10 +96,19 @@
         .reset-btn:hover {
             background-color: #d32f2f;
         }
+        .lugar-link {
+        color: #1a73e8;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .lugar-link:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
-    <h1>Visualizador de Datos</h1>
+    <h1>BUSCADOR DE OBRAS DEL TCE SXXI</h1>
     <div id="buscador">
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
             <div>
@@ -121,6 +130,10 @@
             <div>
                 <label>Festivales:</label>
                 <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
+            </div>
+            <div>
+                <label>Lugar de estreno:</label>
+                <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
             </div>
         </div>
         <div style="display: flex; align-items: center;">
@@ -193,7 +206,7 @@ function parseCSV(csvText) {
     return datos;
 }
 
-        function llenarTabla(obras) {
+function llenarTabla(obras) {
     const tbody = document.querySelector('#tablaObras tbody');
     tbody.innerHTML = '';
     obras.forEach(obra => {
@@ -201,15 +214,29 @@ function parseCSV(csvText) {
         row.insertCell().textContent = obra.id;
         row.insertCell().textContent = obra['Autor/a'];
         row.insertCell().textContent = obra.Obra;
-        // Combinar Fecha de estreno con fechaFormat
         row.insertCell().textContent = `${obra['Fecha de estreno']} (${obra.fechaFormat})`;
         row.insertCell().textContent = obra.Dirección;
-        row.insertCell().textContent = obra['Compañía'] || ''; // Usar nombre correcto del campo
+        row.insertCell().textContent = obra['Compañía'] || '';
         row.insertCell().textContent = obra.Festivales;
-        row.insertCell().textContent = obra['Lugar de estreno'];
+        
+        // Convertir el lugar de estreno en un enlace
+        const lugarCell = row.insertCell();
+        const lugar = obra['Lugar de estreno'] || '';
+        if (lugar) {
+            lugarCell.innerHTML = `
+                <a 
+                    class="lugar-link"
+                    href="https://www.google.com/maps/search/${encodeURIComponent(lugar)}"
+                    target="_blank"
+                    title="Buscar en Google Maps">
+                    ${lugar}
+                </a>
+            `;
+        } else {
+            lugarCell.textContent = '';
+        }
     });
 }
-
 function ordenarTabla(campo) {
     ordenAscendente = !ordenAscendente;
     const obras = [...obrasOriginales];
@@ -273,7 +300,8 @@ function filtrarObras() {
         'Obra': document.getElementById('busqueda-obra').value.toLowerCase(),
         'Dirección': document.getElementById('busqueda-direccion').value.toLowerCase(),
         'Compañía': document.getElementById('busqueda-compania').value.toLowerCase(),
-        'Festivales': document.getElementById('busqueda-festivales').value.toLowerCase()
+        'Festivales': document.getElementById('busqueda-festivales').value.toLowerCase(),
+        'Lugar de estreno': document.getElementById('busqueda-lugar').value.toLowerCase()
     };
 
     const obrasFiltradas = obrasOriginales.filter(obra => {
@@ -328,6 +356,7 @@ function resetearFiltros() {
     document.getElementById('busqueda-festivales').value = '';
     document.getElementById('busquedaExacta').checked = false;
     document.getElementById('fechaInicio').value = '';
+    document.getElementById('busqueda-lugar').value = '';
     document.getElementById('fechaFin').value = '';
     llenarTabla(obrasOriginales);
 }
@@ -346,6 +375,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('fechaInicio').addEventListener('change', filtrarObras);
     document.getElementById('fechaFin').addEventListener('change', filtrarObras);
     document.getElementById('resetFiltros').addEventListener('click', resetearFiltros);
+    document.getElementById('busqueda-lugar').addEventListener('input', filtrarObras);
 });
     </script>
 </body>
