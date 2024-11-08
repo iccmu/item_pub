@@ -8,7 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
             background-color: #dfdfdf7e;
         }
     
@@ -105,105 +107,388 @@
     .lugar-link:hover {
         text-decoration: underline;
     }
+    
+    /* Estilo para el contenedor del mapa */
+    #map-container {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    #map {
+        height: 400px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    
+    /* Estilo para el contenedor de visualizaciones */
+    .visualizations-container {
+        display: flex;
+        gap: 20px;
+        height: 400px;
+    }
+
+    #map-container, #network-container {
+        flex: 1;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #map, #network {
+        height: 400px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    /* Estilos para hacer la tabla scrolleable */
+    .table-container {
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #tablaObras {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    #tablaObras thead {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    #tablaObras thead th {
+        background-color: #dd0d0dc5;
+        border-bottom: 2px solid #b30000;
+    }
+
+    #tablaObras tbody tr:first-child td {
+        border-top: none;
+    }
+
+    /* Asegurar que el contenido principal no se desplace */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        gap: 20px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    /* Estilos para el botón de toggle */
+    .visualizations-toggle {
+        margin: 10px 0;
+    }
+
+    .toggle-btn {
+        background-color: #dd0d0dc5;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .toggle-btn:hover {
+        background-color: #b30000;
+    }
+
+    .toggle-btn .arrow {
+        font-size: 0.8em;
+    }
+
+    /* Estilos para la sección de visualizaciones */
+    .visualizations-section {
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 500px;
+    }
+
+    .visualizations-section.collapsed {
+        max-height: 0;
+    }
+
+    .visualizations-section.collapsed + .table-container {
+        margin-top: 0;
+    }
+
+    /* Rotar flecha cuando está expandido */
+    .visualizations-section:not(.collapsed) + .visualizations-toggle .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Estilos para el toggle del buscador */
+    .search-toggle {
+        margin: 10px 0;
+    }
+
+    .search-section {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 200px; /* Ajustar según el tamaño de tu buscador */
+        overflow: hidden;
+    }
+
+    .search-section.collapsed {
+        max-height: 0;
+    }
+
+    /* Estilos compartidos para ambos botones de toggle */
+    .toggle-btn {
+        background-color: #dd0d0dc5;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .toggle-btn:hover {
+        background-color: #b30000;
+    }
+
+    .toggle-btn .arrow {
+        font-size: 0.8em;
+        transition: transform 0.3s ease;
+    }
+
+    /* Rotar flecha cuando está colapsado */
+    .search-section.collapsed + .search-toggle .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Ajustar el padding de los encabezados de la tabla */
+    #tablaObras th {
+        padding: 8px 12px; /* Reducir el padding vertical de 20px a 8px */
+        text-align: left;
+        background-color: #dd0d0dc5;
+        color: white;
+        cursor: pointer;
+        border-bottom: 2px solid #b30000;
+    }
+
+    /* Mantener el padding de las celdas del cuerpo como está */
+    #tablaObras td {
+        padding: 20px 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .obra-popup {
+        padding: 5px;
+        min-width: 200px;
+    }
+
+    .obra-popup button.ver-grafo {
+        margin-top: 8px;
+        padding: 4px 12px;
+        background-color: #FB7E81;
+        border: 1px solid #d45659;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+    }
+
+    .obra-popup button.ver-grafo:hover {
+        background-color: #d45659;
+    }
+
+    /* Estilos personalizados para los clusters */
+    .marker-cluster-small {
+        background-color: rgba(251, 126, 129, 0.6) !important;
+    }
+
+    .marker-cluster-small div {
+        background-color: rgba(212, 86, 89, 0.8) !important;
+        color: white !important;
+    }
+
+    .marker-cluster-medium {
+        background-color: rgba(251, 126, 129, 0.6) !important;
+    }
+
+    .marker-cluster-medium div {
+        background-color: rgba(212, 86, 89, 0.8) !important;
+        color: white !important;
+    }
+
+    .marker-cluster-large {
+        background-color: rgba(251, 126, 129, 0.6) !important;
+    }
+
+    .marker-cluster-large div {
+        background-color: rgba(212, 86, 89, 0.8) !important;
+        color: white !important;
+    }
     </style>
+    <!-- Agregar estos enlaces para Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Agregar vis.js -->
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- MarkerCluster CSS y JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 </head>
 <body>
-    <h1>BUSCADOR DE OBRAS DEL TCE SXXI</h1>
-    <div id="buscador">
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-            <div>
-                <label>Autor/a:</label>
-                <input type="text" id="busqueda-autor" placeholder="Buscar por autor">
+    <div class="main-content">
+        <div class="content-wrapper">
+            <!-- Botón y sección del buscador -->
+            <div class="search-toggle">
+                <button id="toggleSearchBtn" class="toggle-btn">
+                    Ocultar buscador
+                    <span class="arrow">▼</span>
+                </button>
             </div>
-            <div>
-                <label>Obra:</label>
-                <input type="text" id="busqueda-obra" placeholder="Buscar por obra">
+
+            <div id="searchSection" class="search-section">
+                <div id="buscador">
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+                        <div>
+                            <label>Autor/a:</label>
+                            <input type="text" id="busqueda-autor" placeholder="Buscar por autor">
+                        </div>
+                        <div>
+                            <label>Obra:</label>
+                            <input type="text" id="busqueda-obra" placeholder="Buscar por obra">
+                        </div>
+                        <div>
+                            <label>Dirección:</label>
+                            <input type="text" id="busqueda-direccion" placeholder="Buscar por dirección">
+                        </div>
+                        <div>
+                            <label>compañia:</label>
+                            <input type="text" id="busqueda-compania" placeholder="Buscar por compañia">
+                        </div>
+                        <div>
+                            <label>Festivales:</label>
+                            <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
+                        </div>
+                        <div>
+                            <label>Lugar de estreno:</label>
+                            <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <label>
+                            <input type="checkbox" id="busquedaExacta"> Búsqueda exacta
+                        </label>
+                        <div class="filtro-fechas">
+                            <label>Desde: <input type="date" id="fechaInicio"></label>
+                            <label>Hasta: <input type="date" id="fechaFin"></label>
+                        </div>
+                        <button id="resetFiltros" class="reset-btn">Resetear filtros</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label>Dirección:</label>
-                <input type="text" id="busqueda-direccion" placeholder="Buscar por dirección">
+
+            <!-- Botón y sección de visualizaciones -->
+            <div class="visualizations-toggle">
+                <button id="toggleVisualizationsBtn" class="toggle-btn">
+                    Mostrar visualizaciones
+                    <span class="arrow">▼</span>
+                </button>
             </div>
-            <div>
-                <label>compañia:</label>
-                <input type="text" id="busqueda-compania" placeholder="Buscar por compañia">
+
+            <div id="visualizationsSection" class="visualizations-section collapsed">
+                <div class="visualizations-container">
+                    <div id="map-container">
+                        <div id="map"></div>
+                    </div>
+                    <div id="network-container">
+                        <div id="network"></div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label>Festivales:</label>
-                <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
+            
+            <!-- Contenedor de la tabla -->
+            <div class="table-container">
+                <table id="tablaObras">
+                    <thead>
+                        <tr>
+                            <th onclick="ordenarTabla('id')">ID</th>
+                            <th onclick="ordenarTabla('Autor/a')">Autor/a</th>
+                            <th onclick="ordenarTabla('Obra')">Obra</th>
+                            <th onclick="ordenarTabla('fechaFormat')">Fecha de estreno</th>
+                            <th onclick="ordenarTabla('Dirección')">Dirección</th>
+                            <th onclick="ordenarTabla('compañia')">compañia</th>
+                            <th onclick="ordenarTabla('Festivales')">Festivales</th>
+                            <th onclick="ordenarTabla('Lugar de estreno')">Lugar de estreno</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
-            <div>
-                <label>Lugar de estreno:</label>
-                <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
-            </div>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <label>
-                <input type="checkbox" id="busquedaExacta"> Búsqueda exacta
-            </label>
-            <div class="filtro-fechas">
-                <label>Desde: <input type="date" id="fechaInicio"></label>
-                <label>Hasta: <input type="date" id="fechaFin"></label>
-            </div>
-            <button id="resetFiltros" class="reset-btn">Resetear filtros</button>
         </div>
     </div>
-    <table id="tablaObras">
-        <thead>
-            <tr>
-                <th onclick="ordenarTabla('id')">ID</th>
-                <th onclick="ordenarTabla('Autor/a')">Autor/a</th>
-                <th onclick="ordenarTabla('Obra')">Obra</th>
-                <th onclick="ordenarTabla('fechaFormat')">Fecha de estreno</th>
-                <th onclick="ordenarTabla('Dirección')">Dirección</th>
-                <th onclick="ordenarTabla('compañia')">compañia</th>
-                <th onclick="ordenarTabla('Festivales')">Festivales</th>
-                <th onclick="ordenarTabla('Lugar de estreno')">Lugar de estreno</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
 
     <script>
         let obrasOriginales = [];
         let ordenAscendente = true;
+        let map;
+        let network;
+        let markerClusterGroup;
+
+        // Variable global para almacenar las obras
+        let obras = [];
 
         async function obtenerObras() {
     try {
-        const response = await fetch('data_fechaFormat.csv');
+        const response = await fetch('data_con_coordenadas.csv');
         const csvText = await response.text();
-        console.log("Primera línea del CSV:", csvText.split('\n')[0]);
-        return parseCSV(csvText);
+        
+        // Log del CSV raw para verificar
+        console.log('CSV raw primeras 100 caracteres:', csvText.substring(0, 100));
+        
+        // Procesar CSV manualmente
+        const lines = csvText.split('\n');
+        const headers = lines[0].split('|');
+        
+        const obras = lines.slice(1).map(line => {
+            const values = line.split('|');
+            const obra = {};
+            headers.forEach((header, index) => {
+                obra[header] = values[index];
+            });
+            return obra;
+        });
+        
+        // Log de las primeras 3 obras para verificar estructura
+        console.log('Primeras 3 obras:', obras.slice(0, 3));
+        
+        return obras;
     } catch (error) {
-        console.error("Error al obtener datos:", error);
+        console.error('Error al cargar los datos:', error);
         return [];
     }
-}
-
-function parseCSV(csvText) {
-    const lines = csvText.split('\n');
-    const headers = lines[0].split('|').map(h => h.trim());
-    
-    console.log("Headers:", headers); // Para debug
-
-    const datos = lines.slice(1)
-        .filter(line => line.trim() !== '')
-        .map(line => {
-            const values = line.split('|');
-            const obj = {};
-            headers.forEach((header, index) => {
-                let value = values[index] ? values[index].trim() : '';
-                // Reemplazar "nan" por cadena vacía
-                value = value === 'nan' ? '' : value;
-                obj[header] = value;
-            });
-            return obj;
-        });
-
-    // Para debug
-    console.log("Primera fila de datos:", datos[0]);
-    console.log("Campo Compañía de primera fila:", datos[0]['Compañía']);
-    
-    return datos;
 }
 
 function llenarTabla(obras) {
@@ -236,7 +521,13 @@ function llenarTabla(obras) {
             lugarCell.textContent = '';
         }
     });
+    
+    // Solo actualizar marcadores si el mapa está inicializado
+    if (map) {
+        actualizarMarcadores(obras);
+    }
 }
+
 function ordenarTabla(campo) {
     ordenAscendente = !ordenAscendente;
     const obras = [...obrasOriginales];
@@ -286,66 +577,57 @@ function ordenarTabla(campo) {
 }
 
 function filtrarObras() {
+    // Obtener todos los valores de filtro
+    const autorFiltro = document.getElementById('busqueda-autor').value.toLowerCase();
+    const obraFiltro = document.getElementById('busqueda-obra').value.toLowerCase();
+    const direccionFiltro = document.getElementById('busqueda-direccion').value.toLowerCase();
+    const companiaFiltro = document.getElementById('busqueda-compania').value.toLowerCase();
+    const festivalesFiltro = document.getElementById('busqueda-festivales').value.toLowerCase();
+    const lugarFiltro = document.getElementById('busqueda-lugar').value.toLowerCase();
     const busquedaExacta = document.getElementById('busquedaExacta').checked;
     const fechaInicio = document.getElementById('fechaInicio').value;
     const fechaFin = document.getElementById('fechaFin').value;
 
-    // Función auxiliar para normalizar texto (eliminar tildes)
-    const normalizeText = (text) => {
-        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    };
-
-    const filtros = {
-        'Autor/a': document.getElementById('busqueda-autor').value.toLowerCase(),
-        'Obra': document.getElementById('busqueda-obra').value.toLowerCase(),
-        'Dirección': document.getElementById('busqueda-direccion').value.toLowerCase(),
-        'Compañía': document.getElementById('busqueda-compania').value.toLowerCase(),
-        'Festivales': document.getElementById('busqueda-festivales').value.toLowerCase(),
-        'Lugar de estreno': document.getElementById('busqueda-lugar').value.toLowerCase()
-    };
-
     const obrasFiltradas = obrasOriginales.filter(obra => {
-        // Comprobar todos los filtros de texto
-        const cumpleFiltrosTexto = Object.entries(filtros).every(([campo, valorBusqueda]) => {
-            if (!valorBusqueda) return true;
-            const valorCampo = (obra[campo] || '').toString().toLowerCase();
-            
-            if (busquedaExacta) {
-                // En búsqueda exacta, comparamos los valores tal cual (con tildes)
-                return valorCampo === valorBusqueda;
-            } else {
-                // En búsqueda no exacta, normalizamos ambos valores (sin tildes)
-                return normalizeText(valorCampo).includes(normalizeText(valorBusqueda));
-            }
-        });
-        // Filtro por fechas
-        let cumpleFiltroFechas = true;
-        if (fechaInicio || fechaFin) {
-            // Intentar usar fechaFormat primero, si no está disponible usar Fecha de estreno
-            let fechaObra = null;
-            if (obra.fechaFormat) {
-                // Convertir DD-MM-YYYY a YYYY-MM-DD para new Date()
-                const [dia, mes, anio] = obra.fechaFormat.split('-');
-                fechaObra = new Date(`${anio}-${mes}-${dia}`);
-            }
+        // Función auxiliar para comparar textos según el modo de búsqueda
+        const coincide = (valor, filtro) => {
+            if (!valor) return false;
+            valor = valor.toString().toLowerCase();
+            return busquedaExacta ? valor === filtro : valor.includes(filtro);
+        };
 
-            if (fechaObra && !isNaN(fechaObra)) {
+        // Verificar cada criterio de filtro
+        const cumpleAutor = !autorFiltro || coincide(obra['Autor/a'], autorFiltro);
+        const cumpleObra = !obraFiltro || coincide(obra['Obra'], obraFiltro);
+        const cumpleDireccion = !direccionFiltro || coincide(obra['Dirección'], direccionFiltro);
+        const cumpleCompania = !companiaFiltro || coincide(obra['Compañía'], companiaFiltro);
+        const cumpleFestivales = !festivalesFiltro || coincide(obra['Festivales'], festivalesFiltro);
+        const cumpleLugar = !lugarFiltro || coincide(obra['Lugar de estreno'], lugarFiltro);
+
+        // Verificar fechas si están establecidas
+        let cumpleFechas = true;
+        if (fechaInicio || fechaFin) {
+            const fechaObra = obra.fechaFormat ? new Date(obra.fechaFormat.split('-').reverse().join('-')) : null;
+            if (fechaObra) {
                 if (fechaInicio) {
-                    cumpleFiltroFechas = cumpleFiltroFechas && fechaObra >= new Date(fechaInicio);
+                    cumpleFechas = cumpleFechas && fechaObra >= new Date(fechaInicio);
                 }
                 if (fechaFin) {
-                    cumpleFiltroFechas = cumpleFiltroFechas && fechaObra <= new Date(fechaFin);
+                    cumpleFechas = cumpleFechas && fechaObra <= new Date(fechaFin);
                 }
             } else {
-                // Si no hay fecha válida, excluir del resultado cuando hay filtros de fecha
-                cumpleFiltroFechas = false;
+                cumpleFechas = false;
             }
         }
 
-        return cumpleFiltrosTexto && cumpleFiltroFechas;
+        return cumpleAutor && cumpleObra && cumpleDireccion && 
+               cumpleCompania && cumpleFestivales && cumpleLugar && 
+               cumpleFechas;
     });
 
+    // Actualizar la tabla y las visualizaciones
     llenarTabla(obrasFiltradas);
+    actualizarVisualizaciones(obrasFiltradas);
 }
 
 function resetearFiltros() {
@@ -361,9 +643,217 @@ function resetearFiltros() {
     llenarTabla(obrasOriginales);
 }
 
+function initMap() {
+    map = L.map('map').setView([40.4165, -3.7026], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+}
+
+function createNetworkData(obra) {
+    // Si recibimos un array de obras, usar solo la primera
+    if (Array.isArray(obra)) {
+        console.log('Recibido array de obras, usando la primera:', obra[0]);
+        obra = obra[0];
+    }
+
+    // Verificar que tenemos una obra válida
+    if (!obra) {
+        console.warn('No se recibió una obra válida');
+        return {
+            nodes: new vis.DataSet(),
+            edges: new vis.DataSet()
+        };
+    }
+
+    // Verificar que tenemos los campos necesarios
+    if (!obra['Autor/a'] || !obra.id) {
+        console.warn('Obra incompleta:', obra);
+        return {
+            nodes: new vis.DataSet(),
+            edges: new vis.DataSet()
+        };
+    }
+
+    // Crear el nodo con la información disponible
+    const node = {
+        id: obra.id,
+        label: obra['Autor/a'].toString().trim(),
+        title: `${obra.Obra || 'Sin título'} (${obra['Fecha de estreno'] || 'Fecha desconocida'})`,
+        shape: 'dot',
+        size: 20,
+        color: { 
+            background: '#FB7E81',
+            border: '#d45659'
+        }
+    };
+
+    console.log('Creando nodo:', node);
+
+    const nodes = new vis.DataSet([node]);
+    const edges = new vis.DataSet();
+
+    return { nodes, edges };
+}
+
+function actualizarMarcadores(obrasData) {
+    // Actualizar la variable global
+    obras = obrasData;
+
+    if (!map) {
+        console.error('El mapa no está inicializado');
+        return;
+    }
+
+    // Eliminar el grupo de marcadores anterior si existe
+    if (markerClusterGroup) {
+        map.removeLayer(markerClusterGroup);
+    }
+
+    markerClusterGroup = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        zoomToBoundsOnClick: true,
+        maxClusterRadius: 40
+    });
+
+    obras.forEach(obra => {
+        const lat = parseFloat(obra.lat);
+        const lon = parseFloat(obra.lon);
+
+        if (!isNaN(lat) && !isNaN(lon)) {
+            const marker = L.marker([lat, lon])
+                .bindPopup(`
+                    <div class="obra-popup">
+                        <strong>${obra.Obra}</strong><br>
+                        Autor/a: ${obra['Autor/a']}<br>
+                        Fecha: ${obra['Fecha de estreno']}<br>
+                        Lugar: ${obra['Lugar de estreno']}
+                        <br>
+                        <button class="ver-grafo" onclick="mostrarEnGrafo('${obra.id}')">
+                            Ver en grafo
+                        </button>
+                    </div>
+                `);
+
+            markerClusterGroup.addLayer(marker);
+        }
+    });
+
+    map.addLayer(markerClusterGroup);
+}
+
+// Asegurarnos de que la función sea accesible globalmente
+window.mostrarEnGrafo = function(obraId) {
+    console.log('Buscando obra con ID:', obraId);
+    
+    if (!obraId || !obras) {
+        console.warn('ID de obra no válido o no hay obras cargadas');
+        return;
+    }
+
+    const obra = obras.find(o => o.id === obraId);
+    console.log('Obra encontrada:', obra);
+
+    if (obra && network) {
+        const data = createNetworkData(obra);
+        if (data.nodes.length === 0) {
+            console.warn('No se pudieron crear nodos para la obra');
+            return;
+        }
+
+        network.setData(data);
+        
+        setTimeout(() => {
+            network.fit({
+                nodes: [obra.id],
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }, 100);
+    } else {
+        console.warn('No se encontró la obra o el network no está inicializado');
+    }
+}
+
+function initNetwork() {
+    if (!network) {
+        const container = document.getElementById('network');
+        
+        // Inicializar network vacío
+        const data = {
+            nodes: new vis.DataSet(),
+            edges: new vis.DataSet()
+        };
+        
+        const options = {
+            nodes: {
+                font: { size: 12 }
+            },
+            physics: {
+                stabilization: true,
+                barnesHut: {
+                    gravitationalConstant: -1000,
+                    springLength: 100,
+                    springConstant: 0.01
+                }
+            }
+        };
+
+        network = new vis.Network(container, data, options);
+    }
+}
+
+// Modificar la función llenarTabla para actualizar también el gráfico
+function actualizarVisualizaciones(obras) {
+    actualizarMarcadores(obras);
+    if (network) {
+        const data = createNetworkData(obras);
+        network.setData(data);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
+    // Primero inicializar el mapa y network
+    initMap();
+    initNetwork();
+    
+    // Luego cargar y mostrar los datos
     obrasOriginales = await obtenerObras();
     llenarTabla(obrasOriginales);
+
+    // Configurar toggle para visualizaciones
+    const toggleVisualizationsBtn = document.getElementById('toggleVisualizationsBtn');
+    const visualizationsSection = document.getElementById('visualizationsSection');
+
+    toggleVisualizationsBtn.addEventListener('click', () => {
+        visualizationsSection.classList.toggle('collapsed');
+        
+        toggleVisualizationsBtn.firstChild.textContent = 
+            visualizationsSection.classList.contains('collapsed') 
+                ? 'Mostrar visualizaciones ' 
+                : 'Ocultar visualizaciones ';
+
+        if (!visualizationsSection.classList.contains('collapsed')) {
+            if (map) map.invalidateSize();
+            if (network) network.fit();
+        }
+    });
+
+    // Configurar toggle para buscador
+    const toggleSearchBtn = document.getElementById('toggleSearchBtn');
+    const searchSection = document.getElementById('searchSection');
+
+    toggleSearchBtn.addEventListener('click', () => {
+        searchSection.classList.toggle('collapsed');
+        
+        toggleSearchBtn.firstChild.textContent = 
+            searchSection.classList.contains('collapsed') 
+                ? 'Mostrar buscador ' 
+                : 'Ocultar buscador ';
+    });
 
     // Actualizar los event listeners para los nuevos campos
     document.getElementById('busqueda-autor').addEventListener('input', filtrarObras);
@@ -376,6 +866,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('fechaFin').addEventListener('change', filtrarObras);
     document.getElementById('resetFiltros').addEventListener('click', resetearFiltros);
     document.getElementById('busqueda-lugar').addEventListener('input', filtrarObras);
+});
+
+// Asegurarse de que el input de búsqueda tenga el evento
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('#search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', filtrarObras);
+    }
 });
     </script>
 </body>
