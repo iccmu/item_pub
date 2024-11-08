@@ -1,0 +1,430 @@
+id|Autor/a|Obra|Fecha de estreno|Dirección|Compañía|Festivales|Lugar de estreno|fechaFormat|lat|lon|uuid
+1|Lope de Vega|La Viuda Valenciana|30 de marzo de 2023|Adrián Novella|La Valenciana||Teatro Rialto de Valencia|30-03-2023|39.4710227|-0.3763002|cm8N86kR
+2|Lope de Vega|Fuenteovejuna|30 de junio de 2023|Mariano de Paco Serrano|Teatro Círculo||Corral Cervantes de Madrid|30-06-2023|40.3940876|-3.6994792|VDcGHiVP
+3|Lope de Vega|Lo fingido verdadero. Historia de San Ginés, mártir y comediante; La finzione veritiera|22 de julio de 2022|Luca Vonella|Teatro a Canone|Festival internacional de Teatro Clásico de Almagro|Teatro Municipal de Almagro, Ciudad Real|22-07-2022|38.8903455|-3.7117528|DCfBCtct
+4|Lope de Vega|Lo fingido verdadero|1 de febrero de 2022|Lluís Homar|Compañía Nacional de Teatro Clásico, CNTC||Sala Princioa del Teatro de la Comedia de Madrid|01-02-2022|40.4155336|-3.7003923|LB52PjnD
+5|Lope de Vega|La malcasada|14 de julio de 2022|Ana Vélez|Tumbalobos Teatro|Festival internacional de Teatro Clásico de Almagro|Teatro Municipal de Almagro, Ciudad Real||38.8903455|-3.7117528|76gwJfFX
+6|Lope de Vega|La hermosa fea|17 de junio de 2022|Gabriel García y Daniel Acebes|Diágoras Producciones|Festival Clásicos en Alcalá|Centro Sociocultural Gilitos de Alcalá de Henares, Madrid|17-06-2022|40.4921751|-3.3666232|nwW7QPyy
+7|Lope de Vega|La discreta enamorada|20 de mayo de 2022|Manuel Carcedo Sama|Karpas Tratro||Teatro Karpas de Madrid|20-05-2022|40.410462|-3.697682|M446Krog
+8|Lope de Vega|La dama boba|3 de julio de 2022|Rodrigo Arribas|Fundación Siglo de Oro|Festival internacional de Teatro Clásico de Almagro|Corral de Comedias de Alcalá de Henares, Madrid||40.4822922|-3.3645504|dzzTEcnw
+9|Lope de Vega|El Perro del Hortelano|15 de julio de 2022|Hugo Giachino|Stayin' alive|Festival internacional de Teatro Clásico de Almagro|Casa Palacio de los Villarreal de Almagro, Ciudad Real|15-07-2022|38.8885331|-3.7148567|9uqTvyd7
+10|Lope de Vega|El marqués de las Navas|19 de junio de 2022||Factoría Teatro|Festival Clásicos de Alcalá|Teatro Salón Cervantes de Alcalá de Henares, Madrid|19-06-2022|40.4834571|-3.3661106|8GS67hsg
+11|Lope de Vega|El amor enamorad|22 de julio de 2022|Borja Rodríguez|Mic Producciones Teatrales|Festival internacional de Teatro Clásico de Almagro|Antigua Universidad Renacentista de Almadro, Ciudad Real||38.8915937|-3.7148261|BZELULMp
+12|Lope de Vega|Arte nuevo de hacer melindres en estos tiempos|28 de julio de 2022|Juan Polanco|Cía Kazo Teatro||Sala Nave 73 de Madrid|28-07-2022|40.403178|-3.6987581|NrtReAMx
+13|Lope de Vega|Peribáñez y el comedor de Ocaña|29 de enero de 2021|Eduardo Vasco|Noviembre Teatro||Teatro Calderón de Valladolid|29-01-2021|41.6539837|-4.7246809|ZJcMZWwX
+14|Lope de Vega|Los guanches de Tenerife y conquista de Canaria|24 de junio de 2021|Jesús Román|Cía. Garcilasos|||24-06-2021|||jNUqxxh8
+15|Lope de Vega|Las bizarrías de Belisa|23 de julio de 2021|Antonio Alcalde|Clásicos on the Road|Festival internacional de Teatro Clásico de Almagro|Corral de Comedias|23-07-2021|40.4451582|-3.5339127|BmPBhbx3
+16|Lope de Vega|La boba para los otros|8 de octubre de 2021|Rafael Rodríguez|2Rc Producciones|Festival iberoamericano del Siglo de Oro, Festival de Teatro Clásico de Olmedo|Teatro Pérez Galdós de Las Palmas de Gran Canaria||28.1034923|-15.4138437|8kGfCaMg
+17|Lope de Vega|Fuenteovejuna, historia de un maltrato|16 de octubre de 2021|Marianella Morena|La Morena; Jóvenez Clásicos||Teatro del Títere de la Tía Norica de Cádiz|16-10-2021|36.5321162|-6.2977584|eijpYoDg
+18|Lope de Vega|El Perro del Hortelano|2 de julio de 2021|Paco Mir|Vània Produccions; Sofía Aguilar Producciones de Arte|Festival internacional de Teatro Clásico de Almagro|Corral de Comedias de Almagro, Ciudad Reall|27-07-2021|38.8884394|-3.7119119|cHE3ZKut
+19|Lope de Vega|El Perro del Hortelano|3 de abril de 2021|Dominic Dromgoole|Fundación Siglo de Oro||Verde de los Teatros del Canal de Madrid||40.438279|-3.7051836|4XUrZnJo
+20|Lope de Vega|El Caballero de Olmedo|16 de junio de 2021|Pedro Luis López Bellot|Producciones La Barraca & Cía.|Festival de Teatro Clásico de Cáceres|Plaza de las Veletas de Cáceres|16-06-2021|39.4732379|-6.3702347|GauwsMJ2
+21|Lope de Vega|El animal de Hungría|12 de junio de 2021|Ernesto Arias|Colectivo Allatok; EscénaTe||Corral de Comedias de Alcalá de Henares, Madrid|12-06-2021|40.4822922|-3.3645504|fzDF5ctG
+22|????????|Don Gil de Olmedo es sueño|||????????????||||||b29pK8T3
+23|Lope de Vega|Distrito Fuenteovejuna|Verano 2020|Francisco Valcarce|Movimiento Sempiterno||???|23-06-2020|40.4160512|-3.6929536|iyJQLQ4K
+24|Lope de VegaMÚSICA|Canciones de Olmedo|15 de noviembre de 2020|José Carlos Cuevas|Jóvenes Clásicos|Festival LA ESCENA 2020|Online. Grabado en el Teatro del Soho, Málaga||36.7108625|-4.4294363|52HGsqA5
+25|Lope de Vega|Arte nuevo de hacer teatro para jóvenes de nuestro tiempo; Eco y Narciso; Valor, agravio y mujer; Fuenteovejuna|4 de marzo de 2021|Mariano Estudillo|Joven Compañía Nacional de Teatro Clásico, JCNTC|"Festival de Teatro Clásico de Almagro
+"|sala Tirso de Molina del Teatro de la Comedia de Madrid||40.4155336|-3.7003923|nitqPupq
+26|Lope de Vega|Peribáñez y el comedor de Ocaña|15 de septiembre de 2020|del Colectivo|Dragoi Zuria||||||m3MxwyKf
+27|Lope de Vega|Ni come, ni deja comer|18 de julio de 2020|José Luis Pineda Ortega|Asociación Cultural Teatral A Escena|"Festival de Teatro Clásico de Almagro
+"|Dentro de la programación de Barroco Infantil Online del Festival de Teatro Clásico de Almagro||38.8888239|-3.7111408|7T7sSepD
+28|Lope de Vega|Mujeres del Siglo de Oro|||????????????||||||bTVcdcgd
+29|Lope de VegaTÍTERES|La selva sin amor|18 de julio de 2020|Jesús Caballero|La Máquina Real|"Festival de Teatro Clásico de Almagro
+"|Palacio de los Oviedo de Almagro||38.8885331|-3.7148567|e7QGde6t
+30|Lope de Vega|La discreta enamorada|19 de julio de 2020|Javier Mañón|Corrales de Comedias Teatro S.L|"Festival de Teatro Clásico de Almagro
+"|Palacio de los Oviedo de Almagro|19-07-2020|38.8885331|-3.7148567|TPqPiUeQ
+31|Lope de Vega|El discreto enamorao|29 de enero de 2020|Inés Muñoz|Las monstruas|Ciclo Clásicos en Enero, Murcia|Teatro Circo Murcia|29-01-2020|37.9877971|-1.1281103|2Nscnnvu
+32|Lope de VegaMUSICAL|Castelvines y Monteses|16 de octubre de 2020|Sergio Peris-Mencheta|Barco Pirata; Compañía Nacional de Teatro Clásico. CNTC||Logroño||42.4602928|-2.4483627|R46xArZH
+33|Lope de Vega?????|Todas las guerras|||Joven Compañía Nacional de Teatro Clásico, JCNTC||||||SS85AHpd
+34|Lope de Vega|María Estuardo. Corona trágica|27 de julio de 2019|Manuel Canseco|Compañía Manuel Canseco|"Festival de Teatro Clásico de Almagro
+"|Almagro, Ciudad Real|27-07-2019|38.8888239|-3.7111408|kMoqSfqt
+35|Lope de Vega|Los locos de Valencia|15 de febrero de 2019|Antonio Algarra|Compañía Profesional de la Escuela Nacional de Arte Teatral, INBAL||La Corrala del Mitote, México|15-02-2019|19.3541834|-99.1414052|YwB3VSN5
+36|Lope de Vega|La viuda Valenciana|12 de julio de 2019|Borja Rodríguez|Mic Producciones Teatrales|"Festival de Teatro Clásico de Almagro
+"|Palacio de los Oviedo de Almagro (Ciudad Real)|12-07-2019|38.8885331|-3.7148567|faq6VH7W
+37|Lope de Vega**|La dama boba|8 de julio de 2019|Antonio Alcalde|Clásicos on the Road|"Festival de Teatro Clásico de Almagro
+"|Ermita de la Magdalena de Almagro (Ciudad Real)||38.8844811|-3.7098712|ULVtiFgk
+38|Lope de Vega|La dama boba|26 de mayo de 2019|Victoria Savelieva|Olympia Metropolitana S.A||TAC Catarroja, Valencia|26-05-2019|39.4034449|-0.4095795|NXeE2NPj
+39|Lope de Vega|Fuenteovejuna o el coraje de las mujeres; Fuenteovejuna, el valor de las mujeres|12 de julio de 2019|Vagba Oboud de Sales y Luis Marqués|Alma Production|"Festival de Teatro Clásico de Almagro
+"|Patio de Fúcares de Almagro (Ciudad Real)|12-07-2019|38.8899191|-3.709986|oCCbU3TH
+40|Lope de Vega|El perro del Hortelano|5 de julio de 2019|José Vicente Gómez|El Taular Teatro|"Festival de Teatro Clásico de Almagro
+"|En un coche Mercedes en Almagro||39.6950163|-3.4636674|93DrVYCa
+41|Lope de Vega|El perro del Hortelano|10 de agosto de 2019|Iker Ortiz de Zárate|Ortzai|||10-08-2019|||8qC2LsVg
+42|Lope de Vega|Dos tablas y una pasión|8 de junio de 2019|Rafael Álvarez 'El Brujo'|Producciones El Brujo|Festival de Teatro Clásico de Cáceres|Sala Principal del Gran Teatro de Cáceres||39.4731752|-6.3757083|UpBn6WYq
+43|Lope de Vega|La Gatomaquia|19 de julio de 2018|Laura Ferrer|La Coquèlicot|"Festival de Teatro Clásico de Almagro
+"|Silo de Almagro (Ciudad Real)|19-07-2018|38.8942052|-3.7077272|5eVp3fjg
+44|Lope de Vega|La discreta enamorada|27 de julio de 2018|Santiago Doria|Compañía La Discreta Enamorada|"Festival de Teatro Clásico de Almagro
+"|Corral de Comedias de Almagro (Ciudad Real)|27-07-2018|38.8884394|-3.7119119|j9zRiXuB
+45|Lope de Vega|El perro del Hortelano||Alberto Gómez Taboada|Hilanderas Producciones||||||fbA96vsc
+46|Lope de Vega|El castigo sin venganza||Laura López Martínez|En la Luna Teatro||||||T6G9FjbE
+47|Lope de Vega|El castigo sin venganza|21 de noviembre de 2018|Helena Pimenta|Compañía Nacional de Teatro Clásico, CNTC||Teatro de la Comedia de Madrid|21-11-2018|40.4155336|-3.7003923|jBrf7Xjz
+48|Lope de Vega|Lo fingido verdadero|6 de julio de 2018|David Ojeda|Katum Teatro; Palmyra Teatro|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro (Ciudad Real)||38.89053|-3.7119068|YrpcpozV
+49|Lope de Vega|Préstame tus palabras 3||Alex Ruiz-Pastor|Joven Compañía Nacional de Teatro Clásico, JCNTC||||||h9Ny4mHu
+50|Lope de Vega|La judía de Toledo|8 de marzo de 2017|Laila Ripoll|Compañía Nacional de Teatro Clásico, CNTC; Producciones Micomicón||Teatro de la Comedia de Madrid.||40.4155336|-3.7003923|PFeqK5DJ
+51|Lope de Vega|La dama boba|28 de noviembre de 2017|Alfredo Sanzol|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro de la Comedia de Madrid.|28-11-2017|40.4155336|-3.7003923|ZKGwRXrA
+52|Lope de Vega|La Araucana. Auto sacramental|26 de julio de 2017|Tania Faúndez Carreño|Teatro del Nuevo Mundo|"Festival de Teatro Clásico de Almagro
+"||26-07-2017|||MrF2CHVg
+53|Lope de Vega|Fuenteovejuna; Fuente Ovejuna|19 de mayo de 2017|Javier Hernández-Simón|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro de la Comedia de Madrid|19-05-2017|40.4155336|-3.7003923|ke9pDgqH
+54|Lope de Vega|El caballero de Olmedo|3 de noviembre de 2017|Eduardo Vasco|Noviembre Compañía de Teatro S.L||||||YHemfGzj
+55|Lope de Vega|#Descuadra_2-Una comedia de enredo muy enredada-|10 de julio de 2017|Miguel Moreiras.|Pradana Teatro|"Festival de Teatro Clásico de Almagro
+"|Ermita de San Ildefonso de Almagro|10-07-2017|38.885073|-3.7195114|ibtwRAxf
+56|Lope de Vega|La villana de Getafe|20 de mayo de 2016|Roberto Cerdá|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro de la Comedia de Madrid||40.4155336|-3.7003923|kpM4rPgL
+57|Lope de Vega|La discreta enamorada|17 de enero de 2016|Pedro Miguel Martínez|El Bucle||Casa de Cultura de Burlada, Navarra|17-01-2016|42.8244455|-1.620846|dJt24FyY
+58|Lope de Vega|La boda entre dos maridos||Ana de Santos y Romeo Urbano|Albricias Teatro||||||FPCYhSn7
+59|Lope de Vega|Fuente Ovejuna; Fuenteovejuna||Pepa Gamboa|Atalaya - TNT||Espectáculo TNT - El Vacíe||37.4216355|-5.9735266|P6dKnLg2
+60|Lope de Vega|El perro del Hortelano|19 de octubre de 2016|Helena Pimenta|Compañía Nacional de Teatro Clásico, CNTC||Teatro de la Comedia de Madrid|19-10-2016|40.4155336|-3.7003923|C9bm9ne6
+61|Lope de Vega|Mujeres y criados|29 de abril de 2015|Laurence Boswell y Rodrigo Arribas.|Fundación Siglo de Oro||Teatro Español de Madrid|29-04-2015|40.4149459|-3.7001863|DDtQaLQS
+62|Lope de Vega|La dama boba (versión animal)|11 de julio de 2015|Ramón Gutiérrez Rojas|La Calderona|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro (Ciudad Real)|11-07-2015|38.89053|-3.7119068|atwaDAom
+63|Lope de Vega|La dama boba||Victoria Savelieva|Teatro Clásico Mediterráneo||||||oG8wcqMb
+64|Lope de Vega|Fuenteovejuna|2 de julio de 2015|Ángel Luis Martín Fernández|Vecinos de Fuente Obejuna|"Festival de Teatro Clásico de Almagro
+"|Plaza Mayor de Almagro (Ciudad Real)|27-06-2015|38.8886344|-3.7117809|XWPbMNhP
+65|Lope de Vega|Fuenteovejuna; Fuente Ovejuna|8 de abril de 2015|José Luis Arellano|La Joven Compañía||Teatro Conde Duque de Madrid||40.4274072|-3.7107195|BJPu6cQs
+66|Lope de Vega|El príncipe ynocente|2015||Efe Tres|||20-01-2015|||dcSpL8Zk
+67|Lope de Vega|El caballero de Olmedo|23 de abril de 2015|Juan Carlos Sanz|Valquiria Teatro||Teatro Viñagrande de Alcorcón, Madrid|23-04-2015|40.3482819|-3.8049202|WhmnVfuZ
+68|Lope de Vega|Las dos bandoleras|8 de mayo de 2014|Carme Portaceli|Compañía Nacional de Teatro Clásico, CNTC||Teatro Pavón de Madrid||40.410031|-3.7061552|e7djYgYo
+69|Lope de Vega|La dama boba|14 de febrero de 2014|Adolfo Carmona|Acteatro||Teatro Oriente de Morón|14-02-2014|37.121044|-5.4514299|9J4qWNPH
+70|Lope de Vega|La cortesía de España|3 de abril de 2014|Josep María Mestres|Joven Compañía Nacional de Teatro Clásico, JCNTC||Naves del Español, Matadero Madrid||40.3915443|-3.6971042|3aChjvhR
+71|Lope de Vega|Fuenteovejuna|19 de junio de 2014|Pedro Casas|Compañía José Estruch. RESAD||Claustro del Colegio del Rey de Alcalá de Henares, Madrid|19-06-2014|40.482312|-3.3638123|SrJT5DWr
+72|Lope de Vega|El perro del Hortelano|6 de julio de 2014|Gustavo Funes|Producciones El Perro Andalook||Plaza Vázquez de Molina de Úbeda, Jaén||38.0077028|-3.3678825|EHhm7tRH
+73|Lope de Vega|El perro del Hortelano|5 de febrero de 2014|Laurence Boswell y Rafel Díez Labín|Compañía Rakatá - Fundación Siglo de Oro|Festival de Teatro de Málaga|Teatro Echegaray de Málaga||36.7214409|-4.4192984|iSorgMGV
+74|Lope de Vega|El castigo sin venganza||Ernesto Arias|Compañía Rakatá - Fundación Siglo de Oro||||||DKFpg7EF
+75|Lope de Vega|El caballero de Olmedo|25 de abril de 2014|Antonio Barrios|Compañía de Teatro Clásico de Córdoba. Teatro Par||Sala Góngora del Gran Teatro de Córdoba|25-04-2014|37.884474|-4.7811764|i7G9jpdk
+76|Lope de Vega|El caballero de Olmedo|21 de julio de 2014|Kei Jinguji|Ksec Act|Festival de Teatro Clásico de Olmedo|Corrala Palacio del Caballero de Olmedo (Valladolid)|21-07-2014|41.2863196|-4.6859718|RXswg27x
+77|Lope de Vega|El caballero de Olmedo|8 de febrero de 2014|Lluís Pasqual|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro Pavón de Madrid||40.410031|-3.7061552|GgJif7av
+78|Lope de Vega|Boba para los otros y discreta para sí|22 de julio de 2014|Rebeca Sanz-Conde|Lafinea Teatro|Festival de Teatro Clásico de Olmedo|Corrala Palacio Caballero de Olmedo (Valladolid)|22-07-2014|41.2863196|-4.6859718|A2iwgJeG
+79|Lope de Vega|Olmedo caballero El de; Testosterona|5 de julio de 2013|Nancho Novo|Microteatro Por Dinero|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro||38.8903455|-3.7117528|HS3c2dge
+80|Lope de Vega|La noche toledana|7 de mayo de 2013|Carlos Marchena|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro Pavón de Madrid||40.410031|-3.7061552|9m6VarwD
+81|Lope de Vega|Los locos de Valencia|19 de junio de 2013|Juan Polanco|La Academia del Verso|Festival Clásicos de Alcalá|Teatro Salón Cervantes|19-06-2013|40.4834571|-3.3661106|5MJtJvU6
+82|Lope de Vega|Los celos; Olmedo caballero El|5 de julio de 2013|Sonia Sebastián|Microteatro Por Dinero||Teatro Municipal de Almagro||38.8903455|-3.7117528|V9nrT3ZT
+83|Lope de Vega|La vengadora de mujeres|22 de julio de 2013|Carla Soto|De la Nada Teatro|"Festival de Teatro Clásico de Almagro
+"|Almagro (Ciudad Real)|22-07-2013|38.8888239|-3.7111408|8W8ojkVW
+84|Lope de Vega|La pasión; Olmedo caballero El de|5 de julio de 2013|Ana Risueño|Microteatro Por Dinero|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro||38.8903455|-3.7117528|EpwiCN4G
+85|Lope de Vega|La estrella de Sevilla|27 de julio de 2013|Alfonso Zurro|Teatro Clásico de Sevilla|Festival de Teatro y Danza de Niebla|Festival de Teatro y Danza de Niebla|27-07-2013|37.3623164|-6.6783936|eDuqx6DS
+86|Lope de Vega|La discreta enamorada|30 de noviembre de 2013|Gonzala Martín Scherman|Factoría Teatro||Centro Cultural Valdebernardo de Madrid|30-11-2013|40.3996083|-3.6210667|SHiXGz96
+87|Lope de Vega|La dama boba||Jorge Fullana|Espacio Imaginado||||||AD9i7kLy
+88|Lope de Vega|Fuenteovejuna. Breve tratado sobre las ovejas domésticas|25 de mayo de 2013|Ricard Soler i Mallol|Companyia Obskené||Corral de Comedias de Alcalá de Henares (Madrid)|25-05-2013|40.4822922|-3.3645504|6vaLwwao
+89|Lope de Vega|Fuenteovejuna; Fuente Ovejuna||José Luis Arellano García|La Joven Compañía||||||JtESpJou
+90|Lope de Vega|Fuente Ovejuna. Ensayo desde la violencia; Fuente Ovejuna|19 de junio de 2013|César Barló|Almaviva Teatro||Corrala de la calle Montesinos n.º 56 de Aranjuez, Madrid|19-06-2013|40.0345339|-3.5991432|dQqxrDxY
+91|Lope de Vega|El subterráneo; Olmedo caballero El de|5 de julio de 2013|Fernanda Muchico y Miguel Alcantud|Microteatro Por Dinero|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro||38.8903455|-3.7117528|iYjEasxW
+92|Lope de Vega|El perro del Hortelano|2 de noviembre de 2013|del Colectivo|Zamamur Producciones||||||3VwkPjtp
+93|Lope de Vega|El perro del Hortelano||Manuel Carcedo Sama|Karpas Teatro||||||EwEAfx6W
+94|Lope de Vega|El objeto de deseo; Olmedo caballero El de|5 de julio de 2013|Carlos Molinero|Microteatro Por Dinero|"Festival de Teatro Clásico de Almagro
+"|||||9fTJp8uW
+95|Lope de Vega|El caballero de Olmedo|2013|Antonio Raposo|Viento Sur Teatro|||20-03-2013|||5bPkJCNF
+96|Lope de Vega|El caballero de Olmedo|22 de marzo de 2013|Felype de Lima|Secuencia 3 Artes y Comunicación|Festivales de Cantabria|Palacio de Festivales de Cantabria|22-03-2013|43.4629796|-3.789499|HsiPy3Ec
+97|Lope de Vega|Las flores de don Juan|2012|José Bornás|Apata Teatro|Festival Internacional de Teatro y Danza de San Javier|Festival Internacional de Teatro y Danza de San Javier|20-12-2012|37.8040686|-0.8331786|MXYuUUqt
+98|Lope de Vega|La discreta enamorada y doña Francisquita||Juan Polanco|La Academia del Verso de Alcalá||||||RNUQTFeG
+99|Lope de Vega|La dama boba|23 de junio de 2012|Laila Ripoll|Producciones Micomicón||Plaza de San Jorge de Cáceres|23-06-2012|39.4738717|-6.3702042|jmfzARe9
+100|Lope de Vega|La dama boba||Pilar Pérez Salcedo|La Fragua de los Sueños||||||6hVQeLXg
+101|Lope de Vega|Fingido y verdadero|13 de julio de 2012|Luis Miguel Cintra|Teatro da Cornucopia|"Festival de Teatro Clásico de Almagro
+"|Antigua Universidad Renacentista de Almagro (Ciudad Real)|13-07-2012|38.8915937|-3.7148261|gMDPC7SK
+102|Lope de Vega|El premio del bien hablar|27 de enero de 2012|Carlos Martínez-Abarca|Valquiria Teatro||Teatro Zorrilla de Valladolid|27-01-2012|41.6516356|-4.7280576|PFddtYLu
+103|Lope de Vega|El perro del Hortelano|3 de julio de 2012|Josemi Rodríguez|Pata Teatro||Museo de la Semana Santa de Málaga||36.7235297|-4.4224007|Bo8Ws2sV
+104|Lope de Vega|El perro del Hortelano|15 de julio de 2012|Álvaro Morte|300 Pistolas Produccione|"Festival de Teatro Clásico de Almagro
+"|Teatro La Veleta de Almagro (Ciudad Real)|15-07-2012|38.8994072|-3.7079747|QSEBfMEk
+105|Lope de Vega|El castigo sin venganza|20 de julio de 2012|Antonio Rojas|Seres Comunes|"Festival de Teatro Clásico de Almagro
+"|Teatro La Veleta de Almagro (Ciudad Real)|20-07-2012|38.8994072|-3.7079747|6djAD4Lk
+106|Lope de Vega|El castigo sin venganza|26 de abril de 2012|María Rodríguez y Armando Jerez|Timaginas Teatro||Teatro Guimerá de Santa Cruz de Tenerife|26-04-2012|28.4658898|-16.2508954|3twUJPA5
+107|Lope de Vega|El Bobo del colegio|29 de junio de 2012|José Luis Fernández Puentes|In Vitro Teatro|Festival Clásicos de Alcalá|Patio del Instituto Cervantes de Alcalá de Henares|29-06-2012|40.4537301|-3.5247718|att4tkHH
+108|Lope de Vega|Los locos de Valencia|8 de junio de 2011|Antoni Tordera|Centre Teatral de la Generalitat||Teatre Calderón de Alcoi, Alicante||38.6981544|-0.4721392|Fbh8EXmi
+109|Lope de Vega|El perro del Hortelano|1 de julio 2011|Eduardo Vasco|Compañía Nacional de Teatro Clásico, CNTC|"Festival de Teatro Clásico de Almagro
+"|Hospital de San Juan de Almagro (Ciudad Real)||38.8906549|-3.712043|NeWFGFwo
+110|Lope de Vega|El hospital de los podridos y otros entremeses del s. XXI|3 de junio de 2011|Cristina Yáñez|Tranvía Teatro||Teatro de la Estación de Zaragoza||41.6567486|-0.8942054|ZhGQrcCC
+111|Lope de Vega|El castigo sin venganza|8 de julio de 2011|Francisco Civit|La Sudestada|"Festival de Teatro Clásico de Almagro
+"|Corral de Comedias de Almagro (Ciudad Real)||38.8884394|-3.7119119|WmQYJ6V4
+112|Lope de Vega|El amor enamorado|22 de junio de 2011|Fefa Noia|Lacaimana|Festival Clásicos de Alcalá|Corral de Comedias de Alcalá de Henares (Madrid)|22-06-2011|40.4822922|-3.3645504|MWzdkYew
+113|Lope de Vega|De Fuente Ovejuna a Ciudad Juárez||Lucía Rodríguez Miranda|The Cross Border Project||||||Ak4A8EwK
+114|Lope de Vega|Lo fingido verdadero|14 de julio de 2010|Claudio Hochman|La Máquina Real|"Festival de Teatro Clásico de Almagro
+"|Corral de Comedias de Almagro (Ciudad Real)|14-07-2010|38.8884394|-3.7119119|nkUdZQam
+115|Lope de Vega|La moza de cántaro|27 de marzo de 2010|Eduardo Vasco|Joven Compañía Nacional de Teatro Clásico, JCNTC||Teatro Juan Bravo de Segovia|27-03-2010|40.9504826|-4.1235423|dvxKvwcK
+116|Lope de Vega|La hermosa fea|30 de septiembre de 2010|Francisco García Vicente|La Tejedora de Sueños||Teatro Jovellanos de Gijón (Asturias)||43.5392704|-5.6612742|fniVjFRX
+117|Lope de Vega|La dama boba|15 de enero de 2010|Jaroslaw Bielski|Compañía Réplika Teatro||Teatro Juan Bravo de Segovia|15-01-2010|40.9504826|-4.1235423|gKmvkt4V
+118|Lope de Vega|El galán de la Membrilla|2 de julio de 2010|Antonio Malonda|Teatro Cachivaches||Teatro Auditorio de Chinchilla (Albacete)||38.9205243|-1.7243256|9xUxRTGa
+119|Lope de Vega|El castigo sin venganza|6 de noviembre de 2010|Ernesto Arias y Simon Brede|Compañía Rakatá||||||3q5iuW3H
+120|Lope de Vega|Peribáñez|26 de marzo de 2009|Amaya Curieses|Los Barracos||Círculo de Bellas Artes de Madrid|26-03-2009|40.4183042|-3.6965333|8SXXQhzs
+121|Lope de Vega|Lope a lo-petit|30 de enero de 2009|María Martínez de Tejada|De Puntillas Danza-Teatro||Centro Cultural Antonio Gala de La Rinconada (Sevilla)|30-01-2009|37.4849052|-5.982579|D2uuX8BR
+122|Lope de Vega|La villana de Getafe|10 de julio de 2009|Domingo Ortega|Sociedad Estatal de Conmemoraciones Culturales, SECC; Grupo de Teatro de la Universidad Carlos III|"Festival de Teatro Clásico de Almagro
+"|Patio Wessel de Almagro (Ciudad Real)|10-07-2009|38.9386546|-3.8196163|2Y9ZVyaK
+123|Lope de Vega|La niña de plata|2009|Ernesto Filardi|Aula de Teatro de la Universidad de Alcalá de Henares||Aula de Teatro de la Universidad de Alcalá de Henares|20-09-2009|40.4571879|-3.5190883|iWEiRgyY
+124|Lope de Vega|La hermosa fea|15 de junio de 2009|Juan Manuel Casero|Diágoras Producciones|Festival de Teatro Clásico de Cáceres|Cáceres|15-06-2009|39.4716366|-6.3907192|Nnnhqxqk
+125|Lope de Vega|La Gatomaquia|9 de julio de 2009|Héctor Manuel Vidal|La Cuarta Producciones|"Festival de Teatro Clásico de Almagro
+"|Patio de Fúcares de Almagro (Ciudad Real)||38.8899191|-3.709986|WV8o5piz
+126|Lope de Vega|La estrella de Sevilla|4 de febrero de 2009|Eduardo Vasco|Compañía Nacional de Teatro Clásico, CNTC||Teatro Calderón de Valladolid||41.6539837|-4.7246809|CNJG2b9X
+127|Lope de Vega|Fuenteovejuna|24 de julio de 2009|Liuba Cid|Mefisto Teatro|"Festival de Teatro Clásico de Almagro
+"|Antigua Universidad Renacentista de Almagro (Ciudad Real)|24-07-2009|38.8915937|-3.7148261|5PzhNBoS
+128|Lope de Vega|Fuenteovejuna||Laurence Boswell|Rakatá||||||QwvMFapR
+129|Lope de Vega|Fuenteovejuna|17 de julio de 2009|Kei Jinguji|Ksec Act|"Festival de Teatro Clásico de Almagro
+"|Teatro Municipal de Almagro (Ciudad Real)|17-07-2009|38.89053|-3.7119068|YMyuv5Wq
+130|Lope de Vega|El perro del Hortelano|14 de abril de 2009|Gustavo Funes|El Ojo del Bululú||||||Lr9fXNFU
+131|Lope de Vega|El perro del Hortelano|10 de julio de 2009|Juan Carlos Maestre|Radio Nacional de España|"Festival de Teatro Clásico de Almagro
+"|Corral de Comedias de Almagro (Ciudad Real)|10-07-2009|38.8884394|-3.7119119|4n4S5bUE
+132|Lope de Vega|El desdichado por la honra. Cuento trágico|3 de julio de 2009|Rafael Ruiz Álvarez|Aula de Teatro de la Universidad de Granada||||||Zmnz3yd9
+133|Lope de Vega||||||||||e953orFy
+134|Lope de Vega||||||||||cTQXsTKt
+135|Lope de Vega||||||||||4jFKPnUG
+136|Lope de Vega||||||||||KKqrqjs4
+137|Lope de Vega||||||||||GUfMivbA
+138|Lope de Vega||||||||||KRkszMJ6
+139|Lope de Vega||||||||||2MuxcFbV
+140|Pedro Calderón de la Barca|Mañanas de abril y mayo|13 de abril|Laila Ripoll||Festival de teatro clásico Castilla de Peñíscola|Teatro Fernán-Gómez de Madrid|13-04-2023|40.4249446|-3.6898673|dmbX4aHK
+141|Pedro Calderón de la Barca|La vida es sueño en sus versos esenciales|27 de julio||Olmedo Clásico. Festival de Teatro Clásico de Olmedo|Festival de Teatro Clásico de Olmedo|Centro de Artes Escénicas San Pedro de Olmedo, Valladolid|27-07-2023|41.288271|-4.685676|MvPgR2Si
+142|Pedro Calderón de la Barca|La vida es sueño. Versión musical|1 de julio|Dirección: Macarena Baeza de la Fuente. Ayudante de dirección: Camila Gatica|Teatro la Calderona||Casa Palacio de los Villarreal de Almagro, Ciudad Real|01-07-2023|38.8885331|-3.7148567|Gw6hDWqH
+143|Pedro Calderón de la Barca|La vida es sueño|2 de julio|Dirección: Mariano de Paco. Ayudante de dirección: Daniel Alonso y Francisco Rivera.|Teatro Círculo|"
+Festival Iberoamericano del Siglo de Oro: Clásicos en Alcalá"|Monasterio Cisterciense de San Bernardo de Alcalá de Henares, Madrid||40.4830703|-3.3698094|kf6cNtKH
+144|Pedro Calderón de la Barca|La vida es sueño|14 de octubre|Dirección: Declan Donnellan. Ayudante de dirección: Josete Corral.|Cheek by Jowl; Compañía Nacional de Teatro Clásico, CNTC; Lazona||Teatro Lope de Vega de Sevilla||37.3784059|-5.990964|cMpgiFie
+145|Pedro Calderón de la Barca|La gran Cenobia|13 de enero|DIreccón: David Boceta|Compañía Nacional de Teatro Clásico, CNTC||Sala Tirso de Molina del Teatro de la Comedia de Madrid|13-01-2023|40.4155336|-3.7003923|UUMzdUQw
+146|Pedro Calderón de la Barca|No hay burlas con el amor|11 de junio|Dirección escénica: Josete Corral. Ayudantía de dirección: Víctor Sainz.|Vida Cantina|Festival Clásicos en Alcalá|Centro Cultural Gilitos de Alcalá de Henares, dentro de la programación del Festival Iberoamericano del Siglo de Oro, Clásicos en Alcalá|11-06-2023|40.4921751|-3.3666232|aaSJ9cJQ
+147|Temática SO/Calderón|Calderón, ¿enamorado?|17 de marzo|Amaya Curieses y José Maya|Zampanó Teatro|Jornadas de siglo de oro de Almería||17-03-2023|||adNTSMrt
+148|Tirso de Molina |El burlador de Sevilla y el convidado de piedra |19 de febrero de 2000|Isaac Benabeu |Associació d´Investigació i Experimentació Teatral ||Sala La Cuina de Barcelona|19-02-2000|41.3806393|2.1349951|SK2smH6E
+149|Tirso de Molina |El condenado por desconfiado |1 de noviembre de 2001|José Maya|Zampanó Teatro|Festival de Otoño|Teatro Pavón de Madrid||40.410031|-3.7061552|4WYVBHZ3
+150|Tirso de Molina |El condenado por desconfiado |31 de enero de 2001|Eva del Palacio|Teatro Morboria||Teartro Pradillo de Madrid|31-01-2001|40.4485746|-3.6746284|JPGtn9v3
+151|Tirso de Molina |Marta la piadosa||José Antonio Aliaga|Aula de Teatro Andrés de Claramonte||||||koY6SBzx
+152|Tirso de Molina |Don Gil de las calzas verdes|11 de julio de 2002|Fernando Urdiales|Galileo Teatro||Teatro Liceo de Salamanca|11-07-2002|40.9662889|-5.6624954|SQPuoh5Z
+153|Tirso de Molina |El burlador de Sevilla |28 de febrero de 2003|Miguel Narros|CNTC||Teatro Pavón de Madrid|28-02-2003|40.410031|-3.7061552|CgVmyJPW
+154|Tirso de Molina |El burlador de Sevilla y el convidado de piedra |12 de julio de 2003|Ricardo Camacho|Teatro Libre|Festival de Teatro Medieval y Clásico Ciudad de Chinchilla|Auditorio Municipal de Chinchilla (Albacete)|12-07-2003|38.9205243|-1.7243256|FWt44b2S
+155|Tirso de Molina |El vergonzo en palacio||Asunción Mieres|Aula de Teatro de la UEX||||||9kLbEK6G
+156|Tirso de Molina |La celosa de sí misma|21 de noviembre de 2003|Luis Olmos|CNTC||Teatro Pavón de Madrid|21-11-2003|40.410031|-3.7061552|7ZjiPtFe
+157|Tirso de Molina |La dama del olivar||Juan Antonio Barceló|Caleido||||||YVoQyryd
+158|Tirso de Molina |Sueño del duque de Belaqua|21 de octubre de 2003|Virginia Nölting y Javier Parra|Anthares Teatro||Teatro Cánovas de Málaga|21-10-2003|36.7281001|-4.4186937|PbTgYa9H
+159|Tirso de Molina |El condenado por desconfiado |2 de diciembre de 2004|Alejandro González Puche|Corporación Teatro del Valle||Teatro de la Universidad de Murcia||37.9992893|-1.1649039|jCnmQDjn
+160|Tirso de Molina |Gil el verde|18 de noviembre de 2004|Pepe Ola|Ciénaga Teatro||Sala Central Lechera de Cádiz|18-11-2004|36.5362562|-6.2942236|4Ez2rmT9
+161|Tirso de Molina |La venganza de Tamar|28  de abril de 2004 en Swan. 28 de octubre de 2004|Simon Usher|Royal Shakespeare Company|Festival de Otoño|En Swan: Theatre de Stratford-upon-Avon. En España en Teatro Español de Madrid||46.2651809|-2.7532047|J4tgu2Xb
+162|Tirso de Molina |Desde Toledo a Madrid||Carlos Aladro|Rakatá||||||PNZsbAk6
+163|Tirso de Molina |Don Gil de las calzas verdes|29 de junio de 2006|Eduardo Vasco|CNTC|Festival Internaiconal de Teatro Clásico|Hospital de San Juan, Almagro (Ciudad Real)|29-06-2006|38.8888622|-3.7093043|Ssa5XKZ3
+164|Tirso de Molina |El burlador de Sevilla||Pep Sanchís Vento|Assaig. Grup de Teatre de la Universitar València||||||D4JUQVr8
+165|Tirso de Molina |Don Gil de las calzas verdes||Francisco García Vicente |Esceula Superior de Arte Dramático de Murcia, ESAD||||||nwReXHKZ
+166|Tirso de Molina |El burlador de Sevilla||Hadi Kurich|Teatro de la Tormenta, Xananda||||||bSrbuEP6
+167|Tirso de Molina |Don Juan, el burlador de Sevilla|28 de junio de 2008|Emilio Hernández|Pentación|Featival de Teatro Clásico de Almagro|Almagro, Ciudad Real|28-06-2008|38.8888239|-3.7111408|KqVpndoJ
+168|Tirso de Molina |El burlador de Sevilla o el convidado de piedra; Don Juan, El burlador de Sevilla|22 de febrero de 2008|Dan Jemmett|Teatro de la Abadía||Teatro de la Abadía de Madrid|22-02-2008|40.4353022|-3.7094283|PAqPYYpQ
+169|Tirso de Molina |La mujer por fuerza|7 de marzo de 2008|José Maya|Brazodoble Producciones||Corral de Comedias de Alcalá de Henares, Madrid|07-03-2008|40.4822922|-3.3645504|iBCpAHuT
+170|Tirso de Molina |La prudencia en la mujer |20 de junio de 2008|Alberto González Vergel |Eskene||Plaza de San Jorge de Cáceres|20-06-2008|39.4738717|-6.3702042|DuDuabma
+171|Tirso de Molina |Los balcones de Madrid||Ángel Gutiérrez|Teatro de Cámara, Chéjov||||||RfwaakYW
+172|Tirso de Molina |La celosa de sí misma|24 de julio de 2009|Marta Torres|A Priori Producciones, Teatro de Malta||Corral de Comedias de Almagro, Ciudad Real|24-07-2009|38.8884394|-3.7119119|KcKJMa6R
+173|Tirso de Molina |El condenado por desconfiado |5 de febrero de 2010|Carlos Aladro|CNTC||Teatro Pavón de Madrid||40.410031|-3.7061552|gSyDbjsV
+174|Tirso de Molina |El joven burlador ||Daniel Gallo Orrego|Compañía de Teatro La Calderona, Escuela de Teatro de la Universidad Católica de Chile||||||m7fSiP6V
+175|Tirso de Molina |El burlador de Sevilla|27 de noviembre de 2012|Gonzala Martín Sherman|Factoría Teatro||Sala Capitol de Cáceres|27-11-2012|39.4762784|-6.3709216|E2xEwpM9
+176|Tirso de Molina |El burlador de Sevilla |1 de novimebre de 2014|Antonio León|Corrales de Comedias Teatro||Casa de la Cultura de Almuñécar, Granada||36.7351075|-3.6901528|FYEu9VuK
+177|Tirso de Molina |El pretendiente al revés||José Maya|Brazodoble Producciones||||||m62PuMgr
+178|Tirso de Molina |Crónica de una casa real: La venganza de Tamar y Los cabellos de Absalón ||Gustavo Galindo y Mamen Camacho|Teatro Galo Real||||||mWMX33RZ
+179|Tirso de Molina |El burlador de Sevilla |1 de octubre de 2015|Darío Facal|Teatro Español||Teatro Español de Madrid|10-09-2015|40.4149459|-3.7001863|Hee3aioC
+180|Tirso de Molina |Marta la piadosa||Amaya Curieses|Los Barracos||||||gbQwFCM9
+181|Tirso de Molina |El burlador de Sevilla|13 de abril de 2018|Josep María Mestres|CNTC||Teatro de la Comedia de Madrid|13-04-2018|40.4155336|-3.7003923|mxzw9tgQ
+182|Tirso de Molina |El amor médico|3 de septiembre de 2019|Hugo Nieto|Ensamble Bufo||Corral de Cervantes, Madrid||40.3940876|-3.6994792|YgaAZHYT
+183|Tirso de Molina |Don Gil de las calzas verdes||Asun García|La Teatrera||||||iRUwpQiA
+184|Tirso de Molina |Mujeres del Siglo de Oro-  fragmento de Don Gil de las calzas verdes|18 de septiembre de 2020|Jesús Peña|Teatro Corsario||Biblioteca Pública de Ávila||40.6587704|-4.6918416|Y459eMRN
+185|Tirso de Molina |El burlador de Sevilla |3 de julio de 2022|Xavier Albertí|CNTC|Festival Grec|Teatro Grec de Barcelona||41.3918513|2.1559657|HX8PKxWL
+186|Tirso de Molina |El vergonzoso en palacio|16 de julio de 2022|Carlota Gaviño e Íñigo Rodríguez-Claro|Grumelot||Sala Nave 73 de Madrid|16-07-2022|40.403178|-3.6987581|7pwpry9N
+187|Tirso de Molina |La celosa de sí misma|22 de julio de 2022|Santiago Doria|Compañía Argentina de Teatro Clásico|Festival Internacional de Teatro Clásico de Almagro|Corral de Comedias de Almagro, Ciudad Real|22-07-2022|38.8884394|-3.7119119|2fF88PKE
+188|Tirso de Molina |Las burladas de don Juan|2 de julio de 2022|Sonia Rubio Malagón|Duelos y Quebrantos||Centro Cultural Gilitos de Alcalá de Henares, Madrid|25-07-2022|40.4921751|-3.3666232|YaNfur6f
+189|Rojas Zorrilla|Abre el ojo ||Francisco Plaza|Amar teatro; Producciones Inconstantes||||||AbGNUnsq
+190|Rojas Zorrilla|Abre el ojo|21 de marzo de 2003|Javier Mateo|Aula de teatro de la Universidad de Almería|Jornadas de Teatro del Siglo de Oro|Teatro Apolo de Almería (Andalucía)|21-03-2003|36.8406025|-2.4618673|h7b7fzvS
+191|Rojas Zorrilla|Abre el ojo|28 de febrero de 2004|Antonio Barrios |Teatro Par||Teatro Garnelo de Montilla, Córdoba (Andalucía)|28-02-2004|37.5905728|-4.6379186|kUkn25zA
+192|Rojas Zorrilla|Donde hay agravios no hay celos, y amo criado||Nacho Sánchez Pascual|ComicAstros||||||axTURrKS
+193|Rojas Zorrilla|Del rey abajo, ninguno|28 de junio de 2007|Laila Ripoll|CNTC|Festival Internacional de Teatro Clásico|Almagro, Ciudad Real (Castilla La Mancha)|28-06-2007|38.8888239|-3.7111408|NZ65BLCa
+194|Rojas Zorrilla|Entre bobos anda el juego||José Luis Fernández|In Vitro Teatro||||||6XA7yMHf
+195|Rojas Zorrilla|La ventana Rojas||Eva del Palacio|Morboria Teatro||||||82y88fwf
+196|Rojas Zorrilla|Morir pensando matar |19 de junio de 2007|Ernesto Caballero|Compañía Siglo de Oro, RESAD|Festival Clásicos en Alcalá|Corral de COmedias de Zapateros de Alcalá de Henares (Madrid)|19-06-2007|40.4822922|-3.3645504|gDjLSQsC
+197|Rojas Zorrilla|Entre bobos anda el juego||Amelia Die|Zurdos Contrariados||||||7egKBCoo
+198|Rojas Zorrilla|Sin honra no hay amistad||Juanma Navas|Rezuma Teatro||||||hoX4qvsR
+199|Rojas Zorrilla|Abre el ojo |25 de noviembre de 2011|Rafael Rodríguez|2rc Teatro Compañía de Repertorio||Teatro Cuyás de Las Palmas de Gran Canaria, Las Palmas (Islas Canarias)|25-11-2011|28.1063842|-15.4183244|Sh8oHkKk
+200|Rojas Zorrilla|Donde hay agravios no hay celos||Liuba Cid|Mephisto Teatro||||||McMkfcMG
+201|Rojas Zorrilla|Abre el ojo|8 de agosto de 2012|Javier Mateo|Doble K Teatro|Festival Internacional de Teatro, Músia y Danza de San Javier|Auditorio Parque Almansa de San Javier (Murcia)||37.8033532|-0.8336313|XHZhTRb3
+202|Rojas Zorrilla|Obligados y ofendidos|19 de julio de 2012|Francisco Lidón Plaza|Aula de Teatro de Arquitectura de la Universidad Politécnica de Madrid|Campaña Las Huellas de La Barraca|Ermita de La Magdalena de Almagro|19-07-2012|38.8844811|-3.7098712|GSAkQRx8
+203|Rojas Zorrilla|Celos y agravios ||Liuba Cid|Mephisto teatro|Festival Internacional de Teatro Clásico de Cáceres|Cáceres (Extremadura)||39.4716366|-6.3907192|7j2wEqzF
+204|Rojas Zorrilla|Donde hay agravios no hay celos|3 de julio de 2014|Helena Pimenta|CNTC|Festival Internacional de Teatro Clásico |Hospital de San Juan de Almagro, Ciudad Real (Castilla La Mancha)||38.8906549|-3.712043|HtgQrYhy
+205|Rojas Zorrilla|Los áspides de Cleopatra|7 de septimbre de 2013 (Buenos Aires) 12 de enero de 2014 (España)|Guillermo Heras|CNTC||Teatro Pavón (Madrid)||40.410031|-3.7061552|Vdqu5iqM
+206|Rojas Zorrilla|Donde hay agravios no hay celos|1 de julio de 2017|Macarena Pérez Bravo y Josemi Rodríguez|Pata Teatro||Patio de Arcos del Colegio Prácticas nº1 de Málaga (Andalucía)||36.7215367|-4.4221785|nT3yudzZ
+207|Rojas Zorrilla|Entre bobos anda el juego|28 de septiembre de 2018|Eduardo Vasco|CNTC||Teatro Salón Cervantes de Alcalá de Henares (Madrid)|28-09-2018|40.4834571|-3.3661106|FUhANx2N
+208|Rojas Zorrilla|Guateque 69|17 de julio de 2018|Gorka Martín |Sinsorgadas y Producciones|AlmagrOff|Silo de Almagro, Ciudad Real (Castilla La Mancha)|17-07-2018|38.8942052|-3.7077272|B789Cp9D
+209|Rojas Zorrilla|Numancia ocupada||Pedro Hofhuis|Jóvenes Clásicos||||||TsKgbfys
+210|Rojas Zorrilla|Entre bobos anda el juego |10 de junio de 2021|Paco Carrillo|Verbo Producciones|Festival de Teatro Clásico de Cáceres|Cáceres (Extremadura)|10-06-2021|39.4716366|-6.3907192|k2AaWJLQ
+211|Rojas Zorrilla|Abre el ojo |25 de noviembre de 2022|Eduardo Vasco|Noviembre Teatro||Teatro Calderón de Valladolid, Valladolid (Castilla y León)|25-11-2022|41.6539837|-4.7246809|mdWqCaSy
+212|Rojas Zorrilla|Amo y criado ¡Dónde hay agravios no hay celos!|24 de junio de 2022|Eduardo Vasco|Teatro Libre de Bogotá||Teatro Salón Cervantes de Alcalá de Henares (Madrid)|24-06-2022|40.4834571|-3.3661106|gM8t2NPL
+213|Rojas Zorrilla|Los bandos de Verona|27 de junio de 2024|Daniel Alonso de Santos|Secuencia 3|Festival Iberoamericano del Siglo de Oro. Clásicos en Alcalá||27-06-2024|||RTnScytg
+214|Moreto||||||||||hvXWN5Jm
+215|Sor Juana ||||||||||8ZpCs9KA
+216|Miguel de Cervantes|D. Q. Don Quijote en Barcelona|30 de septiembre de 2000|Àlex Ollé y Carlos Padrissa|La Fura dels Baus||Gran Teatre del Liceu de Barcelona|30-09-2000|41.3801969|2.1732948|f6aHDY8u
+217|Miguel de Cervantes|Don Quijote|23 de febrero de 2000|Pedro Halffter Caro|Teatro Real||Teatro Real de Madrid|23-02-2000|40.4181323|-3.7102972|mPRh6GDG
+218|Miguel de Cervantes|Don Quijote, una historia infinita |20 de octubre de 2000|Gianni Fransceschinni|Teatro Achiperre||Teatro Principal de Zamora|20-10-2000|41.5045405|-5.7464134|WFLzcBCR
+219|Miguel de Cervantes|El retablo de Maese Pedro|15 de diciembre de 2000|Ferrer Ferran |Bambalina Titelles||Centro Social de Castelló de Rugat (Valencia)|15-12-2000|38.9851553|-0.3081331|FxFm5xeL
+220|Miguel de Cervantes|Imagina libros|||????????||||||Y8aLr3RU
+221|Miguel de Cervantes|El Quijote (fragmentos)|21 de mayo de 2000||CNTC||Teatro de la Comedia|21-05-2000|40.4155336|-3.7003923|EHvkTWnu
+222|Miguel de Cervantes|Maravillas de Cervantes. Entremeses, magias, habladurías, elecciones, celos, hipocresía y otras fiestas|30 de marzo de 2000|Joan Font|CNTC||Teatro de la Comedia (Madrid)|30-03-2000|40.4155336|-3.7003923|5jfJdQRs
+223|Miguel de Cervantes|Odón, Quijote|11 de septiembre de 2000|Joan Sors|Clownx|Fira de Teatre al Carrer|Espai Infantil de Tàrrega (Lleida)|11-09-2000|41.647055|1.1256542|JtrRxVB9
+224|Miguel de Cervantes|Quijote|17 de marzo de 2000|Severiano García|Delirium Teatro||La Granja de Santa Cruz de Tenerife|17-03-2000|28.3841497|-16.4578617|H4mwCtFX
+225|Miguel de Cervantes|Rinkonete y Kortadillo|8 de enero de 2000|Antonio Saura|Alquibla Teatro||Teatro Municipal de San Pedro de Pinatar (Murcia)||37.8371549|-0.7853051|ZgdDNgMy
+226|Miguel de Cervantes|Caprichos de Cervantes|6 de marzo de 2001||Teatro Galileo |Feira do Teatro de Galicia|Teatro Galileo (Santiago de Compostela)|06-03-2001|40.4338993|-3.7105739|XC5o4qbx
+227|Miguel de Cervantes|Cervantes en vivo|16 de junio de 2001||Chácena Teatro|Ciclo Clásicos en Alcalá|Hospital de Antezana, Alcalá de Henares (Madrid)|16-06-2001|40.4822815|-3.3669328|EUSpZy34
+228|Miguel de Cervantes|Don Quijote 2000|6 de junio de 2001|Juan J. Martín Uceda|Escuela Municipal de Teatro de Roquetas de Mar||Teatro Apolo de Almería||36.8406025|-2.4618673|iGMt5ace
+229|Miguel de Cervantes|Don Quijote de la Mancha |10 de noviembre de 2001||Anade|Feria de Teatro de Castilla-La Mancha|Pabellón Calle Numancia de Toledo|10-11-2001|39.9778688|-3.956167|Raq9DLdy
+230|Miguel de Cervantes|Don Quijote el caballero|12 de octubre de 2001|Antonio Laguna y César Gómez|Caja Negra|Muestra Provincial de Teatro|Auditorio Torres López de Tomelloso (Ciudad Real)|12-10-2001|39.1566918|-3.0208853|7cMfL6kp
+231|Miguel de Cervantes|El hombre que tenía vacíos los aposentos de la cabeza|10 de noviembre de 2001|Jesús Arbués|Producciones Viridiana, Teatro Inestable||Teatro Marín de Teruel|10-11-2001|40.3410295|-1.1064898|erL36uGG
+232|Miguel de Cervantes|El canto del cisne|5 de mayo de 2001|Fernando Vegal|Teatro de los Buenos Aires||Teatro Alhambra de Granada||37.1714804|-3.5913397|dfyRk4ne
+233|Miguel de Cervantes|La guarda cuidadosa|16 de junio de 2001|Carlos Mochales|Chácena Teatro||Hospital de Antezana, Alcalá de Henares (Madrid)|16-06-2001|40.4822815|-3.3669328|C5bQUDUZ
+234|Miguel de Cervantes|Retablo de las maravillas|20 de junio de 2001|Miguel Serrano|Instante-Zambra||Corral de Carbón de Granada|20-06-2001|37.1735728|-3.5992742|VMrkCo8Z
+235|Miguel de Cervantes|Aventuras de don Quijote y Sancho|8 de octubre de 2002|Ana María Boudeguer|Asociación cultural La Bicicleta||Sala Sanpol de Madrid||40.4239339|-3.7270082|SmZSnHoD
+236|Miguel de Cervantes|Delirio de don Quijote y Sancho Panza||María Elena Diardes|La Recua Teatro||||||ftEyHL5v
+237|Miguel de Cervantes|Don Quijote|26 de enero de 2002|Carlo Boso|Teatro del Finikito||Teatro La Galera de Alcalá de Henares (Madrid)|26-01-2002|40.4801682|-3.3615234|LATYYmFN
+238|Miguel de Cervantes|Don Quijote de la Mancha ||Quim Peñart |Teatro de los Caminos||||||7ZWASnPK
+239|Miguel de Cervantes|Don Quijote en las bodas de Camacho||Pep Oriol |L´Òpera de Tres Rals||||||Jv5XWuGA
+240|Miguel de Cervantes|El juez de los divorcios; El retablo de las maravillas; El viejo celoso; La cueva de Salamanca; Los malcasados; Retablo cervantino||Juan Pedro de Aguilar|CNTC||||||mRSnnNyx
+241|Miguel de Cervantes|La Gitanilla||Rafael Ruiz|Zascandil||||||NCwcTdoe
+242|Miguel de Cervantes|Rinconete y Cortadillo|6 de noviembre de 2002|Juan Manuel Álvarez|Titirimundi Teatro||Teatro Gutierre de Alba, Alcalá de Guadaira (Sevilla)||37.335144|-5.8476081|GZdQ6ndo
+243|Miguel de Cervantes|Cómicos y maleantes||Jesús Arbúes|Producciones Viridiana||||||VWHjwkgx
+244|Miguel de Cervantes|Con una sola mano|2 de mayo de 2003|Hernán Gené de Lucca|Extra-Vagante Teatro||||||jf6UhD8v
+245|Miguel de Cervantes|Cueva de Salamanca |13 de octubre de 2003|Val Núñez y José Manuel Burgos|Maru-Jasp||Teatro La Galera de Alcalá de Henares (Madrid)|13-10-2003|40.4801682|-3.3615234|Rdttg3w6
+246|Miguel de Cervantes|Don Quijote|12 de diciembre de 2003|Ángel Gutierrez|Teatro de Cámara Chéjov||Teatro de Cámara Chéjov (Madrid)||40.4251657|-3.6920414|kgdrj9Lo
+247|Miguel de Cervantes|Don Quijote y la búsqueda de Marcela|27 de septiembre de 2003|Rubén Castro Ilizaliturri|Firewalk Theatre||Mostra Rialles de Cerdanyola del Vallès|27-09-2003|41.5688572|2.0843829|Rr4DcAnn
+248|Miguel de Cervantes|El molino|20 de septiembre de 2003|Fátima Colomo|Camaleón Teatro|||20-09-2003|||WZuYsVqL
+249|Miguel de Cervantes|El retablo de las maravillas|||Perséfone Teatro||||||H2dD8max
+250|Miguel de Cervantes|El sereno|13 de octubre de 2003|Val Núñez y José Manuel Burgos|Maru-Jasp||Teatro La Galera de Alcalá de Henares (Madrid)|13-10-2003|40.4801682|-3.3615234|mGaQKm3X
+251|Miguel de Cervantes|Quijote|4 de octubre de 2003|Santiago Sánchez|L`Om -Imprebís||Teatro Lope de Vega de Alcalá de Henares (Madrid)||40.3157075|-3.5328628|ktnoXaMK
+252|Miguel de Cervantes|Rinconete y Cortadillo||Toni Sánchez|Zascandil||||||nCnrVpA3
+253|Miguel de Cervantes|Señor Quijote mío||Girardo Guerrero|Perro Teatro, A. C||||||kX683hDH
+254|Miguel de Cervantes|Don Quijote (Leyenda para cinco voces)|6 de julio de 2004|Felipe B. Pedraza Jiménez|Rapsodas|Festival de Teatro Clásico|Corral de Comedias de Almagro|06-07-2004|38.8884394|-3.7119119|dTQ5oQGj
+255|Miguel de Cervantes|El juez de los divorcios ||Domingo Ortega |Grupo de Teatro de la Universidad Carlos III||||||d7uT6ATE
+256|Miguel de Cervantes|El retablo de las maravillas ||Domingo Ortega |Grupo de Teatro de la Universidad Carlos III||||||FzKJjmF9
+257|Miguel de Cervantes|El viejo celoso|23 de diciembre de 2004|Etelvino Vázquez|Teatro del Norte||Centro Cultural Cjastur de la Colegiata del San Juan Bautista de Gijón (Asturias)||43.545571|-5.6638903|LdiZ7uXY
+258|Miguel de Cervantes|El viejo celoso|5 de noviembre de 2004|Manuel Canseco|Asociación de Autores de Teatro|V Salón Internacional del Libro Teatral|Círculo de Bellas Artes||40.4183042|-3.6965333|WYrVqsCA
+259|Miguel de Cervantes|Exemplaridades cervantinas|23 de enero de 2004|Andrés Cienfuegos|La Quimera||Teatro Bergidu, de Ponferrada (León)|23-01-2004|42.5465503|-6.5891852|AsYi5c6E
+260|Miguel de Cervantes|La cueva de Salamanca||J. A. Raynaud|Perséfone||||||kaywCh8W
+261|Miguel de Cervantes|La edad de oro|19 de junio de 2004|Eusebio Lázaro|Compañía Eusebio Lázaro|Festival Clásicos en Alcalá|Corral de Zapateros de Alcalá de Henares (Madrid)|19-06-2004|40.4822922|-3.3645504|XJfmrbtM
+262|Miguel de Cervantes|La pasión según don Quijote||Emilio Hernández|Sociedad Estatal de Connmemoraciones Culturales, Armonía||Teatro de La Abadía||40.4353022|-3.7094283|THq8iGup
+263|Miguel de Cervantes|Laberinto de amor||Juan Pastor|Guindalera Escena Abierta||||||5rk2cqw2
+264|Miguel de Cervantes|Morir cuerdo y vivir loco|13 de enero de 2004|Fernando Fernán Gómez|Centro Dramático de Aragón y Centro Dramático Nacional ||Teatro Principal de Zaragoza|13-01-2004|41.6518556|-0.8793213|YAHsCQJU
+265|Miguel de Cervantes|Pedro de Urdemalas; Pedro, the Great Pretender  |1 de septiembre de 2004 en Inglaterra. 30 de octubre de 2004 en España|Mike Alfreds |Royal Shakespeare Company|Festival de Otoño|En Stratfor-upon-Avon (Inglaterra). Teatro Español de Madrid (España)||46.2651809|-2.7532047|Jy2iubTK
+266|Miguel de Cervantes|El retablo de las maravillas. Cinco variaciones sobre un tema de Cervantes|9 de enero de 2004|Alberto Boadella|Els Joglars||Teatro Lope de Vega (Sevilla)||37.3784059|-5.990964|JVSpipvu
+267|Miguel de Cervantes|Cervantes entre palos||Jesús Salgado|Teatro del Duende||||||7yAgYYWE
+268|Miguel de Cervantes|Cervantes insólito|13 de mayo de 2005|María Laura González y Tomás Sendarrubias|Argos Teatro||Teatro Salón Cervantes de Alcalá de Henares (Madrid)|13-05-2005|40.4834571|-3.3661106|XBfV4gSx
+269|Miguel de Cervantes|Curioso retablo|21 de mayo de 2005|Luis Alonso|Teatro Independiente Alcalaíno TIA, Asociación Cultural||Teatro Salón Cervantes de Alcalá de Henares (Madrid)|21-05-2005|40.4834571|-3.3661106|NACMLVnN
+270|Miguel de Cervantes|Don Quijote||Juan Manuel Álvarez|Titirimundi Teatro||||||3t2fWSpp
+271|Miguel de Cervantes|Don Quijote ||Jon Sarasti|Galápagos Cálido||||||dLvovRUo
+272|Miguel de Cervantes|Don Quixote|17 de junio de 2005|John Mowat|Companhia do Chapitô||Corral de Zapateros de Alcalá de Henares (Madrid)|17-06-2005|40.4822922|-3.3645504|QMLXyahG
+273|Miguel de Cervantes|El caballero de la triste figura ????|20 de marzo de 2005|Marcelo Rocca|El Retablo de la Ventana ||Teatro Juan Bravo (Segovia)|20-03-2005|40.9504826|-4.1235423|BjWriyAN
+274|Miguel de Cervantes|El caballeru de la Murnia Figura ????||Inma Rodríguez y Toño Caamaño|Producciones Nun Tris||||||KFKpVJUe
+275|Miguel de Cervantes|El casamiento engañoso. El coloquio de los perros||Pepe Ortega|Solo y Cía||||||V4inLdxH
+276|Miguel de Cervantes|El de la triste figura ????||Juan Margallo|Uroc Teatro||||||ZYNcC5oK
+277|Miguel de Cervantes|El desposeído; The Unpossessed||Stacy Klein|Double Edge Theatre||||||hyb8dD6w
+278|Miguel de Cervantes|El Quijote|||La Candelaria ||||||efxbgEyj
+279|Miguel de Cervantes|El viaje del Parnaso|7 de julio de 2005|Eduardo Vasco|CNTC|Festival Teatro Clásico|Corral de Comedias de Almagro (Ciudad Real)|07-07-2005|38.8884394|-3.7119119|TMbjWcxG
+280|Miguel de Cervantes|El retablo de las maravillas|||La Compañía de la ETR||||||VcGFQG24
+281|Miguel de Cervantes|El viejo celoso; Entremeses; La cueva de Salamanca; La guarda cuidadosa||Andrés Beladíez|La Barraca||||||TSQsSBRW
+282|Miguel de Cervantes|El viejo celoso|||Duelos y Quebrantos||||||UMZxqign
+283|Miguel de Cervantes|El viejo celoso; La compañía de Saavedra||Asunción Mieres|Aula de Teatro de la UEX|XVI Festival de Teatro Clásico de Cáceres|||||AuYF7hA7
+284|Miguel de Cervantes|El viejo celoso; La cueva de Salamanca||Miguel Serrano|Teatro para un Instante||Corral del Carbón (Granada)||37.1750505|-3.5981838|X9SLu27B
+285|Miguel de Cervantes|En un lugar de Sevilla|23 de abril de 2005|José Luis Losa|Edeteatro||Teatro Centro Virgen de los Reyes (Sevilla)|23-04-2005|37.40453|-5.9851479|VZZ5H2NF
+286|Miguel de Cervantes|Entre pícaros y cómicos|12 de agosto de 2005|Antonoi Barrios|Teatro Par||Casa de las Campanas (Córdoba)|12-08-2005|37.8823697|-4.7696905|Lh24i5ue
+287|Miguel de Cervantes|Entremeses|||Alharaca, Grupo de Teatro||||||jJ4GTNkE
+288|Miguel de Cervantes|Entremeses: El viejo celoso, La cueva de Salamanca, Los habladores|||La Locandiera||||||f4nNjCsH
+289|Miguel de Cervantes|Impresión de don Quijote|25 de febrero de 2005|Francisco Plaza|Grupo Sona; Teatro Negro de Praga||Teatro Palacio Valdés de Avilés (Asturias)|25-02-2005|43.555218|-5.920094|aUyF2VNh
+290|Miguel de Cervantes|La columna de El Manco ||Antonia Gómez|Varuma ||||||L5hAXG5a
+291|Miguel de Cervantes|La cueva de Salamanca; La guarda cuidadosa||Arturo Castro|Teatro Margen||||||4hHkBDY6
+292|Miguel de Cervantes|La entretenida |2 de febrero|Helena Pimenta|CNTC||Teatro Pavón (Madrid)||40.410031|-3.7061552|HQB8xzy8
+293|Miguel de Cervantes|La Gitanilla |23 de abril de 2005|Paco Macià|Compañía Ferroviaria de Artes Escénicas|Festival Cervantino de Ceutí|Murcia|23-04-2005|37.9917074|-1.1394671|QfzTzUcp
+294|Miguel de Cervantes|La gracia que no quiso darme el cielo; Miguel de Cervantes, poesía escogida||Joaquín Vida|Joaquín Vida||||||hoec5QH3
+295|Miguel de Cervantes|La Numancia||Javier Juárez|Kull d´Sac||||||NbrW2vo2
+296|Miguel de Cervantes|Las hazañas del caballero de La Mancha||Pascual Varo|El Carromato||||||jybUeyE5
+297|Miguel de Cervantes|Los habladores|||Jara del Centro Extremeño de Alcalá de Henares. Grupo Teatro La||||||XYvbMQu4
+298|Miguel de Cervantes|Mi amigo Don Quijote||Claudia Massotto Franco|Arte Fusión Títeres||||||SYWs6TQy
+299|Miguel de Cervantes|Pasajes del Quijote||José Antonio Adamuz|Almocafre||||||YCrxWpWs
+300|Miguel de Cervantes|¡Quijote!||Cora Herrendorf|Teatro Núcleo||||||bNTFBVd5
+301|Miguel de Cervantes|Quijote||Marcelo Díaz|Teloncillo, Achiperre||||||7XjndJFD
+302|Miguel de Cervantes|Quijote, las mil aventuras|17 de mayo de 2005|Fulgencio Valares |Atakama Teatro||Teatro López de Ayala, Badajoz (Extremadura)|17-05-2005|38.8762766|-6.9723722|Bjs2HQFY
+303|Miguel de Cervantes|Quijote, un hidalgo de La Mancha; Quijote. El hidalgo de la Mancha||Wolf Helem y José Vijuesca|Teatro Clásico Madrid Hidra Lerna||||||ZmxW9A2y
+304|Miguel de Cervantes|Retablo de maese Pedro o de cómo Ginesillo de Pasamonte conoció a don Quijote y lo que le aconteció|3 de diciembre de 2005|Paco Úbeda|La Tirita de Teatro||||||KfAyHLVT
+305|Miguel de Cervantes|Sancho Panza, el musical|9 de abril de 2005|José Luis Moral|Arte&Ocio||Teatro Nuevo Apolo (Madrid)||40.412189|-3.7033341|XHHMRsHL
+306|Miguel de Cervantes|Sancho Panza, gobernador de la ínsula Barataria|||Grupo de Teatro Punto y Aparte||||||CpbdxaXu
+307|Miguel de Cervantes|Teatro con clase||Ignacio Almenar|Delirium Teatro||||||CFpZwScG
+308|Miguel de Cervantes|Entremeses||Andreu A. Segura|Rafel Oliver Producciones||||||3Y7nBba7
+309|Miguel de Cervantes|Entremeses ||Domingo Ortega|Grupo de Teatro de las Universidad Carlos III||||||HxWK9dFj
+310|Miguel de Cervantes|Entremeses: La cueva de Salamanca, Los habladores y La guarda cuidadosa||Domingo Ortega|Grupo de Teatro de la Universidad Carlos III||||||JeVjevkC
+311|Miguel de Cervantes|Don Quixote|26 de octubre de 2007|Josep Galindo|West Yorkshire Playhouse; Mom|Festival de Otoño|Teatro Madrid|26-10-2007|40.4258763|-3.6924628|fnmaXuMP
+312|Miguel de Cervantes|El viejo celoso||Margarita Rodríguez |Grupo Cultural Xana||||||Y9kpZtm2
+313|Miguel de Cervantes|Numancia||Ken Kinguuji|Ksec Act||||||nJX4QU4K
+314|Miguel de Cervantes|Rinconete y Cortadillo en Tormes||María Barragñan|Esphera Teatro||||||9eA4TK7a
+315|Miguel de Cervantes|El licenciado Vidriera |8 de noviembre de 2009|Carlos Martín|Teatro del Temple||Centro Cívico Teodoro Sánchez Punter (Zaragoza)||41.6378108|-0.8728851|2xHApXL4
+316|Miguel de Cervantes|Entremeses variados: La cueva de Salamanca; La guarda cuidadosa; Los habladores||dOMINGO Ortega|Sociedad Estatal de Servicios Culturales. SECC; Grupo de Teatro de la Universidad Carlos III||||||XxFSYndT
+317|Miguel de Cervantes|Quijote||Simeón Spivak|Teatro de la Juventud de Fontanka||||||VucnjoWs
+318|Miguel de Cervantes|Rinconete y Cortadillo; El licenciado Vidriera||Pepe Ortega|Ítaca Teatro||||||iXGetGiE
+319|Miguel de Cervantes|Abrevia T|16 de marzo de 2010|Victor Manuel Dogar|Producciones Dogar||Teatro Bellas Artes (Madrid)|16-03-2010|40.4183333|-3.6963889|iZmxtdL9
+320|Miguel de Cervantes|El coloquio de los perros|9 de octubre de 2010|Fefa Noia|Teatro de la Abadía|Semana Cervantina|Corral de Comedias, Alcalá de Henares (Madrid)||40.4822922|-3.3645504|GijxKZei
+321|Miguel de Cervantes|El imaginario de Cervantes|11 de septiembre de 2010|Sonia Sebastián|Teatro de Cámara Cervantes|Noche en Blanco|Sociedad Cervantina (Madrid)|11-09-2010|40.411408|-3.6970031|2vK7YBde
+322|Miguel de Cervantes|El viejo celoso; El vizcaíno fingido; Entremeses de Cervantes; La cueva de Salamanca||Ernesto de Diego|Corrales de Comedias Teatro||||||R3tArjZq
+323|Miguel de Cervantes|Don Quijote de la Mancha ||Meng Jinghui|Compañía Nacional de Teatro de China ||||||bKjsdsHV
+324|Miguel de Cervantes|El coloquio de los perros|21 de enero de 2011|Francisco Negro|Morfeo Teatro Clásico||Teatro Principal de Burgos (Burgos)|21-01-2011|42.3406276|-3.6998874|6tGQJbYM
+325|Miguel de Cervantes|Entremeses: El vizcaíno fingido, El viejo celoso y La cueva de Salamanca||Alejandro Arestegui|Secuencia 3 Artes y Comunicació||||||EkW9g8Fy
+326|Miguel de Cervantes|Numancia |9 de abril de 2011|José Luis Arellano García|Joven Compañía de Teatro de Parla||Teatro de la Casa de la Juventud de Parla (Madrid)|09-04-2011|40.23242|-3.7614235|kqtVxCNK
+327|Miguel de Cervantes|Cipión de Berganza (incluye los entremeses: El viejo celoso, El vizcaíno fingido y Los habladores)||Carlos Fernández de Castro|Tiempolírico||||||mvSEykhn
+328|Miguel de Cervantes|Don Quijote|13 de diciembre de 2012|Ángel Gutierrez|Teatro de Cámara Chéjov|Festival UNIR Alumni|Sala Gonzalo de Berceo de Logroño (La Rioja)|13-12-2012|42.464221|-2.4425784|Th4o5Xwe
+329|Miguel de Cervantes|El coloquio de los perros||Emilio del Valle|Producciones Inconstantes||||||VhaFdNtM
+330|Miguel de Cervantes|El viejo celoso||Miguel Fresneda|Cambaluz Teatro||||||M4JQfbLG
+331|Miguel de Cervantes|Entremeses|9 de noviembre de 2012|Del Colectivo|Zamamur Producciones ||Gran Teatro de Cáceres (Extremadura)||39.4731946|-6.3754623|9GECzc2t
+332|Miguel de Cervantes|Gaudeamus||Jaime Santos|La Chana Teatro||||||cYaLkKNQ
+333|Miguel de Cervantes|Yo soy don Quijote; Yo soy Don Quijote de La Mancha|5 de julio de 2012|Luis Bermejo|Metrópolis Teatro|Festival de Teatro Clásico de Almagro|Antigua Universidad Renacentista de Almagro (Ciudad Real)|05-07-2012|38.8915937|-3.7148261|D6EhCpFW
+334|Miguel de Cervantes|El coloquio de los perros |26 de marzo de 2013|Ramón Fontserè|CNTC, Els Joglars||Teatro Pavón de Madrid|26-03-2013|40.410031|-3.7061552|GZsZZDHk
+335|Miguel de Cervantes|El coloquio de los perros||Tagore González y David Orrico|Amanece Teatro||||||2euW9s6i
+336|Miguel de Cervantes|Don Quijote de la Mancha |7 de abril de 2014|José Luis Gómez|Centro Dramático Nacional, CDN||Teatro Pavón de Madrid||40.410031|-3.7061552|NXC3m6nW
+337|Miguel de Cervantes|El coloquio de los perros|17 de junio de 2014|Ma Zhenghong y Alejandro González Puche|Laboratorio Escénico Univalle|Festival Internacional de Teatro Clásico|Teatro Municipal de Almagro (Ciudad Real)|17-06-2014|38.89053|-3.7119068|28cWoYSr
+338|Miguel de Cervantes|Entremeses: La cueva de Salamanca, El viejo celoso y El retablo de las maravillas||José Luis Gómez|Teatro de la Abadía|Festival Clásicos en Alcalá|||||BqHMYzhS
+339|Miguel de Cervantes|Las locas historias de Don Quijote de La Mancha|22 de diciembre de 2014|Eva Rodríguez|Universalmix teatro||Centro Cultural La Vaguada de Madrid|22-12-2014|40.4794927|-3.709135|EMnYRH6G
+340|Miguel de Cervantes|El cerco de Numancia|19 de agosto de 2015|Paco Carrillo|Verbo Producciones|Festival Internacional de Teatro Clásico|Teatro Romano de Mérida (Badajoz)|19-08-2015|38.915402|-6.3389273|j5qJR3qy
+341|Miguel de Cervantes|El sueño del Quijote|18 de octubre de 2015|César Deneken|El Jinete Verde||Teatro Villamarta de Jerez de la Frontera (Cádiz)|18-10-2015|36.6828855|-6.1352393|2YBJjSM7
+342|Miguel de Cervantes|Ingenius gentleman don Quixote of La Mancha||Ian Nicholson|Little Soldier Productions||||||6bCw99Rt
+343|Miguel de Cervantes|La española inglesa. Las dos doncellas; Novelas ejemplares||Gonzala Martín Scherman|Factoría Teatro S. L||||||iJ2BBndr
+344|Miguel de Cervantes|Quijote, el vértigo de Sancho; Kixote;|9 de enero de 2015|José Ramón Martínez|Markeliñe||Zornotza Aretoa de Amorebieta-Etxano, Vizcaya (País Vasco)||43.2198301|-2.7319023|JqGEuJL9
+345|Miguel de Cervantes|Quijote aventuras|14 de noviembre de 2015|Severiano García Noda|Delirium Teatro||Auditorio Capitol de Tacoronte, Sanra Cruz de Tenerife (Islas Canarias)|14-11-2015|28.4776101|-16.4147621|8PFeJcLx
+346|Miguel de Cervantes|El coloquio de los perros|26 de julio de 2016|Gastón Borges|Lacoz|Festival Almagro Off|Teatro La Veleta de Almagro (Ciudad Real)|26-07-2016|38.8994072|-3.7079747|XAmPohg7
+347|Miguel de Cervantes|El retablo de las maravillas|30 de enero de 2016|Francisco Negro|Morfeo Teatro Clásico||Teatro Principal de Burgos (Castilla y León)|30-01-2016|42.3406276|-3.6998874|27pQqFmt
+348|Miguel de Cervantes|El viejo celoso||Adriano Iurissevich|Compañía Reymala||||||jgkT696Z
+349|Miguel de Cervantes|La conquista de Jerusalén||Juan Sanz|Antiqua Escena||||||Ujt5etxx
+350|Miguel de Cervantes|La gitanilla|26 de octubre de 2016|Paco Maciá|Arena Teatro; Compañía Ferroviaria|Festiva Medieval|Elche (Alicante)|26-10-2016|38.2665289|-0.6896821|XSjCcxT9
+351|Miguel de Cervantes|Numancia|16 de abril de 2016|Juan Carlos Pérez de la Fuente|Teatro Español||Teatro Español (Madrid)|16-04-2016|40.4149459|-3.7001863|jEaJkbZ9
+352|Miguel de Cervantes|Pedro de Urdemalas  |28 de julio de 2016|Denis Rafter|Joven Compañía Nacional de Teatro Clásico, CNTC|Festival Internacional de Teatro Clásico|Corral de Comedias de Almagro (Ciudad Real)|28-07-2016|38.8884394|-3.7119119|ADCLueUm
+353|Miguel de Cervantes|Tratos|14 de septiembre de 2016|Ernesto Caballero|Centro Dramático Nacional, CDN||Centro Cultural Conde Duque (mADRID)||40.4274072|-3.7107195|dtpGfmsz
+354|Miguel de Cervantes|Amors & Humors||Abel Folk y Pep Planas|Ilerda Antiqua||||||HyjpCy72
+355|Miguel de Cervantes|Dos nuevois entremeses, nunca representados; La guada cuidadosa, El rufián viudo llamado Trampagos. |23 de noviembre de 2017|Ernesto Arias|Teatro de la Abadía||Sala Juan de la Cruz, Teatro de La Abadía (Madrid)|23-11-2017|40.4353022|-3.7094283|WWkspRmn
+356|Miguel de Cervantes|El rufián dichoso|13 de mayp de 2017|Rodrigo Arribas y Verónica Clausich|Fundación Siglo de Oro; Pentación, S.A; Pánico Escénico|Jornadas de Teatro del Siglo de Oro|Auditorio Municipal Maestro Padilla (Almería)|13-05-2017|36.8236768|-2.4440319|mVDXojos
+357|Miguel de Cervantes|Don Quijote somos todos|1 de noviembre de 2019|Carlos Martín|Teatro del Temple||Palacio de Congresos de Jaca, Huesca (Aragón)||42.5749251|-0.5466213|3ESy7MTa
+358|Miguel de Cervantes|El coloquio de los perros. El casamiento engañoso. Novelas ejemplares. El coloquio de los perros. ||Emilio del Valle|Factoría Teatro S.L ||||||gws26YsR
+359|Miguel de Cervantes|Licenciado Vidriera|18 de abril de 2019|Cristina D. Silveira|Karlik Danza Teatro; La Nave del Duende||La Nave del Deunde de Casar de Cáceres (Extremadura)||39.5525213|-6.4194535|DJ5M9BPB
+360|Miguel de Cervantes|Microclásicos; El juez de los divorcios||Antonio León y Norton P|Corrales de Comedias S.L ||||||XwWERmqv
+361|Miguel de Cervantes|De cómo los entremeses de Cervantes no impidieron el casamiento de doña Catalina de Oviedo con el Gran Turco||Juan Mortera|Teatro Margen||||||kemx63Mr
+362|Miguel de Cervantes|Diablos, brujas y granujas||Agustín Sasián|La Luciérnaga Producciones||||||erEdBgjo
+363|Miguel de Cervantes|Don Quijote y Perrisancho|10 de marzo de 2020|Belén Sánchez Vigo|Perripato & Compañía||Sala La Cochera Cabaret (Málaga)||36.6922645|-4.4509556|g5hwXUQq
+364|Miguel de Cervantes|Ahora que nos dejan hablar|23 de enero de 2021|Álvaro Nogales|Mudanzas López, M. L. ||Corral de Comedias de Alcalá de Henares (Madrid)|23-01-2021|40.4822922|-3.3645504|YFe2zLfm
+365|Miguel de Cervantes|Numancia|12 de noviembre de 2021|Ana Zamora|Nao d´Amores, Compañía Nacional de Teatro Clásico, CNTC||Teatro Juan Bravo de Segovia (Castilla y León)|12-11-2021|40.9504826|-4.1235423|3oAMej64
+366|Miguel de Cervantes|El coloquio de las perras|8 de mayo de 2021|Hernán Gené|Estudio Hernán Gené||Corral de Cervantes (Plaza de toros) de Aranjuez (Madrid)||40.0278334|-3.6035532|VAU7yu2n
+367|Miguel de Cervantes|Muejres imaginadas en tiempos de Cervantes||Luis Alonso Prieto|Teatro Independiente Alcalaíno TIA||||||kkctcyaV
+368|Miguel de Cervantes|Pr3cioxxa||Mario Marcol|Tío Venancio||||||jwamdBrq
+369|Miguel de Cervantes|Quixote; Quijote||Laura Sarasola|Pedras de Cartón||||||RLhum87L
+370|Miguel de Cervantes|La guarda cuidadosa; La cueva de Salamanca|19 de junio de 2022|Javier Mañón|Corrales de Comedias Teatro||Corral de Comedias de Alcalá de Henares (Madrid)|19-06-2022|40.4822922|-3.3645504|7HjgFV5y
+371|Juan de la Cueva|El príncipe tirano|13 de julio de 2006|Pepa Gamboa|Centro Andaluz de Teatro, CAT y Teatro Lope de Vega |Festival Internacional de Teatro Clásico de Almagro |Teatro Municipal de Almagro, Ciudad Real (Castilla La Mancha)|13-07-2006|38.8903455|-3.7117528|FDLW7fHq
+372|María de Zayas y Sotomayor|La traición en la amistad|10 de julio de 2003|Mariano de Paco Serrano |Mariano de Paco Serrano||Claustro Mudéjar de Chinchilla, Albacete (Castilla La Mancha)|10-07-2003|38.9203448|-1.7256087|UyGfSGMr
+373|María de Zayas y Sotomayor|La traición en la amistad|16 de julio de 2019|Daniel Acebes|Diágoras Producciones|Festival de Teatro Clásico|Corrala Palacio del Caballero de Olmedo, Valladolid (Castilla y León)|16-07-2019|41.2863196|-4.6859718|BFZ39RWE
+374|María de Zayas y Sotomayor|Traspiés. Palabra para (des)aparecer ||Del Colectivo|Colectivo La Matrioska ||||||HZxPg9UR
+375|María de Zayas y Sotomayor|Tan sabia como valerosa|26 de julio de 2020|Ignacio García|Instituto Cervantes|Festival Internacional de Teatro Clásico de Almagro |Corral de Comedias de Almagro, Ciudad Real (Castilla La Mancha)|26-07-2020|38.8884394|-3.7119119|DTHzaUjf
+376|María de Zayas y Sotomayor|Adiós, dueño mío o la tradición en la amistad|1 de mayo de 2021|Magüi Mira|Olympia Metropolitana S.A||Auditorio de Torrent, Valencia (Comunidad Valenciana)|01-05-2021|39.4236513|-0.4801567|25RUAtVx
+377|María de Zayas y Sotomayor|Autorretratos de pluma y espada; Dramaturgias del barroco en primera persona ||Cristina S.Silveira|Karlik Danza Teatro|Festival de Teatro Clásico de Cáceres|||||AkjJwQ8Y
+378|María de Zayas y Sotomayor|Bambi vs Godzsilla|30 de junio de 2022|Luis Tausía|Compañía del Tío Venancio |Festival Iberoamericano del Siglo de Oro Clásicos en Alcalá|Centro Cultural Gilitos de Alcalá, Madrid (Comunidad de Madrid)|30-06-2022|40.4921751|-3.3666232|gN95pnb5
+379|María de Zayas y Sotomayor|La traición 60.3|19 de mayo de 2022|Cruz Hernández|Unatarde Teatro||Teatro Círculo de Valencia, Valencia (Comunidad Valenciana)|19-05-2022|39.4852114|-0.3553528|TmhpMhBP
+380|Temática SO / Juan Latino||||||||||DdVuHMZa
+381|Juan Ruiz de Alarcón||||||||||WzGXrunw
+382|Lope de Rueda |Garnacho Bululo y Ñaque en la chanza del santero desollado, La carátula |1 de diciembre de 2001|Colectivo|El Capo Cómico||Calle Mayor de Alcalá de Henares, Madrid (Comunidad de Madrid)||40.4820847|-3.3669853|99QT5pPk
+383|Lope de Rueda |La fiesta perpetua|19 de noviembre de 2003|Pilar Laveaga|Teatro de la Ribera||Teatro Principal de Zaragoza|19-11-2003|41.6518556|-0.8793213|PeiKuYND
+384|Lope de Rueda |Historias de Martín de Villalba.||Etelvino Vázquez|Teatro del Norte||||||6nuktjdd
+385|Lope de Rueda |El deleitoso y otras delicias||Agusíin Iglesias|Teatro Guirigai||||||9VL6w8BW
+386|Lope de Rueda |Los cómicos de la legua||Domingo Torres|Uno teatro||||||ZajeBGfm
+387|Lope de Rueda |Julia, Un viaje teatrástico|22 de marzo de 2012|Julio Fraga |Teatro Clásico de Sevilla ||Teatro Villa del Conocimiento y las Artes de Mairena del Alcor, Sevilla (Andalucía)|22-03-2012|37.3752136|-5.748197|LxmKUpvM
+388|Lope de Rueda |La corte de los bufones: paso a paso la comedia||José Uriel García Solís|La Gorgona Teatro||||||6QCvJU7Y
+389|Lope de Rueda |Fiesta de farsantes. Tablado del mundo|2 de septiembre de 2021|Daniel Alonso de Santos|Pérez y Goldstein S.L; Okboomer.|Festival Clásicos en Alcalá|Teatros del Canal, Madrid (Comunidad de Madrid)||40.438279|-3.7051836|j4YFPDXn
+390|Lope de Rueda |La garnacha de los bufones||Javier Mañón|Corrales de Comedias ||||||JeCviTQZ
+391|Temática SO / Juan Rana||||||||||PxPHw4hN
+392|Temático SO / Varia||||||||||GZFC9gTf
+393|Fernando de Rojas||||||||||ghmm6vMr
+394|Temática SO / Folklore||||||||||GDkeV4jC
+395|Temática SO / Música||||||||||SCHX9taT
+396|Temática SO / Danza||||||||||JLd56Ups
