@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Metadatos para compartir en redes sociales -->
+    <meta property="og:title" content="Buscador de obras del TCE SXXI">
+    <meta property="og:description" content="Buscador de obras del Teatro Contemporáneo Español del Siglo XXI">
+    <meta property="og:image" content="PruebaTCE5.png">
+    <meta property="og:url" content="URL_DE_TU_SITIO">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="PruebaTCE5.png">
     <title>Buscador de obras del TCE SXXI</title>
     <style>
         body {
@@ -58,7 +66,7 @@
         }
     
         th {
-            background-color: #dd0d0dc5;
+            background-color: #E09900;
             color: white;
             cursor: pointer;
         }
@@ -167,7 +175,7 @@
     }
 
     #tablaObras thead th {
-        background-color: #dd0d0dc5;
+        background-color: #E09900;
         border-bottom: 2px solid #b30000;
     }
 
@@ -199,24 +207,43 @@
     }
 
     .toggle-btn {
-        background-color: #dd0d0dc5;
+        background-color: #E09900;
         color: white;
         border: none;
-        padding: 5px 10px;
+        padding: 8px 10px;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 0.9em;
+        font-size: 1.1em;
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 5px;
+        transition: background-color 0.3s ease;
     }
 
     .toggle-btn:hover {
         background-color: #b30000;
     }
 
+    .toggle-btn i {
+        font-size: 1.2em;
+    }
+
+    .toggle-btn i:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-right: 0;
+        padding-bottom: 5px;
+    }
+
+    .toggle-btn i:last-of-type {
+        padding-left: 0;
+        padding-top: 5px;
+    }
+
     .toggle-btn .arrow {
         font-size: 0.8em;
+        margin-top: 2px;
     }
 
     /* Estilos para la sección de visualizaciones */
@@ -256,7 +283,7 @@
 
     /* Estilos compartidos para ambos botones de toggle */
     .toggle-btn {
-        background-color: #dd0d0dc5;
+        background-color: #E09900;
         color: white;
         border: none;
         padding: 5px 10px;
@@ -286,7 +313,7 @@
     #tablaObras th {
         padding: 8px 12px; /* Reducir el padding vertical de 20px a 8px */
         text-align: left;
-        background-color: #dd0d0dc5;
+        background-color: #E09900;
         color: white;
         cursor: pointer;
         border-bottom: 2px solid #b30000;
@@ -347,6 +374,80 @@
         background-color: rgba(212, 86, 89, 0.8) !important;
         color: white !important;
     }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        display: block;
+        border: 1px solid red; /* Temporal para debugging */
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .logo-container {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    .logo {
+        height: 100%;
+        width: auto;
+        display: block;
+    }
+
+    #buscador {
+        flex-grow: 1;
+        margin-bottom: 0;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .title-bar {
+        background-color: #E09900;
+        color: white;
+        padding: 10px 20px;
+    }
+
+    .title-bar .logo {
+        height: 100px;
+        width: auto;
+    }
+
+    .title-bar {
+        background-color: #E09900;
+        color: white;
+        padding: 10px 20px;
+        position: relative;
+        /* Aumentar el padding para acomodar el logo más grande */
+        padding: 20px;
+    }
+
+    .title-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px; /* Aumentado el gap para mejor espaciado con logo más grande */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .title-bar h1 {
+        margin: 0;
+        color: white;
+        font-size: 2em; /* Aumentado el tamaño del texto para mejor proporción */
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -357,65 +458,71 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- Agregar Font Awesome en el <head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="main-content">
         <div class="content-wrapper">
             <!-- Botón y sección del buscador -->
-            <div class="search-toggle">
-                <button id="toggleSearchBtn" class="toggle-btn">
-                    Ocultar buscador
-                    <span class="arrow">▼</span>
-                </button>
-            </div>
-
-            <div id="searchSection" class="search-section">
-                <div id="buscador">
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-                        <div>
-                            <label>Autor/a:</label>
-                            <input type="text" id="busqueda-autor" placeholder="Buscar por autor">
-                        </div>
-                        <div>
-                            <label>Obra:</label>
-                            <input type="text" id="busqueda-obra" placeholder="Buscar por obra">
-                        </div>
-                        <div>
-                            <label>Dirección:</label>
-                            <input type="text" id="busqueda-direccion" placeholder="Buscar por dirección">
-                        </div>
-                        <div>
-                            <label>compañia:</label>
-                            <input type="text" id="busqueda-compania" placeholder="Buscar por compañia">
-                        </div>
-                        <div>
-                            <label>Festivales:</label>
-                            <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
-                        </div>
-                        <div>
-                            <label>Lugar de estreno:</label>
-                            <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
-                        </div>
-                    </div>
-                    <div style="display: flex; align-items: center;">
-                        <label>
-                            <input type="checkbox" id="busquedaExacta"> Búsqueda exacta
-                        </label>
-                        <div class="filtro-fechas">
-                            <label>Desde: <input type="date" id="fechaInicio"></label>
-                            <label>Hasta: <input type="date" id="fechaFin"></label>
-                        </div>
-                        <button id="resetFiltros" class="reset-btn">Resetear filtros</button>
-                    </div>
+            <div class="title-bar">
+                <div class="title-content">
+                    <img src="PruebaTCE5.png" alt="Logo TCE" class="logo">
+                    <h1>Teatro Clásico Español - Siglo XXI</h1>
                 </div>
             </div>
 
-            <!-- Botón y sección de visualizaciones -->
-            <div class="visualizations-toggle">
-                <button id="toggleVisualizationsBtn" class="toggle-btn">
-                    Mostrar visualizaciones
-                    <span class="arrow">▼</span>
-                </button>
+            <div id="searchSection" class="search-section">
+                <div class="header-container">
+                    <div id="buscador">
+                        <div style="margin-bottom: 10px;">
+                            <button id="toggleVisualizationsBtn" class="toggle-btn" title="Mostrar/Ocultar visualizaciones">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <i class="fas fa-project-diagram"></i>
+                                <span class="arrow">▼</span>
+                            </button>
+                        </div>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+                            <div>
+                                <label>Autor/a:</label>
+                                <input type="text" id="busqueda-autor" placeholder="Buscar por autor">
+                            </div>
+                            <div>
+                                <label>Obra:</label>
+                                <input type="text" id="busqueda-obra" placeholder="Buscar por obra">
+                            </div>
+                            <div>
+                                <label>Dirección:</label>
+                                <input type="text" id="busqueda-direccion" placeholder="Buscar por dirección">
+                            </div>
+                            <div>
+                                <label>compañia:</label>
+                                <input type="text" id="busqueda-compania" placeholder="Buscar por compañia">
+                            </div>
+                            <div>
+                                <label>Festivales:</label>
+                                <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
+                            </div>
+                            <div>
+                                <label>Lugar de estreno:</label>
+                                <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center;">
+                                <label>
+                                    <input type="checkbox" id="busquedaExacta"> Búsqueda exacta
+                                </label>
+                                <div class="filtro-fechas">
+                                    <label>Desde: <input type="date" id="fechaInicio"></label>
+                                    <label>Hasta: <input type="date" id="fechaFin"></label>
+                                </div>
+                                <button id="resetFiltros" class="reset-btn">Resetear filtros</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="visualizationsSection" class="visualizations-section collapsed">
@@ -588,14 +695,27 @@ function filtrarObras() {
     const fechaInicio = document.getElementById('fechaInicio').value;
     const fechaFin = document.getElementById('fechaFin').value;
 
-    const obrasFiltradas = obrasOriginales.filter(obra => {
-        // Función auxiliar para comparar textos según el modo de búsqueda
-        const coincide = (valor, filtro) => {
-            if (!valor) return false;
-            valor = valor.toString().toLowerCase();
-            return busquedaExacta ? valor === filtro : valor.includes(filtro);
-        };
+    const normalizarTexto = (texto) => {
+        if (!texto) return '';
+        return texto.toString()
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, ""); // Elimina diacríticos
+    };
 
+    const coincide = (valor, filtro) => {
+        if (!valor) return false;
+        if (!filtro) return true; // Si no hay filtro, devuelve true
+        
+        const valorNormalizado = normalizarTexto(valor);
+        const filtroNormalizado = normalizarTexto(filtro);
+        
+        return busquedaExacta ? 
+            valorNormalizado === filtroNormalizado : // Búsqueda exacta
+            valorNormalizado.includes(filtroNormalizado); // Búsqueda parcial
+    };
+
+    const obrasFiltradas = obrasOriginales.filter(obra => {
         // Verificar cada criterio de filtro
         const cumpleAutor = !autorFiltro || coincide(obra['Autor/a'], autorFiltro);
         const cumpleObra = !obraFiltro || coincide(obra['Obra'], obraFiltro);
@@ -824,35 +944,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     obrasOriginales = await obtenerObras();
     llenarTabla(obrasOriginales);
 
-    // Configurar toggle para visualizaciones
+    // Actualizar el event listener del botón de visualizaciones
     const toggleVisualizationsBtn = document.getElementById('toggleVisualizationsBtn');
     const visualizationsSection = document.getElementById('visualizationsSection');
 
     toggleVisualizationsBtn.addEventListener('click', () => {
         visualizationsSection.classList.toggle('collapsed');
         
-        toggleVisualizationsBtn.firstChild.textContent = 
-            visualizationsSection.classList.contains('collapsed') 
-                ? 'Mostrar visualizaciones ' 
-                : 'Ocultar visualizaciones ';
+        // Solo manejar la rotación de la flecha
+        const arrow = toggleVisualizationsBtn.querySelector('.arrow');
+        arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
+            ? 'rotate(0deg)' 
+            : 'rotate(180deg)';
 
         if (!visualizationsSection.classList.contains('collapsed')) {
             if (map) map.invalidateSize();
             if (network) network.fit();
         }
-    });
-
-    // Configurar toggle para buscador
-    const toggleSearchBtn = document.getElementById('toggleSearchBtn');
-    const searchSection = document.getElementById('searchSection');
-
-    toggleSearchBtn.addEventListener('click', () => {
-        searchSection.classList.toggle('collapsed');
-        
-        toggleSearchBtn.firstChild.textContent = 
-            searchSection.classList.contains('collapsed') 
-                ? 'Mostrar buscador ' 
-                : 'Ocultar buscador ';
     });
 
     // Actualizar los event listeners para los nuevos campos
