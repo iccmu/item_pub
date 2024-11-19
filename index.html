@@ -771,14 +771,11 @@ function initMap() {
 }
 
 function createNetworkData(obra) {
-    // Si recibimos un array de obras, usar solo la primera
     if (Array.isArray(obra)) {
-        console.log('Recibido array de obras, usando la primera:', obra[0]);
         obra = obra[0];
     }
 
-    // Verificar que tenemos una obra válida
-    if (!obra) {
+    if (!obra || !obra['Autor/a']) {
         console.warn('No se recibió una obra válida');
         return {
             nodes: new vis.DataSet(),
@@ -786,32 +783,52 @@ function createNetworkData(obra) {
         };
     }
 
-    // Verificar que tenemos los campos necesarios
-    if (!obra['Autor/a'] || !obra.id) {
-        console.warn('Obra incompleta:', obra);
-        return {
-            nodes: new vis.DataSet(),
-            edges: new vis.DataSet()
-        };
-    }
+    const nodes = new vis.DataSet();
+    const edges = new vis.DataSet();
 
-    // Crear el nodo con la información disponible
-    const node = {
-        id: obra.id,
+    // Crear nodo del autor
+    const autorNode = {
+        id: 'autor_' + obra['Autor/a'],
         label: obra['Autor/a'].toString().trim(),
-        title: `${obra.Obra || 'Sin título'} (${obra['Fecha de estreno'] || 'Fecha desconocida'})`,
         shape: 'dot',
-        size: 20,
-        color: { 
+        size: 30,
+        color: {
             background: '#FB7E81',
             border: '#d45659'
+        },
+        font: {
+            size: 16,
+            bold: true
         }
     };
+    nodes.add(autorNode);
 
-    console.log('Creando nodo:', node);
+    // Encontrar todas las obras del mismo autor
+    const obrasDelAutor = obras.filter(o => o['Autor/a'] === obra['Autor/a']);
 
-    const nodes = new vis.DataSet([node]);
-    const edges = new vis.DataSet();
+    // Crear nodos para cada obra y conectarlos al autor
+    obrasDelAutor.forEach(obraRelacionada => {
+        const obraNode = {
+            id: 'obra_' + obraRelacionada.id,
+            label: obraRelacionada.Obra,
+            shape: 'box',
+            size: 20,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
+            },
+            title: `${obraRelacionada.Obra}\n${obraRelacionada['Fecha de estreno'] || 'Fecha desconocida'}`
+        };
+        
+        const edge = {
+            from: 'autor_' + obra['Autor/a'],
+            to: 'obra_' + obraRelacionada.id,
+            arrows: 'to'
+        };
+
+        nodes.add(obraNode);
+        edges.add(edge);
+    });
 
     return { nodes, edges };
 }
