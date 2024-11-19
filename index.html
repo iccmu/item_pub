@@ -448,6 +448,27 @@
         color: white;
         font-size: 2em; /* Aumentado el tamaño del texto para mejor proporción */
     }
+
+    .estadisticas-container {
+        display: flex;
+        gap: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.1em;
+    }
+
+    .stat-item i {
+        color: #E09900;
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -522,6 +543,21 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div id="estadisticas" class="estadisticas-container">
+                <div class="stat-item">
+                    <i class="fas fa-user"></i>
+                    <span>Autores: <span id="count-autores">0</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Obras: <span id="count-obras">0</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Festivales: <span id="count-festivales">0</span></span>
                 </div>
             </div>
 
@@ -745,12 +781,16 @@ function filtrarObras() {
                cumpleFechas;
     });
 
-    // Actualizar la tabla y las visualizaciones
+    // Actualizar la tabla con las obras filtradas
     llenarTabla(obrasFiltradas);
     actualizarVisualizaciones(obrasFiltradas);
+
+    // Actualizar contadores usando la nueva función
+    actualizarContadores(obrasFiltradas);
 }
 
 function resetearFiltros() {
+    // Resetear valores de los inputs
     document.getElementById('busqueda-autor').value = '';
     document.getElementById('busqueda-obra').value = '';
     document.getElementById('busqueda-direccion').value = '';
@@ -760,7 +800,16 @@ function resetearFiltros() {
     document.getElementById('fechaInicio').value = '';
     document.getElementById('busqueda-lugar').value = '';
     document.getElementById('fechaFin').value = '';
+    
+    // Actualizar tabla y marcadores
     llenarTabla(obrasOriginales);
+    actualizarMarcadores(obrasOriginales);
+    
+    // Actualizar contadores
+    actualizarContadores(obrasOriginales);
+    
+    // Resetear el grafo mostrando el nodo comodín
+    mostrarNodoComodin();
 }
 
 function initMap() {
@@ -880,7 +929,27 @@ function actualizarMarcadores(obrasData) {
     map.addLayer(markerClusterGroup);
 }
 
-// Asegurarnos de que la función sea accesible globalmente
+// Agregar función para mostrar el nodo comodín
+function mostrarNodoComodin() {
+    const nodes = new vis.DataSet([{
+        id: 'tce',
+        label: 'TCE-SXXI',
+        shape: 'star',
+        size: 40,
+        color: {
+            background: '#E09900',
+            border: '#b30000'
+        },
+        font: {
+            size: 18,
+            bold: true
+        }
+    }]);
+    
+    network.setData({ nodes: nodes, edges: new vis.DataSet() });
+}
+
+// Modificar la función mostrarEnGrafo para incluir el estado de carga
 window.mostrarEnGrafo = function(obraId) {
     console.log('Buscando obra con ID:', obraId);
     
@@ -893,23 +962,51 @@ window.mostrarEnGrafo = function(obraId) {
     console.log('Obra encontrada:', obra);
 
     if (obra && network) {
-        const data = createNetworkData(obra);
-        if (data.nodes.length === 0) {
-            console.warn('No se pudieron crear nodos para la obra');
-            return;
-        }
+        // Mostrar estado de carga
+        const nodes = new vis.DataSet([{
+            id: 'loading',
+            label: 'Cargando...',
+            shape: 'dot',
+            size: 30,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
+            },
+            font: { size: 16 }
+        }]);
+        network.setData({ nodes: nodes, edges: new vis.DataSet() });
 
-        network.setData(data);
+        // Asegurarse de que la sección de visualizaciones esté visible
+        const visualizationsSection = document.getElementById('visualizationsSection');
+        visualizationsSection.classList.remove('collapsed');
         
+        // Actualizar la flecha del botón
+        const toggleVisualizationsBtn = document.getElementById('toggleVisualizationsBtn');
+        const arrow = toggleVisualizationsBtn.querySelector('.arrow');
+        arrow.style.transform = 'rotate(180deg)';
+
+        // Simular tiempo de carga
         setTimeout(() => {
+            const data = createNetworkData(obra);
+            if (data.nodes.length === 0) {
+                console.warn('No se pudieron crear nodos para la obra');
+                mostrarNodoComodin();
+                return;
+            }
+
+            network.setData(data);
+            
             network.fit({
-                nodes: [obra.id],
+                nodes: ['obra_' + obra.id],
                 animation: {
                     duration: 1000,
                     easingFunction: 'easeInOutQuad'
                 }
             });
-        }, 100);
+            
+            if (map) map.invalidateSize();
+            network.fit();
+        }, 800); // Tiempo de carga simulado
     } else {
         console.warn('No se encontró la obra o el network no está inicializado');
     }
@@ -918,12 +1015,6 @@ window.mostrarEnGrafo = function(obraId) {
 function initNetwork() {
     if (!network) {
         const container = document.getElementById('network');
-        
-        // Inicializar network vacío
-        const data = {
-            nodes: new vis.DataSet(),
-            edges: new vis.DataSet()
-        };
         
         const options = {
             nodes: {
@@ -939,27 +1030,50 @@ function initNetwork() {
             }
         };
 
-        network = new vis.Network(container, data, options);
+        network = new vis.Network(container, { nodes: new vis.DataSet(), edges: new vis.DataSet() }, options);
+        
+        // Mostrar el nodo comodín inicial
+        mostrarNodoComodin();
     }
 }
 
-// Modificar la función llenarTabla para actualizar también el gráfico
+// Modificar la función actualizarVisualizaciones para que solo actualice el mapa
 function actualizarVisualizaciones(obras) {
     actualizarMarcadores(obras);
-    if (network) {
-        const data = createNetworkData(obras);
-        network.setData(data);
-    }
+    // Eliminar la actualización automática del grafo
+    // if (network) {
+    //     const data = createNetworkData(obras);
+    //     network.setData(data);
+    // }
+}
+
+// Agregar esta nueva función para actualizar los contadores
+function actualizarContadores(obrasData) {
+    const autoresUnicos = new Set(obrasData.map(obra => obra['Autor/a'])).size;
+    const obrasTotal = obrasData.length;
+    const festivalesUnicos = new Set(
+        obrasData
+            .map(obra => obra['Festivales'])
+            .filter(festival => festival) // Eliminar valores vacíos
+            .flatMap(festival => festival.split(',').map(f => f.trim()))
+    ).size;
+
+    document.getElementById('count-autores').textContent = autoresUnicos;
+    document.getElementById('count-obras').textContent = obrasTotal;
+    document.getElementById('count-festivales').textContent = festivalesUnicos;
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Primero inicializar el mapa y network
+    // Inicializar el mapa y network
     initMap();
     initNetwork();
     
-    // Luego cargar y mostrar los datos
+    // Cargar y mostrar los datos
     obrasOriginales = await obtenerObras();
     llenarTabla(obrasOriginales);
+    
+    // Inicializar los contadores con todos los datos
+    actualizarContadores(obrasOriginales);
 
     // Actualizar el event listener del botón de visualizaciones
     const toggleVisualizationsBtn = document.getElementById('toggleVisualizationsBtn');
@@ -968,7 +1082,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     toggleVisualizationsBtn.addEventListener('click', () => {
         visualizationsSection.classList.toggle('collapsed');
         
-        // Solo manejar la rotación de la flecha
         const arrow = toggleVisualizationsBtn.querySelector('.arrow');
         arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
             ? 'rotate(0deg)' 
@@ -976,7 +1089,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (!visualizationsSection.classList.contains('collapsed')) {
             if (map) map.invalidateSize();
-            if (network) network.fit();
+            // No actualizar el network aquí
         }
     });
 
