@@ -188,15 +188,15 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        padding: 20px;
+        padding: 10px;
         box-sizing: border-box;
-        gap: 20px;
+        gap: 10px;
     }
 
     .content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         flex: 1;
         overflow: hidden;
     }
@@ -207,18 +207,19 @@
     }
 
     .toggle-btn {
+        padding: 5px 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
         background-color: #E09900;
         color: white;
         border: none;
-        padding: 8px 10px;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 1.1em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        transition: background-color 0.3s ease;
+        font-size: 0.9em;
+        flex-direction: row;
     }
 
     .toggle-btn:hover {
@@ -226,77 +227,9 @@
     }
 
     .toggle-btn i {
-        font-size: 1.2em;
-    }
-
-    .toggle-btn i:first-child {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        padding-right: 0;
-        padding-bottom: 5px;
-    }
-
-    .toggle-btn i:last-of-type {
-        padding-left: 0;
-        padding-top: 5px;
-    }
-
-    .toggle-btn .arrow {
-        font-size: 0.8em;
-        margin-top: 2px;
-    }
-
-    /* Estilos para la sección de visualizaciones */
-    .visualizations-section {
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        max-height: 500px;
-    }
-
-    .visualizations-section.collapsed {
-        max-height: 0;
-    }
-
-    .visualizations-section.collapsed + .table-container {
-        margin-top: 0;
-    }
-
-    /* Rotar flecha cuando está expandido */
-    .visualizations-section:not(.collapsed) + .visualizations-toggle .arrow {
-        transform: rotate(180deg);
-    }
-
-    /* Estilos para el toggle del buscador */
-    .search-toggle {
-        margin: 10px 0;
-    }
-
-    .search-section {
-        transition: max-height 0.3s ease-in-out;
-        max-height: 200px; /* Ajustar según el tamaño de tu buscador */
-        overflow: hidden;
-    }
-
-    .search-section.collapsed {
-        max-height: 0;
-    }
-
-    /* Estilos compartidos para ambos botones de toggle */
-    .toggle-btn {
-        background-color: #E09900;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.9em;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .toggle-btn:hover {
-        background-color: #b30000;
+        font-size: 1.1em;
+        padding: 0;
+        margin: 0;
     }
 
     .toggle-btn .arrow {
@@ -385,12 +318,12 @@
     .header-container {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
     }
 
     .logo-container {
@@ -418,45 +351,118 @@
         background-color: #E09900;
         color: white;
         padding: 10px 20px;
-    }
-
-    .title-bar .logo {
-        height: 100px;
-        width: auto;
-    }
-
-    .title-bar {
-        background-color: #E09900;
-        color: white;
-        padding: 10px 20px;
         position: relative;
-        /* Aumentar el padding para acomodar el logo más grande */
-        padding: 20px;
     }
 
     .title-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 30px; /* Aumentado el gap para mejor espaciado con logo más grande */
+        gap: 20px;
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    .title-bar .logo {
+        height: 60px;
+        width: auto;
     }
 
     .title-bar h1 {
         margin: 0;
         color: white;
-        font-size: 2em; /* Aumentado el tamaño del texto para mejor proporción */
+        font-size: 1.8em;
     }
 
     .estadisticas-container {
         display: flex;
-        gap: 20px;
-        padding: 15px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .stats-group {
+        display: flex;
+        gap: 20px;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.1em;
+    }
+
+    .stat-item i {
+        color: #E09900;
+    }
+
+    /* Ajustar el estilo del botón para que coincida con la barra */
+    .toggle-btn {
+        padding: 5px 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .toggle-btn i {
+        font-size: 1.1em;
+        border: none;
+        padding: 0;
+    }
+
+    .visualizations-section {
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        height: auto;
+        opacity: 1;
+        margin-bottom: 10px;
+    }
+
+    .visualizations-section.collapsed {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Rotar flecha cuando está colapsado */
+    .visualizations-section.collapsed + .toggle-btn .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Asegurarse de que el contenedor principal tenga el espacio correcto */
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    /* Estadísticas container */
+    .estadisticas-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-bottom: 10px;
+    }
+
+    .stats-group {
+        display: flex;
+        gap: 20px;
     }
 
     .stat-item {
@@ -496,68 +502,50 @@
             <div id="searchSection" class="search-section">
                 <div class="header-container">
                     <div id="buscador">
-                        <div style="margin-bottom: 10px;">
-                            <button id="toggleVisualizationsBtn" class="toggle-btn" title="Mostrar/Ocultar visualizaciones">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <i class="fas fa-project-diagram"></i>
-                                <span class="arrow">▼</span>
-                            </button>
-                        </div>
-
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-                            <div>
-                                <label>Autor/a:</label>
-                                <input type="text" id="busqueda-autor" placeholder="Buscar por autor">
+                            <input type="text" id="busqueda-autor" class="form-control" placeholder="Buscar por Autor">
+                            <input type="text" id="busqueda-obra" class="form-control" placeholder="Buscar por Obra">
+                            <input type="text" id="busqueda-direccion" class="form-control" placeholder="Buscar por Dirección">
+                            <input type="text" id="busqueda-compania" class="form-control" placeholder="Buscar por Compañía">
+                            <input type="text" id="busqueda-festivales" class="form-control" placeholder="Buscar por Festival">
+                            <input type="text" id="busqueda-lugar" class="form-control" placeholder="Buscar por Lugar">
+                            
+                            <input type="date" id="fechaInicio" class="form-control" placeholder="Fecha inicio">
+                            <input type="date" id="fechaFin" class="form-control" placeholder="Fecha fin">
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="busquedaExacta">
+                                <label class="form-check-label" for="busquedaExacta">Búsqueda exacta</label>
                             </div>
-                            <div>
-                                <label>Obra:</label>
-                                <input type="text" id="busqueda-obra" placeholder="Buscar por obra">
-                            </div>
-                            <div>
-                                <label>Dirección:</label>
-                                <input type="text" id="busqueda-direccion" placeholder="Buscar por dirección">
-                            </div>
-                            <div>
-                                <label>compañia:</label>
-                                <input type="text" id="busqueda-compania" placeholder="Buscar por compañia">
-                            </div>
-                            <div>
-                                <label>Festivales:</label>
-                                <input type="text" id="busqueda-festivales" placeholder="Buscar por festivales">
-                            </div>
-                            <div>
-                                <label>Lugar de estreno:</label>
-                                <input type="text" id="busqueda-lugar" placeholder="Buscar por lugar de estreno">
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; justify-content: space-between;">
-                            <div style="display: flex; align-items: center;">
-                                <label>
-                                    <input type="checkbox" id="busquedaExacta"> Búsqueda exacta
-                                </label>
-                                <div class="filtro-fechas">
-                                    <label>Desde: <input type="date" id="fechaInicio"></label>
-                                    <label>Hasta: <input type="date" id="fechaFin"></label>
-                                </div>
-                                <button id="resetFiltros" class="reset-btn">Resetear filtros</button>
-                            </div>
+                            
+                            <button id="resetFiltros" class="btn btn-secondary">
+                                <i class="fas fa-undo-alt"></i> Resetear filtros
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="estadisticas" class="estadisticas-container">
-                <div class="stat-item">
-                    <i class="fas fa-user"></i>
-                    <span>Autores: <span id="count-autores">0</span></span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-theater-masks"></i>
-                    <span>Obras: <span id="count-obras">0</span></span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Festivales: <span id="count-festivales">0</span></span>
+                <button id="toggleVisualizationsBtn" class="toggle-btn" onclick="toggleVisualizations()">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="arrow">▼</span>
+                </button>
+                
+                <div class="stats-group">
+                    <div class="stat-item" onclick="showAuthors()">
+                        <i class="fas fa-user"></i>
+                        <span>Autores: <span id="count-autores">0</span></span>
+                    </div>
+                    <div class="stat-item" onclick="showWorks()">
+                        <i class="fas fa-theater-masks"></i>
+                        <span>Obras: <span id="count-obras">0</span></span>
+                    </div>
+                    <div class="stat-item" onclick="showFestivals()">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Festivales: <span id="count-festivales">0</span></span>
+                    </div>
                 </div>
             </div>
 
@@ -682,8 +670,8 @@ function ordenarTabla(campo) {
         
         // Mover valores vacíos al final
         if (!valorA && !valorB) return 0;  // Ambos vacíos, mantener orden original
-        if (!valorA) return 1;             // A vacío, mover al final
-        if (!valorB) return -1;            // B vacío, mover al final
+        if (!valorA) return 1;             // A vacio, mover al final
+        if (!valorB) return -1;            // B vacio, mover al final
         
         // Caso especial para el ID (ordenamiento numérico)
         if (campo === 'id') {
@@ -790,26 +778,122 @@ function filtrarObras() {
 }
 
 function resetearFiltros() {
-    // Resetear valores de los inputs
+    console.log('Reseteando filtros y visualizaciones');
+    
+    // Resetear los campos de búsqueda
     document.getElementById('busqueda-autor').value = '';
     document.getElementById('busqueda-obra').value = '';
     document.getElementById('busqueda-direccion').value = '';
     document.getElementById('busqueda-compania').value = '';
     document.getElementById('busqueda-festivales').value = '';
-    document.getElementById('busquedaExacta').checked = false;
-    document.getElementById('fechaInicio').value = '';
     document.getElementById('busqueda-lugar').value = '';
+    document.getElementById('fechaInicio').value = '';
     document.getElementById('fechaFin').value = '';
+    document.getElementById('busquedaExacta').checked = false;
     
-    // Actualizar tabla y marcadores
+    // Resetear la tabla
     llenarTabla(obrasOriginales);
-    actualizarMarcadores(obrasOriginales);
     
-    // Actualizar contadores
+    // Resetear contadores
     actualizarContadores(obrasOriginales);
     
-    // Resetear el grafo mostrando el nodo comodín
-    mostrarNodoComodin();
+    // Resetear el network a su estado inicial
+    resetNetwork();
+}
+
+// Función para resetear el network a su estado inicial
+function resetNetwork() {
+    console.log('Reseteando network a estado inicial');
+    
+    // Crear nodos: central y estadísticas
+    const nodes = new vis.DataSet([
+        { 
+            id: 'central', 
+            label: 'TCE-SXXI',
+            shape: 'star',
+            size: 40,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
+            }
+        },
+        { 
+            id: 'autores', 
+            label: 'Autores',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf007',  // fa-user
+                size: 30,
+                color: '#E09900'
+            }
+        },
+        { 
+            id: 'obras', 
+            label: 'Obras',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf02d',  // fa-book (el que funciona al hacer clic)
+                size: 30,
+                color: '#E09900',
+                weight: 900  // Asegurarnos de que carga la versión correcta
+            }
+        },
+        { 
+            id: 'festivales', 
+            label: 'Festivales',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf133',  // fa-calendar-alt
+                size: 30,
+                color: '#E09900'
+            }
+        }
+    ]);
+
+    // Crear conexiones desde el nodo central
+    const edges = new vis.DataSet([
+        { from: 'central', to: 'autores' },
+        { from: 'central', to: 'obras' },
+        { from: 'central', to: 'festivales' }
+    ]);
+
+    // Configuración de la visualización
+    const options = {
+        nodes: {
+            font: {
+                size: 16
+            }
+        },
+        edges: {
+            width: 2,
+            color: {
+                color: '#E09900',
+                highlight: '#b30000'
+            }
+        },
+        physics: {
+            enabled: true,
+            barnesHut: {
+                gravitationalConstant: -2000,
+                centralGravity: 0.3,
+                springLength: 200
+            }
+        },
+        interaction: {
+            hover: true,
+            tooltipDelay: 200
+        }
+    };
+
+    // Actualizar el network con los datos iniciales
+    if (network) {
+        network.setData({ nodes, edges });
+        network.setOptions(options);
+        network.fit();
+    }
 }
 
 function initMap() {
@@ -825,7 +909,7 @@ function createNetworkData(obra) {
     }
 
     if (!obra || !obra['Autor/a']) {
-        console.warn('No se recibió una obra válida');
+        console.warn('No se recibi una obra válida');
         return {
             nodes: new vis.DataSet(),
             edges: new vis.DataSet()
@@ -1013,28 +1097,237 @@ window.mostrarEnGrafo = function(obraId) {
 }
 
 function initNetwork() {
-    if (!network) {
-        const container = document.getElementById('network');
-        
-        const options = {
-            nodes: {
-                font: { size: 12 }
-            },
-            physics: {
-                stabilization: true,
-                barnesHut: {
-                    gravitationalConstant: -1000,
-                    springLength: 100,
-                    springConstant: 0.01
-                }
+    const container = document.getElementById('network');
+    
+    // Crear nodos: central y estadísticas
+    const nodes = new vis.DataSet([
+        { 
+            id: 'central', 
+            label: 'TCE-SXXI',
+            shape: 'star',
+            size: 40,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
             }
-        };
+        },
+        { 
+            id: 'autores', 
+            label: 'Autores',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf007',  // código del icono fa-user
+                size: 30,
+                color: '#E09900'
+            }
+        },
+        { 
+            id: 'obras', 
+            label: 'Obras',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf02d',  // código del icono fa-book
+                size: 30,
+                color: '#E09900'
+            }
+        },
+        { 
+            id: 'festivales', 
+            label: 'Festivales',
+            shape: 'icon',
+            icon: {
+                face: '"Font Awesome 5 Free"',
+                code: '\uf133',  // código del icono fa-calendar-alt
+                size: 30,
+                color: '#E09900'
+            }
+        }
+    ]);
 
-        network = new vis.Network(container, { nodes: new vis.DataSet(), edges: new vis.DataSet() }, options);
-        
-        // Mostrar el nodo comodín inicial
-        mostrarNodoComodin();
+    // Crear conexiones desde el nodo central
+    const edges = new vis.DataSet([
+        { from: 'central', to: 'autores' },
+        { from: 'central', to: 'obras' },
+        { from: 'central', to: 'festivales' }
+    ]);
+
+    // Configuración de la visualización
+    const options = {
+        nodes: {
+            font: {
+                size: 16
+            }
+        },
+        edges: {
+            width: 2,
+            color: {
+                color: '#E09900',
+                highlight: '#b30000'
+            }
+        },
+        physics: {
+            enabled: true,
+            barnesHut: {
+                gravitationalConstant: -2000,
+                centralGravity: 0.3,
+                springLength: 200
+            }
+        },
+        interaction: {
+            hover: true,
+            tooltipDelay: 200
+        }
+    };
+
+    // Crear el network
+    network = new vis.Network(container, { nodes, edges }, options);
+
+    // Manejar eventos de clic en los nodos
+    network.on('click', function(params) {
+        if (params.nodes.length > 0) {
+            const nodeId = params.nodes[0];
+            switch(nodeId) {
+                case 'autores':
+                    showAuthors();
+                    break;
+                case 'obras':
+                    showWorks();
+                    break;
+                case 'festivales':
+                    showFestivals();
+                    break;
+            }
+        }
+    });
+
+    // Ajustar la vista para mostrar todos los nodos
+    network.fit();
+}
+
+// Funciones para manejar los clics en los nodos
+function showAuthors() {
+    console.log('Mostrando autores');
+    
+    // Obtener los autores de la tabla actual
+    const tabla = document.getElementById('tabla-obras');
+    const filas = tabla.getElementsByTagName('tr');
+    const autores = [];
+    
+    // Empezar desde 1 para saltar la fila de encabezados
+    for (let i = 1; i < filas.length; i++) {
+        const autorCell = filas[i].cells[0]; // La columna de autores es la primera
+        if (autorCell) {
+            const autor = autorCell.textContent.trim();
+            if (autor) {
+                autores.push(autor);
+            }
+        }
     }
+    
+    // Obtener autores únicos
+    const autoresUnicos = [...new Set(autores)];
+    console.log('Autores únicos encontrados en la tabla:', autoresUnicos);
+
+    // Crear nodos
+    const nodes = new vis.DataSet([
+        // Nodo central
+        { 
+            id: 'central', 
+            label: 'TCE-SXXI',
+            shape: 'star',
+            size: 40,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
+            }
+        },
+        // Nodos de autores
+        ...autoresUnicos.map((autor, index) => ({
+            id: `autor_${index}`,
+            label: autor,
+            shape: 'dot',
+            size: 25,
+            color: {
+                background: '#E09900',
+                border: '#b30000'
+            },
+            font: {
+                size: 14
+            }
+        }))
+    ]);
+
+    // Crear conexiones desde el nodo central a cada autor
+    const edges = new vis.DataSet(
+        autoresUnicos.map((_, index) => ({
+            from: 'central',
+            to: `autor_${index}`,
+            color: {
+                color: '#E09900',
+                highlight: '#b30000'
+            },
+            width: 2
+        }))
+    );
+
+    // Configurar opciones de visualización
+    const options = {
+        nodes: {
+            font: {
+                size: 16
+            }
+        },
+        physics: {
+            enabled: true,
+            barnesHut: {
+                gravitationalConstant: -3000,
+                centralGravity: 0.3,
+                springLength: 150,
+                springConstant: 0.04
+            },
+            stabilization: {
+                iterations: 2000
+            }
+        }
+    };
+
+    try {
+        console.log('Actualizando network con:', {
+            numeroDeAutores: autoresUnicos.length,
+            autores: autoresUnicos
+        });
+
+        // Actualizar el network
+        network.setData({ nodes, edges });
+        network.setOptions(options);
+        
+        // Esperar un momento y ajustar la vista
+        setTimeout(() => {
+            network.fit({
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }, 500);
+
+        console.log('Network actualizado exitosamente');
+    } catch (error) {
+        console.error('Error al actualizar el network:', error);
+    }
+}
+
+// Implementar funciones similares para obras y festivales
+function showWorks() {
+    console.log('Mostrando obras');
+    // Implementar lógica similar para obras
+}
+
+function showFestivals() {
+    console.log('Mostrando festivales');
+    // Implementar lógica similar para festivales
 }
 
 // Modificar la función actualizarVisualizaciones para que solo actualice el mapa
@@ -1061,6 +1354,157 @@ function actualizarContadores(obrasData) {
     document.getElementById('count-autores').textContent = autoresUnicos;
     document.getElementById('count-obras').textContent = obrasTotal;
     document.getElementById('count-festivales').textContent = festivalesUnicos;
+}
+
+// Definir la función globalmente antes de cualquier otro código JavaScript
+window.toggleVisualizations = function() {
+    console.log('Función toggleVisualizations llamada'); // Debug
+    
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    const toggleBtn = document.getElementById('toggleVisualizationsBtn');
+    const arrow = toggleBtn.querySelector('.arrow');
+    
+    console.log('Estado actual:', visualizationsSection.classList.contains('collapsed')); // Debug
+    
+    visualizationsSection.classList.toggle('collapsed');
+    
+    // Rotar la flecha
+    arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
+        ? 'rotate(0deg)' 
+        : 'rotate(180deg)';
+    
+    // Si las visualizaciones están visibles, actualizar el mapa
+    if (!visualizationsSection.classList.contains('collapsed')) {
+        if (typeof map !== 'undefined' && map) {
+            map.invalidateSize();
+        }
+    }
+}
+
+// Definir las funciones en el scope global (window)
+window.showAuthors = function() {
+    console.log('Iniciando showAuthors');
+    
+    // Asegurarse de que el visualizationsSection esté visible
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    if (visualizationsSection.classList.contains('collapsed')) {
+        toggleVisualizations();
+    }
+    
+    // Verificar que network existe y está inicializado
+    if (typeof network !== 'undefined' && network) {
+        console.log('Network encontrado, actualizando...');
+        updateNetworkWithAuthors();
+    } else {
+        console.error('Network no está definido');
+    }
+};
+
+window.showWorks = function() {
+    console.log('Mostrar obras en el gráfico de nodos');
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    if (visualizationsSection.classList.contains('collapsed')) {
+        toggleVisualizations();
+    }
+    
+    if (typeof network !== 'undefined' && network) {
+        updateNetworkWithWorks();
+    }
+};
+
+window.showFestivals = function() {
+    console.log('Mostrar festivales en el gráfico de nodos');
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    if (visualizationsSection.classList.contains('collapsed')) {
+        toggleVisualizations();
+    }
+    
+    if (typeof network !== 'undefined' && network) {
+        updateNetworkWithFestivals();
+    }
+};
+
+// Funciones auxiliares para actualizar el network
+function updateNetworkWithAuthors() {
+    console.log('Actualizando red con autores');
+    
+    // Depurar los datos disponibles
+    console.log('Datos originales:', obrasOriginales);
+    
+    // Crear un conjunto único de autores
+    const autoresUnicos = [...new Set(obrasOriginales.map(obra => obra.autor))];
+    console.log('Autores únicos:', autoresUnicos);
+    
+    // Crear nodos para cada autor
+    const nodes = new vis.DataSet(
+        autoresUnicos.map((autor, index) => ({
+            id: index,
+            label: autor,
+            group: 'author',
+            shape: 'dot',
+            size: 20,
+            color: {
+                background: '#E09900',
+                border: '#b30000',
+                highlight: {
+                    background: '#b30000',
+                    border: '#E09900'
+                }
+            }
+        }))
+    );
+    
+    // Crear edges (conexiones) si quieres mostrar relaciones entre autores
+    const edges = new vis.DataSet([]);
+    
+    // Opciones de visualización
+    const options = {
+        nodes: {
+            font: {
+                size: 16
+            }
+        },
+        physics: {
+            stabilization: true,
+            barnesHut: {
+                gravitationalConstant: -80000,
+                springConstant: 0.001,
+                springLength: 200
+            }
+        }
+    };
+    
+    // Actualizar el network con los nuevos datos
+    try {
+        console.log('Actualizando network con:', {
+            nodos: nodes.length,
+            conexiones: edges.length
+        });
+        
+        network.setData({
+            nodes: nodes,
+            edges: edges
+        });
+        
+        network.setOptions(options);
+        
+        // Fit para mostrar todos los nodos
+        network.fit();
+        
+        console.log('Network actualizado exitosamente');
+    } catch (error) {
+        console.error('Error al actualizar el network:', error);
+    }
+}
+
+function updateNetworkWithWorks() {
+    console.log('Actualizando red con obras');
+    // Aquí va la lógica para mostrar solo las obras
+}
+
+function updateNetworkWithFestivals() {
+    console.log('Actualizando red con festivales');
+    // Aquí va la lógica para mostrar solo los festivales
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1111,6 +1555,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('#search-input');
     if (searchInput) {
         searchInput.addEventListener('input', filtrarObras);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Verificar que los elementos existen
+    const toggleBtn = document.getElementById('toggleVisualizationsBtn');
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    
+    console.log('Toggle button:', toggleBtn); // Verificar si se encuentra el botón
+    console.log('Visualizations section:', visualizationsSection); // Verificar si se encuentra la sección
+    
+    if (toggleBtn && visualizationsSection) {
+        toggleBtn.addEventListener('click', () => {
+            console.log('Botón clickeado');
+            console.log('Estado actual:', visualizationsSection.classList.contains('collapsed'));
+            
+            visualizationsSection.classList.toggle('collapsed');
+            
+            console.log('Nuevo estado:', visualizationsSection.classList.contains('collapsed'));
+            
+            const arrow = toggleBtn.querySelector('.arrow');
+            if (arrow) {
+                arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
+                    ? 'rotate(0deg)' 
+                    : 'rotate(180deg)';
+            }
+
+            if (!visualizationsSection.classList.contains('collapsed')) {
+                if (typeof map !== 'undefined' && map) {
+                    map.invalidateSize();
+                }
+            }
+        });
+        
+        console.log('Event listener añadido correctamente');
+    } else {
+        console.error('No se encontraron los elementos necesarios:', {
+            toggleBtn: !!toggleBtn,
+            visualizationsSection: !!visualizationsSection
+        });
     }
 });
     </script>
