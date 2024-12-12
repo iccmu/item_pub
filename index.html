@@ -1004,76 +1004,80 @@ function ordenarTabla(campo) {
 }
 
 function filtrarObras() {
-    // Obtener todos los valores de filtro
-    const autorFiltro = document.getElementById('busqueda-autor').value.toLowerCase();
-    const obraFiltro = document.getElementById('busqueda-obra').value.toLowerCase();
-    const direccionFiltro = document.getElementById('busqueda-direccion').value.toLowerCase();
-    const companiaFiltro = document.getElementById('busqueda-compania').value.toLowerCase();
-    const festivalesFiltro = document.getElementById('busqueda-festivales').value.toLowerCase();
-    const lugarFiltro = document.getElementById('busqueda-lugar').value.toLowerCase();
-    const busquedaExacta = document.getElementById('busquedaExacta').checked;
-    const fechaInicio = document.getElementById('fechaInicio').value;
-    const fechaFin = document.getElementById('fechaFin').value;
+    if (!Array.isArray(obrasOriginales) || obrasOriginales.length === 0) {
+        console.error('No hay obras originales para filtrar');
+        return;
+    }
 
-    const normalizarTexto = (texto) => {
-        if (!texto) return '';
-        return texto.toString()
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-    };
+    try {
+        const busquedaExacta = document.getElementById('busquedaExacta')?.checked || false;
+        const fechaInicio = document.getElementById('fechaInicio')?.value;
+        const fechaFin = document.getElementById('fechaFin')?.value;
 
-    const coincide = (valor, filtro) => {
-        if (!valor) return false;
-        if (!filtro) return true;
-        
-        const valorNormalizado = normalizarTexto(valor);
-        const filtroNormalizado = normalizarTexto(filtro);
-        
-        return busquedaExacta ? 
-            valorNormalizado === filtroNormalizado :
-            valorNormalizado.includes(filtroNormalizado);
-    };
+        const filtros = [
+            { id: 'busqueda-autor', campo: 'Autor/a' },
+            { id: 'busqueda-obra', campo: 'Obra' },
+            { id: 'busqueda-direccion', campo: 'Dirección' },
+            { id: 'busqueda-compania', campo: 'Compañía' },
+            { id: 'busqueda-festivales', campo: 'Festivales' },
+            { id: 'busqueda-lugar', campo: 'Lugar de estreno' }
+        ].map(f => ({
+            ...f,
+            valor: document.getElementById(f.id)?.value?.toLowerCase().trim() || ''
+        }));
 
-    const obrasFiltradas = obrasOriginales.filter(obra => {
-        const cumpleAutor = !autorFiltro || coincide(obra['Autor/a'], autorFiltro);
-        const cumpleObra = !obraFiltro || coincide(obra['Obra'], obraFiltro);
-        const cumpleDireccion = !direccionFiltro || coincide(obra['Dirección'], direccionFiltro);
-        const cumpleCompania = !companiaFiltro || coincide(obra['Compañía'], companiaFiltro);
-        const cumpleFestivales = !festivalesFiltro || coincide(obra['Festivales'], festivalesFiltro);
-        const cumpleLugar = !lugarFiltro || coincide(obra['Lugar de estreno'], lugarFiltro);
-
-        let cumpleFechas = true;
-        if (fechaInicio || fechaFin) {
-            const fechaObra = obra.fechaFormat ? new Date(obra.fechaFormat.split('-').reverse().join('-')) : null;
-            if (fechaObra) {
-                if (fechaInicio) {
-                    cumpleFechas = cumpleFechas && fechaObra >= new Date(fechaInicio);
+        const obrasFiltradas = obrasOriginales.filter(obra => {
+            // Verificar cada filtro de texto
+            const cumpleFiltrosTexto = filtros.every(({ campo, valor }) => {
+                if (!valor) return true;
+                
+                const valorObra = obra[campo]?.toString().toLowerCase().trim() || '';
+                
+                if (campo === 'Festivales' && valorObra.includes(',')) {
+                    const festivales = valorObra.split(',').map(f => f.trim());
+                    return busquedaExacta 
+                        ? festivales.some(f => f === valor)
+                        : festivales.some(f => f.includes(valor));
                 }
-                if (fechaFin) {
-                    cumpleFechas = cumpleFechas && fechaObra <= new Date(fechaFin);
+
+                return busquedaExacta 
+                    ? valorObra === valor
+                    : valorObra.includes(valor);
+            });
+
+            // Verificar fechas
+            let cumpleFechas = true;
+            if (fechaInicio || fechaFin) {
+                const fechaObra = obra.fechaFormat 
+                    ? new Date(obra.fechaFormat.split('-').reverse().join('-'))
+                    : null;
+
+                if (fechaObra) {
+                    if (fechaInicio) {
+                        cumpleFechas = cumpleFechas && fechaObra >= new Date(fechaInicio);
+                    }
+                    if (fechaFin) {
+                        cumpleFechas = cumpleFechas && fechaObra <= new Date(fechaFin);
+                    }
+                } else {
+                    cumpleFechas = false;
                 }
-            } else {
-                cumpleFechas = false;
             }
-        }
 
-        return cumpleAutor && cumpleObra && cumpleDireccion && 
-               cumpleCompania && cumpleFestivales && cumpleLugar && 
-               cumpleFechas;
-    });
+            return cumpleFiltrosTexto && cumpleFechas;
+        });
 
-    // Actualizar la tabla con las obras filtradas
-    llenarTabla(obrasFiltradas);
-    
-    // Actualizar visualizaciones con las obras filtradas
-    actualizarVisualizaciones(obrasFiltradas);
+        console.log(`Filtrado completado: ${obrasFiltradas.length} obras encontradas`);
+        
+        // Actualizar visualizaciones
+        llenarTabla(obrasFiltradas);
+        actualizarVisualizaciones(obrasFiltradas);
+        actualizarContadores(obrasFiltradas);
+        actualizarListasUnicas(obrasFiltradas);
 
-    // Actualizar contadores con las obras filtradas
-    actualizarContadores(obrasFiltradas);
-    
-    // Actualizar las listas únicas con las obras filtradas
-    actualizarListasUnicas(obrasFiltradas);
+    } catch (error) {
+        console.error('Error al filtrar obras:', error);
+    }
 }
 
 function resetearFiltros() {
@@ -1912,232 +1916,234 @@ function actualizarListasUnicas(obras) {
     document.getElementById('lista-lugares').innerHTML = crearListaHTML(lugaresCount, 'Lugar de estreno');
 }
 
-function mostrarEnGrafo(tipo, valor) {
-    console.log(`Mostrando en grafo: ${tipo} - ${valor}`);
-    
-    // Verificar que network está inicializado
-    if (typeof network === 'undefined' || !network) {
-        console.error('Network no está definido o no está inicializado');
-        return;
-    }
-
-    // Asegurarse de que el visualizationsSection esté visible
-    const visualizationsSection = document.getElementById('visualizationsSection');
-    if (!visualizationsSection) {
-        console.error('visualizationsSection no está definido');
-        return;
-    }
-    if (visualizationsSection.classList.contains('collapsed')) {
-        toggleVisualizations();
-    }
-
-    // Filtrar las obras que coinciden con el tipo y valor seleccionados
-    const obrasFiltradas = obrasOriginales.filter(obra => obra[tipo] === valor);
-    console.log('Obras filtradas:', obrasFiltradas);
-
-    if (obrasFiltradas.length === 0) {
-        console.warn('No se encontraron obras para el tipo y valor especificados');
-        return;
-    }
-
-    try {
-        // Crear nodos para el gráfico
-        const nodes = new vis.DataSet([
-            { 
-                id: 'central', 
-                label: valor,
-                shape: 'star',
-                size: 40,
-                color: {
-                    background: '#E09900',
-                    border: '#b30000'
-                }
-            },
-            ...obrasFiltradas.map((obra, index) => ({
-                id: `obra_${index}`,
-                label: obra.Obra,
-                shape: 'dot',
-                size: 25,
-                color: {
-                    background: '#E09900',
-                    border: '#b30000'
-                },
-                font: {
-                    size: 14
-                }
-            }))
-        ]);
-
-        // Crear conexiones desde el nodo central a cada obra
-        const edges = new vis.DataSet(
-            obrasFiltradas.map((_, index) => ({
-                from: 'central',
-                to: `obra_${index}`,
-                color: {
-                    color: '#E09900',
-                    highlight: '#b30000'
-                },
-                width: 2
-            }))
-        );
-
-        // Actualizar el network con los nuevos datos
-        network.setData({ nodes, edges });
-        network.fit();
-
-    } catch (error) {
-        console.error('Error al actualizar el network:', error);
-    }
-}
-
-function ordenarLista(tipo, criterio) {
-    const listaId = `lista-${tipo}`;
-    const listaElement = document.getElementById(listaId);
-    const items = Array.from(listaElement.getElementsByClassName('lista-item'));
-
-    items.sort((a, b) => {
-        const nombreA = a.querySelector('.item-nombre').textContent;
-        const nombreB = b.querySelector('.item-nombre').textContent;
-        const contadorA = parseInt(a.querySelector('.item-contador').textContent);
-        const contadorB = parseInt(b.querySelector('.item-contador').textContent);
-
-        if (criterio === 'alfabetico') {
-            return nombreA.localeCompare(nombreB);
-        } else if (criterio === 'contador') {
-            return contadorB - contadorA;
-        }
-    });
-
-    listaElement.innerHTML = '';
-    items.forEach(item => listaElement.appendChild(item));
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-    // Inicializar el mapa y network
-    initMap();
-    initNetwork();
-    
-    // Cargar y mostrar los datos
-    obrasOriginales = await obtenerObras();
-    llenarTabla(obrasOriginales);
-    
-    // Inicializar los contadores con todos los datos
-    actualizarContadores(obrasOriginales);
-    actualizarListasUnicas(obrasOriginales);
-
-    // Event listeners para los campos de búsqueda
-    document.getElementById('busqueda-autor').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busqueda-obra').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busqueda-direccion').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busqueda-compania').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busqueda-festivales').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busqueda-lugar').addEventListener('input', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('busquedaExacta').addEventListener('change', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('fechaInicio').addEventListener('change', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('fechaFin').addEventListener('change', () => {
-        filtrarObras();
-        actualizarListasUnicas(obrasOriginales);
-    });
-    document.getElementById('resetFiltros').addEventListener('click', () => {
-        resetearFiltros();
-        actualizarListasUnicas(obrasOriginales);
-    });
-});
-
-// Asegurarse de que el input de búsqueda tenga el evento
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('#search-input');
-    if (searchInput) {
-        searchInput.addEventListener('input', filtrarObras);
-    }
-});
-
-// Modificar la función crearListaHTML para incluir todos los datos relacionados
-const crearListaHTML = (ocurrencias, tipo) => {
-    return Object.entries(ocurrencias)
-        .sort(([a], [b]) => a.localeCompare(b, 'es', {sensitivity: 'base'}))
-        .map(([valor, cantidad]) => {
-            const valorEscapado = escapeHTML(valor);
-            return `
-                <div class="lista-item" 
-                     data-tipo="${escapeHTML(tipo)}" 
-                     data-valor="${valorEscapado}" 
-                     onclick="mostrarDatosRelacionados('${tipo}', '${valorEscapado}')">
-                    <span class="item-nombre">${valorEscapado}</span>
-                    <span class="item-contador">${cantidad}</span>
-                </div>
-            `;
-        }).join('');
-};
-
-// Agregar nueva función para mostrar datos relacionados
 function mostrarDatosRelacionados(tipo, valor) {
     console.log(`Elemento seleccionado - ${tipo}: ${valor}`);
     
-    // Filtrar las obras que coinciden con el tipo y valor seleccionados
     const obrasRelacionadas = obrasOriginales.filter(obra => {
         if (tipo === 'Festivales') {
-            // Para festivales, dividir por comas y buscar coincidencias
             const festivales = obra[tipo]?.split(',').map(f => f.trim()) || [];
             return festivales.includes(valor);
         }
         return obra[tipo] === valor;
     });
 
-    // Crear conjuntos únicos para cada tipo de dato
-    const datosRelacionados = {
-        'Autor/a': new Set(),
-        'Obra': new Set(),
-        'Dirección': new Set(),
-        'Compañía': new Set(),
-        'Festivales': new Set(),
-        'Lugar de estreno': new Set()
+    // Crear el objeto JSON con las estadísticas
+    const datosJSON = {
+        tipo: tipo,
+        valor: valor,
+        total_obras: obrasRelacionadas.length,
+        estadisticas: {
+            num_autores: [...new Set(obrasRelacionadas.map(obra => obra['Autor/a']).filter(Boolean))].length,
+            num_obras: [...new Set(obrasRelacionadas.map(obra => obra['Obra']).filter(Boolean))].length,
+            num_direcciones: [...new Set(obrasRelacionadas.map(obra => obra['Dirección']).filter(Boolean))].length,
+            num_companias: [...new Set(obrasRelacionadas.map(obra => obra['Compañía']).filter(Boolean))].length,
+            num_festivales: [...new Set(obrasRelacionadas.flatMap(obra => 
+                obra['Festivales'] ? obra['Festivales'].split(',').map(f => f.trim()) : []
+            ))].length,
+            num_lugares: [...new Set(obrasRelacionadas.map(obra => obra['Lugar de estreno']).filter(Boolean))].length
+        }
     };
 
-    // Recolectar todos los datos relacionados
-    obrasRelacionadas.forEach(obra => {
-        Object.keys(datosRelacionados).forEach(campo => {
-            if (campo === 'Festivales' && obra[campo]) {
-                // Manejar festivales como lista separada por comas
-                obra[campo].split(',').forEach(festival => {
-                    datosRelacionados[campo].add(festival.trim());
-                });
-            } else if (obra[campo]) {
-                datosRelacionados[campo].add(obra[campo]);
+    // Crear visualización de red simplificada
+    const nodes = new vis.DataSet();
+    const edges = new vis.DataSet();
+
+    // Agregar nodo central
+    nodes.add({
+        id: 'central',
+        label: valor,
+        shape: 'star',
+        size: 45,
+        color: {
+            background: '#E09900',
+            border: '#b30000'
+        },
+        font: { size: 16, bold: true }
+    });
+
+    // Agregar nodos de estadísticas
+    const estadisticas = [
+        { key: 'autores', label: 'Autores', icon: '\uf007' },
+        { key: 'obras', label: 'Obras', icon: '\uf02d' },
+        { key: 'direcciones', label: 'Direcciones', icon: '\uf3c5' },
+        { key: 'companias', label: 'Compañías', icon: '\uf0c0' },
+        { key: 'festivales', label: 'Festivales', icon: '\uf133' },
+        { key: 'lugares', label: 'Lugares', icon: '\uf3c5' }
+    ];
+
+    estadisticas.forEach((stat, index) => {
+        const cantidad = datosJSON.estadisticas[`num_${stat.key}`];
+        if (cantidad > 0) {
+            nodes.add({
+                id: stat.key,
+                label: `${stat.label}\n(${cantidad})`,
+                shape: 'icon',
+                icon: {
+                    face: '"Font Awesome 5 Free"',
+                    code: stat.icon,
+                    size: 30,
+                    color: '#E09900'
+                },
+                font: { size: 14 }
+            });
+
+            edges.add({
+                from: 'central',
+                to: stat.key,
+                length: 200,
+                color: { color: '#E09900', highlight: '#b30000' }
+            });
+        }
+    });
+
+    // Configuración de la visualización
+    const options = {
+        nodes: {
+            font: { size: 16 }
+        },
+        edges: {
+            width: 2,
+            smooth: { type: 'continuous' }
+        },
+        physics: {
+            stabilization: true,
+            barnesHut: {
+                gravitationalConstant: -5000,
+                centralGravity: 0.5,
+                springLength: 150,
+                springConstant: 0.05
             }
+        }
+    };
+
+    // Actualizar el network
+    if (network) {
+        network.setData({ nodes, edges });
+        network.setOptions(options);
+        
+        setTimeout(() => {
+            network.fit({
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }, 500);
+    }
+
+    return datosJSON;
+}
+
+// Función para manejar todos los eventos de búsqueda
+function setupSearchListeners() {
+    // Array con todos los campos de búsqueda
+    const searchFields = [
+        { id: 'busqueda-autor', field: 'Autor/a' },
+        { id: 'busqueda-obra', field: 'Obra' },
+        { id: 'busqueda-direccion', field: 'Dirección' },
+        { id: 'busqueda-compania', field: 'Compañía' },
+        { id: 'busqueda-festivales', field: 'Festivales' },
+        { id: 'busqueda-lugar', field: 'Lugar de estreno' }
+    ];
+
+    // Configurar listener para cada campo
+    searchFields.forEach(({ id, field }) => {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.error(`Elemento de búsqueda no encontrado: ${id}`);
+            return;
+        }
+
+        // Agregar eventos input y change
+        ['input', 'change'].forEach(eventType => {
+            element.addEventListener(eventType, debounce(() => {
+                console.log(`Búsqueda en ${field}: ${element.value}`);
+                filtrarObras();
+            }, 300));
         });
     });
 
-    // Imprimir los datos relacionados
-    console.log('Datos relacionados:');
-    Object.entries(datosRelacionados).forEach(([campo, valores]) => {
-        console.log(`${campo}:`, Array.from(valores));
+    // Configurar listener para fechas
+    ['fechaInicio', 'fechaFin'].forEach(id => {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.error(`Elemento de fecha no encontrado: ${id}`);
+            return;
+        }
+
+        element.addEventListener('change', () => {
+            console.log(`Fecha ${id} cambiada: ${element.value}`);
+            filtrarObras();
+        });
     });
+
+    // Configurar listener para búsqueda exacta
+    const busquedaExacta = document.getElementById('busquedaExacta');
+    if (busquedaExacta) {
+        busquedaExacta.addEventListener('change', () => {
+            console.log(`Búsqueda exacta: ${busquedaExacta.checked}`);
+            filtrarObras();
+        });
+    }
+
+    // Configurar listener para reset
+    const resetBtn = document.getElementById('resetFiltros');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            console.log('Reseteando filtros');
+            resetearFiltros();
+        });
+    }
 }
+
+// Función debounce para optimizar las búsquedas
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Al inicio del archivo, después de las declaraciones de variables globales
+async function inicializarAplicacion() {
+    try {
+        // Cargar los datos
+        obrasOriginales = await obtenerObras();
+        
+        // Inicializar visualizaciones
+        initMap();
+        initNetwork();
+        
+        // Configurar los listeners de búsqueda
+        setupSearchListeners();
+        
+        // Llenar la tabla inicial
+        llenarTabla(obrasOriginales);
+        
+        // Actualizar contadores
+        actualizarContadores(obrasOriginales);
+        
+        // Actualizar listas únicas
+        actualizarListasUnicas(obrasOriginales);
+        
+        // Actualizar visualizaciones
+        actualizarVisualizaciones(obrasOriginales);
+        
+        console.log('Aplicación inicializada correctamente');
+    } catch (error) {
+        console.error('Error al inicializar la aplicación:', error);
+    }
+}
+
+// Agregar el evento DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarAplicacion();
+});
     </script>
 </body>
 </html>
