@@ -1457,7 +1457,7 @@ function initNetwork() {
         { from: 'central', to: 'festivales' }
     ]);
 
-    // Configuración de la visualización
+    // Configuración de la visualizaci��n
     const options = {
         nodes: {
             font: {
@@ -1895,7 +1895,7 @@ function actualizarListasUnicas(obras) {
                     <div class="lista-item" 
                          data-tipo="${escapeHTML(tipo)}" 
                          data-valor="${valorEscapado}" 
-                         onclick="mostrarEnGrafo(this.dataset.tipo, this.dataset.valor)">
+                         onclick="console.log('${tipo}:', '${valorEscapado}')">
                         <span class="item-nombre">${valorEscapado}</span>
                         <span class="item-contador">${cantidad}</span>
                     </div>
