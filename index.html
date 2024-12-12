@@ -351,7 +351,11 @@
         background-color: #E09900;
         color: white;
         padding: 10px 20px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
     .title-content {
@@ -475,6 +479,208 @@
     .stat-item i {
         color: #E09900;
     }
+
+    /* Nuevos estilos para el sidebar */
+    .sidebar {
+        width: 250px;
+        height: calc(100vh - 80px); /* Ajustar altura para que empiece debajo de la barra de título */
+        position: fixed;
+        left: 0;
+        top: 80px; /* Altura de la barra de título */
+        background-color: white;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .main-content {
+        margin-left: 270px; /* Ancho del sidebar + margen */
+        padding: 10px;
+        padding-top: 80px; /* Compensar la altura de la barra de título fija */
+        height: 100vh;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    /* Ajustes para los elementos del buscador en vertical */
+    #buscador {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    #buscador input, 
+    #buscador select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .form-check {
+        margin: 10px 0;
+    }
+
+    #resetFiltros {
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    /* Ajuste para el contenedor principal */
+    .content-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Estilos para las listas únicas */
+    .lista-unicos {
+        height: 200px;
+        overflow-y: auto;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        font-size: 0.9em;
+        line-height: 1.5;
+        scrollbar-width: thin;
+    }
+
+    /* Estilos para el scrollbar en navegadores webkit (Chrome, Safari, etc.) */
+    .lista-unicos::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .lista-unicos::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .lista-unicos::-webkit-scrollbar-thumb {
+        background: #E09900;
+        border-radius: 3px;
+    }
+
+    .lista-unicos::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
+
+    /* Ajustar el espaciado entre los campos de búsqueda y sus listas */
+    #buscador input {
+        margin-bottom: 5px;
+    }
+
+    /* Ajustar el ancho del sidebar para acomodar mejor las listas scrollables */
+    .sidebar {
+        width: 300px; /* Aumentar un poco el ancho del sidebar */
+        padding: 20px;
+    }
+
+    /* Ajustar el margen del contenido principal */
+    .main-content {
+        margin-left: 320px; /* Ajustar según el nuevo ancho del sidebar */
+    }
+
+    /* Estilos para los items de las listas únicas */
+    .lista-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 0;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+
+    .lista-item:nth-child(even) {
+        background-color: #f2f2f2; /* Color de fondo para elementos pares */
+    }
+
+    .lista-item:nth-child(odd) {
+        background-color: #ffffff; /* Color de fondo para elementos impares */
+    }
+
+    .lista-item:last-child {
+        border-bottom: none;
+    }
+
+    .item-nombre {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    .item-contador {
+        background-color: #E09900;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        min-width: 24px;
+        text-align: center;
+    }
+
+    /* Ajustar el estilo de la lista para mejor legibilidad */
+    .lista-unicos {
+        height: 200px;
+        overflow-y: auto;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        font-size: 0.9em;
+        line-height: 1.5;
+        scrollbar-width: thin;
+    }
+
+    .lista-unicos:hover .item-contador {
+        background-color: #b30000;
+    }
+
+    .lista-item:hover {
+        background-color: #e6e6e6; /* Color de fondo al pasar el mouse */
+    }
+
+    .lista-item:active {
+        background-color: #dcdcdc; /* Color de fondo al hacer clic */
+    }
+
+    /* Estilos para la disposición horizontal de búsqueda y botones */
+    .busqueda-con-botones {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+        background-color: #f0f0f0; /* Color de fondo para separar los campos */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .busqueda-con-botones input {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%; /* Asegurar que el input ocupe todo el ancho disponible */
+    }
+
+    .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #333;
+        font-size: 1.2em;
+        padding: 5px;
+        transition: color 0.3s;
+    }
+
+    .icon-btn:hover {
+        color: #E09900;
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -489,9 +695,92 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Nuevo sidebar -->
+    <div class="sidebar">
+        <div id="buscador">
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-autor" class="form-control" placeholder="Buscar por Autor">
+                <button onclick="ordenarLista('autores', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('autores', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-autores" class="lista-unicos"></div>
+            
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-obra" class="form-control" placeholder="Buscar por Obra">
+                <button onclick="ordenarLista('obras', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('obras', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-obras" class="lista-unicos"></div>
+            
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-direccion" class="form-control" placeholder="Buscar por Dirección">
+                <button onclick="ordenarLista('direcciones', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('direcciones', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-direcciones" class="lista-unicos"></div>
+            
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-compania" class="form-control" placeholder="Buscar por Compañía">
+                <button onclick="ordenarLista('companias', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('companias', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-companias" class="lista-unicos"></div>
+            
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-festivales" class="form-control" placeholder="Buscar por Festival">
+                <button onclick="ordenarLista('festivales', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('festivales', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-festivales" class="lista-unicos"></div>
+            
+            <div class="busqueda-con-botones">
+                <input type="text" id="busqueda-lugar" class="form-control" placeholder="Buscar por Lugar">
+                <button onclick="ordenarLista('lugares', 'alfabetico')" class="icon-btn">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </button>
+                <button onclick="ordenarLista('lugares', 'contador')" class="icon-btn">
+                    <i class="fas fa-sort-numeric-down"></i>
+                </button>
+            </div>
+            <div id="lista-lugares" class="lista-unicos"></div>
+            
+            <input type="date" id="fechaInicio" class="form-control" placeholder="Fecha inicio">
+            <input type="date" id="fechaFin" class="form-control" placeholder="Fecha fin">
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="busquedaExacta">
+                <label class="form-check-label" for="busquedaExacta">Búsqueda exacta</label>
+            </div>
+            
+            <button id="resetFiltros" class="btn btn-secondary">
+                <i class="fas fa-undo-alt"></i> Resetear filtros
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenido principal ajustado -->
     <div class="main-content">
         <div class="content-wrapper">
-            <!-- Botón y sección del buscador -->
             <div class="title-bar">
                 <div class="title-content">
                     <img src="PruebaTCE5.png" alt="Logo TCE" class="logo">
@@ -499,39 +788,13 @@
                 </div>
             </div>
 
-            <div id="searchSection" class="search-section">
-                <div class="header-container">
-                    <div id="buscador">
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
-                            <input type="text" id="busqueda-autor" class="form-control" placeholder="Buscar por Autor">
-                            <input type="text" id="busqueda-obra" class="form-control" placeholder="Buscar por Obra">
-                            <input type="text" id="busqueda-direccion" class="form-control" placeholder="Buscar por Dirección">
-                            <input type="text" id="busqueda-compania" class="form-control" placeholder="Buscar por Compañía">
-                            <input type="text" id="busqueda-festivales" class="form-control" placeholder="Buscar por Festival">
-                            <input type="text" id="busqueda-lugar" class="form-control" placeholder="Buscar por Lugar">
-                            
-                            <input type="date" id="fechaInicio" class="form-control" placeholder="Fecha inicio">
-                            <input type="date" id="fechaFin" class="form-control" placeholder="Fecha fin">
-                            
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="busquedaExacta">
-                                <label class="form-check-label" for="busquedaExacta">Búsqueda exacta</label>
-                            </div>
-                            
-                            <button id="resetFiltros" class="btn btn-secondary">
-                                <i class="fas fa-undo-alt"></i> Resetear filtros
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div id="estadisticas" class="estadisticas-container">
-                <button id="toggleVisualizationsBtn" class="toggle-btn" onclick="toggleVisualizations()">
+                <!-- Eliminar el botón de toggle de visualizaciones -->
+                <!-- <button id="toggleVisualizationsBtn" class="toggle-btn" onclick="toggleVisualizations()">
                     <i class="fas fa-map-marked-alt"></i>
                     <i class="fas fa-project-diagram"></i>
                     <span class="arrow">▼</span>
-                </button>
+                </button> -->
                 
                 <div class="stats-group">
                     <div class="stat-item" onclick="showAuthors()">
@@ -549,13 +812,13 @@
                 </div>
             </div>
 
-            <div id="visualizationsSection" class="visualizations-section collapsed">
+            <div id="visualizationsSection" class="visualizations-section">
                 <div class="visualizations-container">
-                    <div id="map-container">
-                        <div id="map"></div>
-                    </div>
                     <div id="network-container">
                         <div id="network"></div>
+                    </div>
+                    <div id="map-container">
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -771,10 +1034,15 @@ function filtrarObras() {
 
     // Actualizar la tabla con las obras filtradas
     llenarTabla(obrasFiltradas);
+    
+    // Actualizar visualizaciones con las obras filtradas
     actualizarVisualizaciones(obrasFiltradas);
 
-    // Actualizar contadores usando la nueva función
+    // Actualizar contadores con las obras filtradas
     actualizarContadores(obrasFiltradas);
+    
+    // Actualizar las listas únicas con las obras filtradas
+    actualizarListasUnicas(obrasFiltradas);
 }
 
 function resetearFiltros() {
@@ -901,6 +1169,11 @@ function initMap() {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
+
+    // Llama a invalidateSize para asegurarte de que el mapa se renderiza correctamente
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 100);
 }
 
 function createNetworkData(obra) {
@@ -1357,29 +1630,29 @@ function actualizarContadores(obrasData) {
 }
 
 // Definir la función globalmente antes de cualquier otro código JavaScript
-window.toggleVisualizations = function() {
-    console.log('Función toggleVisualizations llamada'); // Debug
-    
-    const visualizationsSection = document.getElementById('visualizationsSection');
-    const toggleBtn = document.getElementById('toggleVisualizationsBtn');
-    const arrow = toggleBtn.querySelector('.arrow');
-    
-    console.log('Estado actual:', visualizationsSection.classList.contains('collapsed')); // Debug
-    
-    visualizationsSection.classList.toggle('collapsed');
-    
-    // Rotar la flecha
-    arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
-        ? 'rotate(0deg)' 
-        : 'rotate(180deg)';
-    
-    // Si las visualizaciones están visibles, actualizar el mapa
-    if (!visualizationsSection.classList.contains('collapsed')) {
-        if (typeof map !== 'undefined' && map) {
-            map.invalidateSize();
-        }
-    }
-}
+// window.toggleVisualizations = function() {
+//     console.log('Función toggleVisualizations llamada'); // Debug
+//     
+//     const visualizationsSection = document.getElementById('visualizationsSection');
+//     const toggleBtn = document.getElementById('toggleVisualizationsBtn');
+//     const arrow = toggleBtn.querySelector('.arrow');
+//     
+//     console.log('Estado actual:', visualizationsSection.classList.contains('collapsed')); // Debug
+//     
+//     visualizationsSection.classList.toggle('collapsed');
+//     
+//     // Rotar la flecha
+//     arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
+//         ? 'rotate(0deg)' 
+//         : 'rotate(180deg)';
+//     
+//     // Si las visualizaciones están visibles, actualizar el mapa
+//     if (!visualizationsSection.classList.contains('collapsed')) {
+//         if (typeof map !== 'undefined' && map) {
+//             map.invalidateSize();
+//         }
+//     }
+// };
 
 // Definir las funciones en el scope global (window)
 window.showAuthors = function() {
@@ -1507,6 +1780,180 @@ function updateNetworkWithFestivals() {
     // Aquí va la lógica para mostrar solo los festivales
 }
 
+// Función auxiliar para contar ocurrencias
+function contarOcurrencias(array, campo) {
+    return array.reduce((acc, item) => {
+        const valor = item[campo];
+        if (valor) {
+            // Si el campo es 'Festivales', dividir por comas y contar cada festival
+            if (campo === 'Festivales' && valor.includes(',')) {
+                valor.split(',').forEach(festival => {
+                    const festivalTrim = festival.trim();
+                    acc[festivalTrim] = (acc[festivalTrim] || 0) + 1;
+                });
+            } else {
+                acc[valor] = (acc[valor] || 0) + 1;
+            }
+        }
+        return acc;
+    }, {});
+}
+
+function actualizarListasUnicas(obras) {
+    // Función auxiliar para escapar caracteres especiales
+    const escapeHTML = (str) => {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    };
+
+    // Función para crear el HTML de cada lista
+    const crearListaHTML = (ocurrencias, tipo) => {
+        return Object.entries(ocurrencias)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([valor, cantidad]) => {
+                const valorEscapado = escapeHTML(valor);
+                return `
+                    <div class="lista-item" 
+                         data-tipo="${escapeHTML(tipo)}" 
+                         data-valor="${valorEscapado}" 
+                         onclick="mostrarEnGrafo(this.dataset.tipo, this.dataset.valor)">
+                        <span class="item-nombre">${valorEscapado}</span>
+                        <span class="item-contador">${cantidad}</span>
+                    </div>
+                `;
+            }).join('');
+    };
+
+    // Contar ocurrencias para cada campo
+    const autoresCount = contarOcurrencias(obras, 'Autor/a');
+    const obrasCount = contarOcurrencias(obras, 'Obra');
+    const direccionesCount = contarOcurrencias(obras, 'Dirección');
+    const companiasCount = contarOcurrencias(obras, 'Compañía');
+    const festivalesCount = contarOcurrencias(obras, 'Festivales');
+    const lugaresCount = contarOcurrencias(obras, 'Lugar de estreno');
+
+    // Actualizar el contenido de cada lista
+    document.getElementById('lista-autores').innerHTML = crearListaHTML(autoresCount, 'Autor/a');
+    document.getElementById('lista-obras').innerHTML = crearListaHTML(obrasCount, 'Obra');
+    document.getElementById('lista-direcciones').innerHTML = crearListaHTML(direccionesCount, 'Dirección');
+    document.getElementById('lista-companias').innerHTML = crearListaHTML(companiasCount, 'Compañía');
+    document.getElementById('lista-festivales').innerHTML = crearListaHTML(festivalesCount, 'Festivales');
+    document.getElementById('lista-lugares').innerHTML = crearListaHTML(lugaresCount, 'Lugar de estreno');
+
+    // Añadir event listeners después de crear los elementos
+    document.querySelectorAll('.lista-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const tipo = this.dataset.tipo;
+            const valor = this.dataset.valor;
+            mostrarEnGrafo(tipo, valor);
+        });
+    });
+}
+
+function mostrarEnGrafo(tipo, valor) {
+    console.log(`Mostrando en grafo: ${tipo} - ${valor}`);
+    
+    // Verificar que network está inicializado
+    if (typeof network === 'undefined' || !network) {
+        console.error('Network no está definido o no está inicializado');
+        return;
+    }
+
+    // Asegurarse de que el visualizationsSection esté visible
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    if (!visualizationsSection) {
+        console.error('visualizationsSection no está definido');
+        return;
+    }
+    if (visualizationsSection.classList.contains('collapsed')) {
+        toggleVisualizations();
+    }
+
+    // Filtrar las obras que coinciden con el tipo y valor seleccionados
+    const obrasFiltradas = obrasOriginales.filter(obra => obra[tipo] === valor);
+    console.log('Obras filtradas:', obrasFiltradas);
+
+    if (obrasFiltradas.length === 0) {
+        console.warn('No se encontraron obras para el tipo y valor especificados');
+        return;
+    }
+
+    try {
+        // Crear nodos para el gráfico
+        const nodes = new vis.DataSet([
+            { 
+                id: 'central', 
+                label: valor,
+                shape: 'star',
+                size: 40,
+                color: {
+                    background: '#E09900',
+                    border: '#b30000'
+                }
+            },
+            ...obrasFiltradas.map((obra, index) => ({
+                id: `obra_${index}`,
+                label: obra.Obra,
+                shape: 'dot',
+                size: 25,
+                color: {
+                    background: '#E09900',
+                    border: '#b30000'
+                },
+                font: {
+                    size: 14
+                }
+            }))
+        ]);
+
+        // Crear conexiones desde el nodo central a cada obra
+        const edges = new vis.DataSet(
+            obrasFiltradas.map((_, index) => ({
+                from: 'central',
+                to: `obra_${index}`,
+                color: {
+                    color: '#E09900',
+                    highlight: '#b30000'
+                },
+                width: 2
+            }))
+        );
+
+        // Actualizar el network con los nuevos datos
+        network.setData({ nodes, edges });
+        network.fit();
+
+    } catch (error) {
+        console.error('Error al actualizar el network:', error);
+    }
+}
+
+function ordenarLista(tipo, criterio) {
+    const listaId = `lista-${tipo}`;
+    const listaElement = document.getElementById(listaId);
+    const items = Array.from(listaElement.getElementsByClassName('lista-item'));
+
+    items.sort((a, b) => {
+        const nombreA = a.querySelector('.item-nombre').textContent;
+        const nombreB = b.querySelector('.item-nombre').textContent;
+        const contadorA = parseInt(a.querySelector('.item-contador').textContent);
+        const contadorB = parseInt(b.querySelector('.item-contador').textContent);
+
+        if (criterio === 'alfabetico') {
+            return nombreA.localeCompare(nombreB);
+        } else if (criterio === 'contador') {
+            return contadorB - contadorA;
+        }
+    });
+
+    listaElement.innerHTML = '';
+    items.forEach(item => listaElement.appendChild(item));
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     // Inicializar el mapa y network
     initMap();
@@ -1518,36 +1965,49 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Inicializar los contadores con todos los datos
     actualizarContadores(obrasOriginales);
+    actualizarListasUnicas(obrasOriginales);
 
-    // Actualizar el event listener del botón de visualizaciones
-    const toggleVisualizationsBtn = document.getElementById('toggleVisualizationsBtn');
-    const visualizationsSection = document.getElementById('visualizationsSection');
-
-    toggleVisualizationsBtn.addEventListener('click', () => {
-        visualizationsSection.classList.toggle('collapsed');
-        
-        const arrow = toggleVisualizationsBtn.querySelector('.arrow');
-        arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
-            ? 'rotate(0deg)' 
-            : 'rotate(180deg)';
-
-        if (!visualizationsSection.classList.contains('collapsed')) {
-            if (map) map.invalidateSize();
-            // No actualizar el network aquí
-        }
+    // Event listeners para los campos de búsqueda
+    document.getElementById('busqueda-autor').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
     });
-
-    // Actualizar los event listeners para los nuevos campos
-    document.getElementById('busqueda-autor').addEventListener('input', filtrarObras);
-    document.getElementById('busqueda-obra').addEventListener('input', filtrarObras);
-    document.getElementById('busqueda-direccion').addEventListener('input', filtrarObras);
-    document.getElementById('busqueda-compania').addEventListener('input', filtrarObras);
-    document.getElementById('busqueda-festivales').addEventListener('input', filtrarObras);
-    document.getElementById('busquedaExacta').addEventListener('change', filtrarObras);
-    document.getElementById('fechaInicio').addEventListener('change', filtrarObras);
-    document.getElementById('fechaFin').addEventListener('change', filtrarObras);
-    document.getElementById('resetFiltros').addEventListener('click', resetearFiltros);
-    document.getElementById('busqueda-lugar').addEventListener('input', filtrarObras);
+    document.getElementById('busqueda-obra').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('busqueda-direccion').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('busqueda-compania').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('busqueda-festivales').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('busqueda-lugar').addEventListener('input', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('busquedaExacta').addEventListener('change', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('fechaInicio').addEventListener('change', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('fechaFin').addEventListener('change', () => {
+        filtrarObras();
+        actualizarListasUnicas(obrasOriginales);
+    });
+    document.getElementById('resetFiltros').addEventListener('click', () => {
+        resetearFiltros();
+        actualizarListasUnicas(obrasOriginales);
+    });
 });
 
 // Asegurarse de que el input de búsqueda tenga el evento
@@ -1555,46 +2015,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('#search-input');
     if (searchInput) {
         searchInput.addEventListener('input', filtrarObras);
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Verificar que los elementos existen
-    const toggleBtn = document.getElementById('toggleVisualizationsBtn');
-    const visualizationsSection = document.getElementById('visualizationsSection');
-    
-    console.log('Toggle button:', toggleBtn); // Verificar si se encuentra el botón
-    console.log('Visualizations section:', visualizationsSection); // Verificar si se encuentra la sección
-    
-    if (toggleBtn && visualizationsSection) {
-        toggleBtn.addEventListener('click', () => {
-            console.log('Botón clickeado');
-            console.log('Estado actual:', visualizationsSection.classList.contains('collapsed'));
-            
-            visualizationsSection.classList.toggle('collapsed');
-            
-            console.log('Nuevo estado:', visualizationsSection.classList.contains('collapsed'));
-            
-            const arrow = toggleBtn.querySelector('.arrow');
-            if (arrow) {
-                arrow.style.transform = visualizationsSection.classList.contains('collapsed') 
-                    ? 'rotate(0deg)' 
-                    : 'rotate(180deg)';
-            }
-
-            if (!visualizationsSection.classList.contains('collapsed')) {
-                if (typeof map !== 'undefined' && map) {
-                    map.invalidateSize();
-                }
-            }
-        });
-        
-        console.log('Event listener añadido correctamente');
-    } else {
-        console.error('No se encontraron los elementos necesarios:', {
-            toggleBtn: !!toggleBtn,
-            visualizationsSection: !!visualizationsSection
-        });
     }
 });
     </script>
