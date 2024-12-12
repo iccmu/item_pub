@@ -1457,7 +1457,7 @@ function initNetwork() {
         { from: 'central', to: 'festivales' }
     ]);
 
-    // Configuración de la visualizaci��n
+    // Configuración de la visualización
     const options = {
         nodes: {
             font: {
@@ -1895,7 +1895,7 @@ function actualizarListasUnicas(obras) {
                     <div class="lista-item" 
                          data-tipo="${escapeHTML(tipo)}" 
                          data-valor="${valorEscapado}" 
-                         onclick="console.log('${tipo}:', '${valorEscapado}')">
+                         onclick="mostrarDatosRelacionados('${tipo}', '${valorEscapado}')">
                         <span class="item-nombre">${valorEscapado}</span>
                         <span class="item-contador">${cantidad}</span>
                     </div>
@@ -2075,6 +2075,69 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', filtrarObras);
     }
 });
+
+// Modificar la función crearListaHTML para incluir todos los datos relacionados
+const crearListaHTML = (ocurrencias, tipo) => {
+    return Object.entries(ocurrencias)
+        .sort(([a], [b]) => a.localeCompare(b, 'es', {sensitivity: 'base'}))
+        .map(([valor, cantidad]) => {
+            const valorEscapado = escapeHTML(valor);
+            return `
+                <div class="lista-item" 
+                     data-tipo="${escapeHTML(tipo)}" 
+                     data-valor="${valorEscapado}" 
+                     onclick="mostrarDatosRelacionados('${tipo}', '${valorEscapado}')">
+                    <span class="item-nombre">${valorEscapado}</span>
+                    <span class="item-contador">${cantidad}</span>
+                </div>
+            `;
+        }).join('');
+};
+
+// Agregar nueva función para mostrar datos relacionados
+function mostrarDatosRelacionados(tipo, valor) {
+    console.log(`Elemento seleccionado - ${tipo}: ${valor}`);
+    
+    // Filtrar las obras que coinciden con el tipo y valor seleccionados
+    const obrasRelacionadas = obrasOriginales.filter(obra => {
+        if (tipo === 'Festivales') {
+            // Para festivales, dividir por comas y buscar coincidencias
+            const festivales = obra[tipo]?.split(',').map(f => f.trim()) || [];
+            return festivales.includes(valor);
+        }
+        return obra[tipo] === valor;
+    });
+
+    // Crear conjuntos únicos para cada tipo de dato
+    const datosRelacionados = {
+        'Autor/a': new Set(),
+        'Obra': new Set(),
+        'Dirección': new Set(),
+        'Compañía': new Set(),
+        'Festivales': new Set(),
+        'Lugar de estreno': new Set()
+    };
+
+    // Recolectar todos los datos relacionados
+    obrasRelacionadas.forEach(obra => {
+        Object.keys(datosRelacionados).forEach(campo => {
+            if (campo === 'Festivales' && obra[campo]) {
+                // Manejar festivales como lista separada por comas
+                obra[campo].split(',').forEach(festival => {
+                    datosRelacionados[campo].add(festival.trim());
+                });
+            } else if (obra[campo]) {
+                datosRelacionados[campo].add(obra[campo]);
+            }
+        });
+    });
+
+    // Imprimir los datos relacionados
+    console.log('Datos relacionados:');
+    Object.entries(datosRelacionados).forEach(([campo, valores]) => {
+        console.log(`${campo}:`, Array.from(valores));
+    });
+}
     </script>
 </body>
 </html>
