@@ -1492,6 +1492,14 @@ function initNetwork() {
     // Crear el network
     network = new vis.Network(container, { nodes, edges }, options);
 
+    // Agregar el evento de doble clic
+    network.on('doubleClick', function(params) {
+        if (params.nodes.length > 0) {
+            const nodeId = params.nodes[0];
+            console.log('Doble clic en el nodo:', nodeId);
+        }
+    });
+
     // Manejar eventos de clic en los nodos
     network.on('click', function(params) {
         if (params.nodes.length > 0) {
