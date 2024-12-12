@@ -482,21 +482,23 @@
 
     /* Nuevos estilos para el sidebar */
     .sidebar {
-        width: 250px;
-        height: calc(100vh - 80px); /* Ajustar altura para que empiece debajo de la barra de título */
+        width: 300px;
+        height: calc(100vh - 80px);
         position: fixed;
         left: 0;
-        top: 80px; /* Altura de la barra de título */
+        top: 80px;
         background-color: white;
         box-shadow: 2px 0 5px rgba(0,0,0,0.1);
         padding: 20px;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .main-content {
-        margin-left: 270px; /* Ancho del sidebar + margen */
+        margin-left: 270px;
         padding: 10px;
-        padding-top: 80px; /* Compensar la altura de la barra de título fija */
+        padding-top: 80px;
         height: 100vh;
         box-sizing: border-box;
         overflow-y: auto;
@@ -506,7 +508,7 @@
     #buscador {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         margin: 0;
         padding: 0;
         background: none;
@@ -540,15 +542,18 @@
     /* Estilos para las listas únicas */
     .lista-unicos {
         height: 200px;
+        min-height: 200px;
+        max-height: 200px;
         overflow-y: auto;
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #f8f9fa;
+        margin: 0;
+        padding: 5px;
+        background-color: #ffffff;
         border: 1px solid #dee2e6;
         border-radius: 4px;
         font-size: 0.9em;
         line-height: 1.5;
         scrollbar-width: thin;
+        flex: 0 0 auto;
     }
 
     /* Estilos para el scrollbar en navegadores webkit (Chrome, Safari, etc.) */
@@ -577,13 +582,13 @@
 
     /* Ajustar el ancho del sidebar para acomodar mejor las listas scrollables */
     .sidebar {
-        width: 300px; /* Aumentar un poco el ancho del sidebar */
+        width: 300px;
         padding: 20px;
     }
 
     /* Ajustar el margen del contenido principal */
     .main-content {
-        margin-left: 320px; /* Ajustar según el nuevo ancho del sidebar */
+        margin-left: 320px;
     }
 
     /* Estilos para los items de las listas únicas */
@@ -597,11 +602,11 @@
     }
 
     .lista-item:nth-child(even) {
-        background-color: #f2f2f2; /* Color de fondo para elementos pares */
+        background-color: #f2f2f2;
     }
 
     .lista-item:nth-child(odd) {
-        background-color: #ffffff; /* Color de fondo para elementos impares */
+        background-color: #ffffff;
     }
 
     .lista-item:last-child {
@@ -642,11 +647,11 @@
     }
 
     .lista-item:hover {
-        background-color: #e6e6e6; /* Color de fondo al pasar el mouse */
+        background-color: #e6e6e6;
     }
 
     .lista-item:active {
-        background-color: #dcdcdc; /* Color de fondo al hacer clic */
+        background-color: #dcdcdc;
     }
 
     /* Estilos para la disposición horizontal de búsqueda y botones */
@@ -654,10 +659,11 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        margin-bottom: 10px;
-        background-color: #f0f0f0; /* Color de fondo para separar los campos */
-        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #f0f0f0;
+        padding: 8px;
         border-radius: 5px;
+        flex: 0 0 auto;
     }
 
     .busqueda-con-botones input {
@@ -665,7 +671,7 @@
         padding: 8px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        width: 100%; /* Asegurar que el input ocupe todo el ancho disponible */
+        width: 100%;
     }
 
     .icon-btn {
@@ -680,6 +686,33 @@
 
     .icon-btn:hover {
         color: #E09900;
+    }
+
+    /* Nuevo contenedor para cada grupo de búsqueda */
+    .grupo-busqueda {
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .grupo-busqueda:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Ajustar el espaciado del input y botones */
+    .busqueda-con-botones {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 2px;
+        background-color: #f8f9fa;
+        padding: 5px;
+        border-radius: 4px;
+        flex: 0 0 auto;
     }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
@@ -987,23 +1020,22 @@ function filtrarObras() {
         return texto.toString()
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, ""); // Elimina diacríticos
+            .replace(/[\u0300-\u036f]/g, "");
     };
 
     const coincide = (valor, filtro) => {
         if (!valor) return false;
-        if (!filtro) return true; // Si no hay filtro, devuelve true
+        if (!filtro) return true;
         
         const valorNormalizado = normalizarTexto(valor);
         const filtroNormalizado = normalizarTexto(filtro);
         
         return busquedaExacta ? 
-            valorNormalizado === filtroNormalizado : // Búsqueda exacta
-            valorNormalizado.includes(filtroNormalizado); // Búsqueda parcial
+            valorNormalizado === filtroNormalizado :
+            valorNormalizado.includes(filtroNormalizado);
     };
 
     const obrasFiltradas = obrasOriginales.filter(obra => {
-        // Verificar cada criterio de filtro
         const cumpleAutor = !autorFiltro || coincide(obra['Autor/a'], autorFiltro);
         const cumpleObra = !obraFiltro || coincide(obra['Obra'], obraFiltro);
         const cumpleDireccion = !direccionFiltro || coincide(obra['Dirección'], direccionFiltro);
@@ -1011,7 +1043,6 @@ function filtrarObras() {
         const cumpleFestivales = !festivalesFiltro || coincide(obra['Festivales'], festivalesFiltro);
         const cumpleLugar = !lugarFiltro || coincide(obra['Lugar de estreno'], lugarFiltro);
 
-        // Verificar fechas si están establecidas
         let cumpleFechas = true;
         if (fechaInicio || fechaFin) {
             const fechaObra = obra.fechaFormat ? new Date(obra.fechaFormat.split('-').reverse().join('-')) : null;
@@ -1799,21 +1830,65 @@ function contarOcurrencias(array, campo) {
     }, {});
 }
 
+// Función para escapar caracteres especiales en HTML
+function escapeHTML(str) {
+    if (!str) return '';
+    return str
+        .toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 function actualizarListasUnicas(obras) {
-    // Función auxiliar para escapar caracteres especiales
-    const escapeHTML = (str) => {
-        return str
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+    // Obtener los valores de búsqueda actuales
+    const autorBusqueda = document.getElementById('busqueda-autor').value.toLowerCase();
+    const obraBusqueda = document.getElementById('busqueda-obra').value.toLowerCase();
+    const direccionBusqueda = document.getElementById('busqueda-direccion').value.toLowerCase();
+    const companiaBusqueda = document.getElementById('busqueda-compania').value.toLowerCase();
+    const festivalesBusqueda = document.getElementById('busqueda-festivales').value.toLowerCase();
+    const lugarBusqueda = document.getElementById('busqueda-lugar').value.toLowerCase();
+
+    // Función para normalizar texto (eliminar tildes y convertir a minúsculas)
+    const normalizarTexto = (texto) => {
+        if (!texto) return '';
+        return texto.toString()
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
     };
+
+    // Función de coincidencia mejorada
+    const coincide = (valor, busqueda) => {
+        if (!busqueda) return true;
+        if (!valor) return false;
+        return normalizarTexto(valor).includes(normalizarTexto(busqueda));
+    };
+
+    // Filtrar las obras según todos los criterios de búsqueda
+    const obrasFiltradas = obras.filter(obra => {
+        return coincide(obra['Autor/a'], autorBusqueda) &&
+               coincide(obra['Obra'], obraBusqueda) &&
+               coincide(obra['Dirección'], direccionBusqueda) &&
+               coincide(obra['Compañía'], companiaBusqueda) &&
+               coincide(obra['Festivales'], festivalesBusqueda) &&
+               coincide(obra['Lugar de estreno'], lugarBusqueda);
+    });
+
+    // Contar ocurrencias usando las obras ya filtradas
+    const autoresCount = contarOcurrencias(obrasFiltradas, 'Autor/a');
+    const obrasCount = contarOcurrencias(obrasFiltradas, 'Obra');
+    const direccionesCount = contarOcurrencias(obrasFiltradas, 'Dirección');
+    const companiasCount = contarOcurrencias(obrasFiltradas, 'Compañía');
+    const festivalesCount = contarOcurrencias(obrasFiltradas, 'Festivales');
+    const lugaresCount = contarOcurrencias(obrasFiltradas, 'Lugar de estreno');
 
     // Función para crear el HTML de cada lista
     const crearListaHTML = (ocurrencias, tipo) => {
         return Object.entries(ocurrencias)
-            .sort(([a], [b]) => a.localeCompare(b))
+            .sort(([a], [b]) => a.localeCompare(b, 'es', {sensitivity: 'base'}))
             .map(([valor, cantidad]) => {
                 const valorEscapado = escapeHTML(valor);
                 return `
@@ -1828,14 +1903,6 @@ function actualizarListasUnicas(obras) {
             }).join('');
     };
 
-    // Contar ocurrencias para cada campo
-    const autoresCount = contarOcurrencias(obras, 'Autor/a');
-    const obrasCount = contarOcurrencias(obras, 'Obra');
-    const direccionesCount = contarOcurrencias(obras, 'Dirección');
-    const companiasCount = contarOcurrencias(obras, 'Compañía');
-    const festivalesCount = contarOcurrencias(obras, 'Festivales');
-    const lugaresCount = contarOcurrencias(obras, 'Lugar de estreno');
-
     // Actualizar el contenido de cada lista
     document.getElementById('lista-autores').innerHTML = crearListaHTML(autoresCount, 'Autor/a');
     document.getElementById('lista-obras').innerHTML = crearListaHTML(obrasCount, 'Obra');
@@ -1843,15 +1910,6 @@ function actualizarListasUnicas(obras) {
     document.getElementById('lista-companias').innerHTML = crearListaHTML(companiasCount, 'Compañía');
     document.getElementById('lista-festivales').innerHTML = crearListaHTML(festivalesCount, 'Festivales');
     document.getElementById('lista-lugares').innerHTML = crearListaHTML(lugaresCount, 'Lugar de estreno');
-
-    // Añadir event listeners después de crear los elementos
-    document.querySelectorAll('.lista-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const tipo = this.dataset.tipo;
-            const valor = this.dataset.valor;
-            mostrarEnGrafo(tipo, valor);
-        });
-    });
 }
 
 function mostrarEnGrafo(tipo, valor) {
