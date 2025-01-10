@@ -1639,7 +1639,7 @@ function initNetwork() {
             const nodeId = params.nodes[0];
             switch(nodeId) {
                 case 'autores':
-                    showAuthors();
+                    // No hacer nada cuando se hace clic en 'autores'
                     break;
                 case 'obras':
                     showWorks();
@@ -1657,114 +1657,21 @@ function initNetwork() {
 
 // Funciones para manejar los clics en los nodos
 function showAuthors() {
-    console.log('Mostrando autores');
+    console.log('Iniciando showAuthors');
     
-    // Obtener los autores de la tabla actual
-    const tabla = document.getElementById('tabla-obras');
-    const filas = tabla.getElementsByTagName('tr');
-    const autores = [];
-    
-    // Empezar desde 1 para saltar la fila de encabezados
-    for (let i = 1; i < filas.length; i++) {
-        const autorCell = filas[i].cells[0]; // La columna de autores es la primera
-        if (autorCell) {
-            const autor = autorCell.textContent.trim();
-            if (autor) {
-                autores.push(autor);
-            }
-        }
+    // Asegurarse de que el visualizationsSection esté visible
+    const visualizationsSection = document.getElementById('visualizationsSection');
+    if (visualizationsSection.classList.contains('collapsed')) {
+        toggleVisualizations();
     }
     
-    // Obtener autores únicos
-    const autoresUnicos = [...new Set(autores)];
-    console.log('Autores únicos encontrados en la tabla:', autoresUnicos);
-
-    // Crear nodos
-    const nodes = new vis.DataSet([
-        // Nodo central
-        { 
-            id: 'central', 
-            label: 'TCE-SXXI',
-            shape: 'star',
-            size: 40,
-            color: {
-                background: '#E09900',
-                border: '#b30000'
-            }
-        },
-        // Nodos de autores
-        ...autoresUnicos.map((autor, index) => ({
-            id: `autor_${index}`,
-            label: autor,
-            shape: 'dot',
-            size: 25,
-            color: {
-                background: '#E09900',
-                border: '#b30000'
-            },
-            font: {
-                size: 14
-            }
-        }))
-    ]);
-
-    // Crear conexiones desde el nodo central a cada autor
-    const edges = new vis.DataSet(
-        autoresUnicos.map((_, index) => ({
-            from: 'central',
-            to: `autor_${index}`,
-            color: {
-                color: '#E09900',
-                highlight: '#b30000'
-            },
-            width: 2
-        }))
-    );
-
-    // Configurar opciones de visualización
-    const options = {
-        nodes: {
-            font: {
-                size: 16
-            }
-        },
-        physics: {
-            enabled: true,
-            barnesHut: {
-                gravitationalConstant: -3000,
-                centralGravity: 0.3,
-                springLength: 150,
-                springConstant: 0.04
-            },
-            stabilization: {
-                iterations: 2000
-            }
-        }
-    };
-
-    try {
-        console.log('Actualizando network con:', {
-            numeroDeAutores: autoresUnicos.length,
-            autores: autoresUnicos
-        });
-
-        // Actualizar el network
-        network.setData({ nodes, edges });
-        network.setOptions(options);
-        
-        // Esperar un momento y ajustar la vista
-        setTimeout(() => {
-            network.fit({
-                animation: {
-                    duration: 1000,
-                    easingFunction: 'easeInOutQuad'
-                }
-            });
-        }, 500);
-
-        console.log('Network actualizado exitosamente');
-    } catch (error) {
-        console.error('Error al actualizar el network:', error);
+    // Verificar que network existe y está inicializado
+    if (typeof network !== 'undefined' && network) {
+        console.log('Network encontrado, manteniendo vista actual');
+        // No hacer nada cuando se hace clic en el nodo 'Autor'
+        return; // Simplemente retornamos sin hacer cambios
+    } else {
+        console.error('Network no está definido');
     }
 }
 
@@ -2057,12 +1964,15 @@ function actualizarListasUnicas(obras) {
     document.getElementById('lista-lugares').innerHTML = crearListaHTML(lugaresCount, 'Lugar de estreno');
 }
 
-function typewriterEffect(element, text, speed = 50) {
+function typewriterEffect(element, text, baseSpeed = 50) {
     let i = 0;
     element.value = ''; // Limpiar el campo primero
     
     function type() {
         if (i < text.length) {
+            // Reducir la velocidad a la mitad cuando el texto supere los 20 caracteres
+            const speed = text.length > 20 ? baseSpeed / 2 : baseSpeed;
+            
             element.value += text.charAt(i);
             i++;
             setTimeout(type, speed);
