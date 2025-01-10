@@ -714,6 +714,38 @@
         border-radius: 4px;
         flex: 0 0 auto;
     }
+
+    /* Agregar estos estilos */
+    .filtros-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .form-check {
+        margin: 0;  /* Eliminar el margen que tenía antes */
+    }
+
+    #resetFiltros {
+        margin: 0;  /* Eliminar el margen que tenía antes */
+    }
+
+    /* Ajustar el sidebar para usar flexbox */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        /* ... resto de propiedades existentes ... */
+    }
+
+    #buscador {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /* ... resto de propiedades existentes ... */
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -800,12 +832,19 @@
             <input type="date" id="fechaInicio" class="form-control" placeholder="Fecha inicio">
             <input type="date" id="fechaFin" class="form-control" placeholder="Fecha fin">
             
+            <!-- Quitar el checkbox y botón reset de aquí -->
+            
+            <!-- ... resto de campos de búsqueda y listas ... -->
+        </div>
+        
+        <!-- Agregar el nuevo footer fuera del buscador -->
+        <div class="filtros-footer">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="busquedaExacta">
                 <label class="form-check-label" for="busquedaExacta">Búsqueda exacta</label>
             </div>
             
-            <button id="resetFiltros" class="btn btn-secondary">
+            <button id="resetFiltros" class="reset-btn">
                 <i class="fas fa-undo-alt"></i> Resetear filtros
             </button>
         </div>
@@ -1308,8 +1347,10 @@ function actualizarMarcadores(obrasData) {
                         Fecha: ${obra['Fecha de estreno']}<br>
                         Lugar: ${obra['Lugar de estreno']}
                         <br>
-                        <button class="ver-grafo" onclick="mostrarEnGrafo('${obra.id}')">
-                            Ver en grafo
+                        <button class="ver-grafo" onclick="window.open('https://www.google.com/search?q=${encodeURIComponent(
+                            `${obra.Obra} ${obra['Autor/a']} ${obra['Fecha de estreno']} ${obra['Lugar de estreno']}`
+                        )}', '_blank')">
+                            Buscar en Google
                         </button>
                     </div>
                 `);
