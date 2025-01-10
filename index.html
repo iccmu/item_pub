@@ -2152,6 +2152,41 @@ async function inicializarAplicacion() {
 document.addEventListener('DOMContentLoaded', () => {
     inicializarAplicacion();
 });
+
+function ordenarLista(tipo, criterio) {
+    console.log(`Ordenando lista ${tipo} por ${criterio}`);
+    
+    // Obtener el contenedor de la lista
+    const listaContainer = document.getElementById(`lista-${tipo}`);
+    if (!listaContainer) {
+        console.error(`Contenedor no encontrado: lista-${tipo}`);
+        return;
+    }
+
+    // Obtener todos los items de la lista
+    const items = Array.from(listaContainer.getElementsByClassName('lista-item'));
+    
+    items.sort((a, b) => {
+        const nombreA = a.querySelector('.item-nombre').textContent.trim();
+        const nombreB = b.querySelector('.item-nombre').textContent.trim();
+        const contadorA = parseInt(a.querySelector('.item-contador').textContent);
+        const contadorB = parseInt(b.querySelector('.item-contador').textContent);
+
+        if (criterio === 'alfabetico') {
+            return nombreA.localeCompare(nombreB, 'es', { sensitivity: 'base' });
+        } else if (criterio === 'contador') {
+            // Ordenar primero por contador (descendente) y luego alfabéticamente si son iguales
+            if (contadorB !== contadorA) {
+                return contadorB - contadorA;
+            }
+            return nombreA.localeCompare(nombreB, 'es', { sensitivity: 'base' });
+        }
+    });
+
+    // Limpiar y volver a agregar los elementos ordenados
+    listaContainer.innerHTML = '';
+    items.forEach(item => listaContainer.appendChild(item));
+}
     </script>
 </body>
 </html>
