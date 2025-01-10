@@ -802,6 +802,62 @@
         border-color: #b30000;
         box-shadow: 0 0 0 0.2rem rgba(179, 0, 0, 0.25);
     }
+
+    .vis-tooltip {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #E09900;
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 12px;
+        color: #333;
+        max-width: 300px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+    .custom-tooltip {
+        position: fixed;
+        background-color: white;
+        border: 1px solid #E09900;
+        border-radius: 4px;
+        padding: 12px;
+        font-size: 12px;
+        color: #333;
+        max-width: 300px;
+        max-height: 400px;
+        overflow-y: auto;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transition: opacity 0.2s ease;
+        pointer-events: auto;
+    }
+
+    .custom-tooltip strong {
+        color: #E09900;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .custom-tooltip::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .custom-tooltip::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .custom-tooltip::-webkit-scrollbar-thumb {
+        background: #E09900;
+        border-radius: 3px;
+    }
+
+    .custom-tooltip::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -2062,6 +2118,15 @@ function mostrarDatosRelacionados(tipo, valor) {
     estadisticas.forEach((stat, index) => {
         const cantidad = datosJSON.estadisticas[`num_${stat.key}`];
         if (cantidad > 0) {
+            // Obtener la lista detallada según el tipo de estadística
+            const listaDetallada = obtenerListaDetallada(obrasRelacionadas, stat.key);
+            const tooltipHTML = `
+                <div style="max-width: 300px; padding: 8px;">
+                    <strong>${stat.label} (${cantidad})</strong><br>
+                    ${listaDetallada.map(item => `• ${item}`).join('<br>')}
+                </div>
+            `;
+
             nodes.add({
                 id: stat.key,
                 label: `${stat.label}\n(${cantidad})`,
@@ -2072,7 +2137,8 @@ function mostrarDatosRelacionados(tipo, valor) {
                     size: 30,
                     color: '#E09900'
                 },
-                font: { size: 14 }
+                font: { size: 14 },
+                title: tooltipHTML // Agregar el tooltip detallado
             });
 
             edges.add({
@@ -2084,14 +2150,23 @@ function mostrarDatosRelacionados(tipo, valor) {
         }
     });
 
-    // Configuración de la visualización
+    // Modificar las opciones para mantener los mismos colores en hover
     const options = {
         nodes: {
-            font: { size: 16 }
+            font: { size: 16 },
+            color: {
+                hover: {
+                    border: '#E09900',      // Mismo color que el borde normal
+                    background: '#E09900'    // Mismo color que el fondo normal
+                }
+            }
         },
         edges: {
             width: 2,
-            smooth: { type: 'continuous' }
+            smooth: { type: 'continuous' },
+            color: {
+                hover: '#E09900'    // Mismo color que el borde normal
+            }
         },
         physics: {
             stabilization: true,
@@ -2101,6 +2176,13 @@ function mostrarDatosRelacionados(tipo, valor) {
                 springLength: 150,
                 springConstant: 0.05
             }
+        },
+        interaction: {
+            hover: false,
+            hoverConnectedEdges: false,
+            tooltipDelay: 0,
+            selectable: true,
+            selectConnectedEdges: false
         }
     };
 
@@ -2108,7 +2190,37 @@ function mostrarDatosRelacionados(tipo, valor) {
     if (network) {
         network.setData({ nodes, edges });
         network.setOptions(options);
-        
+
+        // Agregar evento de clic para los nodos
+        network.on('click', function(params) {
+            // Remover cualquier tooltip existente
+            removeCustomTooltip();
+
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const node = nodes.get(nodeId);
+                if (node && node.title) {
+                    // Obtener la posición del clic en la pantalla
+                    const position = network.getPositions([nodeId])[nodeId];
+                    const canvasPosition = network.canvasToDOM(position);
+                    
+                    showCustomTooltip(node.title, canvasPosition.x, canvasPosition.y);
+                }
+            }
+        });
+
+        // Agregar evento de clic al documento para cerrar el tooltip
+        document.addEventListener('click', function(event) {
+            const tooltip = document.querySelector('.custom-tooltip');
+            const networkContainer = document.getElementById('network');
+            
+            // Si el clic fue fuera del network y del tooltip, cerrar el tooltip
+            if (!networkContainer.contains(event.target) && 
+                (!tooltip || !tooltip.contains(event.target))) {
+                removeCustomTooltip();
+            }
+        });
+
         setTimeout(() => {
             network.fit({
                 animation: {
@@ -2120,6 +2232,40 @@ function mostrarDatosRelacionados(tipo, valor) {
     }
 
     return datosJSON;
+}
+
+// Función para mostrar el tooltip personalizado
+function showCustomTooltip(content, x, y) {
+    removeCustomTooltip(); // Remover tooltip existente
+
+    const tooltip = document.createElement('div');
+    tooltip.className = 'custom-tooltip';
+    tooltip.innerHTML = content;
+
+    // Calcular la posición para que no se salga de la pantalla
+    const padding = 10;
+    const maxX = window.innerWidth - tooltip.offsetWidth - padding;
+    const maxY = window.innerHeight - tooltip.offsetHeight - padding;
+    
+    x = Math.min(Math.max(padding, x), maxX);
+    y = Math.min(Math.max(padding, y), maxY);
+
+    document.body.appendChild(tooltip);
+    
+    // Posicionar el tooltip después de agregarlo al DOM
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+    
+    tooltip.style.left = `${x - tooltipWidth/2}px`;
+    tooltip.style.top = `${y - tooltipHeight - 10}px`;
+}
+
+// Función para remover el tooltip
+function removeCustomTooltip() {
+    const existingTooltip = document.querySelector('.custom-tooltip');
+    if (existingTooltip) {
+        existingTooltip.remove();
+    }
 }
 
 // Función para manejar todos los eventos de búsqueda
@@ -2300,6 +2446,28 @@ function mostrarDetallesObra(obra) {
                 `)
                 .openOn(map);
         }
+    }
+}
+
+// Agregar esta nueva función auxiliar
+function obtenerListaDetallada(obras, tipo) {
+    switch (tipo) {
+        case 'autores':
+            return [...new Set(obras.map(obra => obra['Autor/a']).filter(Boolean))];
+        case 'obras':
+            return [...new Set(obras.map(obra => obra['Obra']).filter(Boolean))];
+        case 'direcciones':
+            return [...new Set(obras.map(obra => obra['Dirección']).filter(Boolean))];
+        case 'companias':
+            return [...new Set(obras.map(obra => obra['Compañía']).filter(Boolean))];
+        case 'festivales':
+            return [...new Set(obras.flatMap(obra => 
+                obra['Festivales'] ? obra['Festivales'].split(',').map(f => f.trim()) : []
+            ))];
+        case 'lugares':
+            return [...new Set(obras.map(obra => obra['Lugar de estreno']).filter(Boolean))];
+        default:
+            return [];
     }
 }
     </script>
