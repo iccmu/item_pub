@@ -1048,6 +1048,17 @@ function llenarTabla(obras) {
     tbody.innerHTML = '';
     obras.forEach(obra => {
         const row = tbody.insertRow();
+        
+        // Añadir el evento de doble clic a la fila
+        row.addEventListener('dblclick', () => {
+            console.log('Doble clic en obra:', obra);
+            // Aquí puedes añadir la acción que quieras realizar al hacer doble clic
+            mostrarDetallesObra(obra);
+        });
+        
+        // Añadir clase para indicar que la fila es interactiva
+        row.classList.add('clickable-row');
+        
         row.insertCell().textContent = obra.id;
         row.insertCell().textContent = obra['Autor/a'];
         row.insertCell().textContent = obra.Obra;
@@ -1073,11 +1084,6 @@ function llenarTabla(obras) {
             lugarCell.textContent = '';
         }
     });
-    
-    // Solo actualizar marcadores si el mapa está inicializado
-    if (map) {
-        actualizarMarcadores(obras);
-    }
 }
 
 function ordenarTabla(campo) {
@@ -2359,6 +2365,31 @@ function clearInput(inputId) {
         input.focus();
         // Disparar el evento input para actualizar los filtros
         input.dispatchEvent(new Event('input'));
+    }
+}
+
+// Función para mostrar detalles de la obra
+function mostrarDetallesObra(obra) {
+    console.log('Mostrando detalles de:', obra);
+    
+    // Centrar el mapa en la ubicación de la obra
+    if (map) {
+        const lat = parseFloat(obra.lat);
+        const lon = parseFloat(obra.lon);
+        if (!isNaN(lat) && !isNaN(lon)) {
+            map.setView([lat, lon], 15);
+            
+            // Opcional: Abrir un popup en el mapa con información de la obra
+            L.popup()
+                .setLatLng([lat, lon])
+                .setContent(`
+                    <strong>${obra.Obra}</strong><br>
+                    Autor: ${obra['Autor/a']}<br>
+                    Fecha: ${obra['Fecha de estreno']}<br>
+                    Lugar: ${obra['Lugar de estreno']}
+                `)
+                .openOn(map);
+        }
     }
 }
     </script>
