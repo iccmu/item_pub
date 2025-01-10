@@ -858,6 +858,36 @@
     .custom-tooltip::-webkit-scrollbar-thumb:hover {
         background: #b30000;
     }
+
+    .tooltip-content {
+        max-width: 300px;
+        padding: 8px;
+    }
+
+    .tooltip-content strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #E09900;
+    }
+
+    .tooltip-content ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    .tooltip-content li {
+        margin: 4px 0;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .tooltip-content li:before {
+        content: "•";
+        color: #E09900;
+        position: absolute;
+        left: 0;
+    }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -2129,13 +2159,8 @@ function mostrarDatosRelacionados(tipo, valor) {
         if (cantidad > 0) {
             // Obtener la lista detallada según el tipo de estadística
             const listaDetallada = obtenerListaDetallada(obrasRelacionadas, stat.key);
-            const tooltipHTML = `
-                <div style="max-width: 300px; padding: 8px;">
-                    <strong>${stat.label} (${cantidad})</strong><br>
-                    ${listaDetallada.map(item => `• ${item}`).join('<br>')}
-                </div>
-            `;
-
+            
+            // Crear el contenido del tooltip sin las etiquetas de estilo
             nodes.add({
                 id: stat.key,
                 label: `${stat.label}\n(${cantidad})`,
@@ -2147,7 +2172,11 @@ function mostrarDatosRelacionados(tipo, valor) {
                     color: '#E09900'
                 },
                 font: { size: 14 },
-                title: tooltipHTML // Agregar el tooltip detallado
+                tooltipContent: { // Usar una propiedad personalizada para el contenido
+                    title: stat.label,
+                    count: cantidad,
+                    items: listaDetallada
+                }
             });
 
             edges.add({
@@ -2200,20 +2229,28 @@ function mostrarDatosRelacionados(tipo, valor) {
         network.setData({ nodes, edges });
         network.setOptions(options);
 
-        // Agregar evento de clic para los nodos
+        // Modificar el evento de clic para usar la nueva propiedad tooltipContent
         network.on('click', function(params) {
-            // Remover cualquier tooltip existente
             removeCustomTooltip();
 
             if (params.nodes.length > 0) {
                 const nodeId = params.nodes[0];
                 const node = nodes.get(nodeId);
-                if (node && node.title) {
-                    // Obtener la posición del clic en la pantalla
+                if (node && node.tooltipContent) {
                     const position = network.getPositions([nodeId])[nodeId];
                     const canvasPosition = network.canvasToDOM(position);
                     
-                    showCustomTooltip(node.title, canvasPosition.x, canvasPosition.y);
+                    // Crear el contenido HTML del tooltip usando tooltipContent
+                    const tooltipHTML = `
+                        <div class="tooltip-content">
+                            <strong>${node.tooltipContent.title} (${node.tooltipContent.count})</strong>
+                            <ul>
+                                ${node.tooltipContent.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                    
+                    showCustomTooltip(tooltipHTML, canvasPosition.x, canvasPosition.y);
                 }
             }
         });
