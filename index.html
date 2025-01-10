@@ -1201,6 +1201,15 @@ function filtrarObras() {
         const fechaInicio = document.getElementById('fechaInicio')?.value;
         const fechaFin = document.getElementById('fechaFin')?.value;
 
+        // Función para normalizar texto (eliminar acentos y convertir a minúsculas)
+        const normalizarTexto = (texto) => {
+            if (!texto) return '';
+            return texto.toString()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        };
+
         const filtros = [
             { id: 'busqueda-autor', campo: 'Autor/a' },
             { id: 'busqueda-obra', campo: 'Obra' },
@@ -1210,7 +1219,7 @@ function filtrarObras() {
             { id: 'busqueda-lugar', campo: 'Lugar de estreno' }
         ].map(f => ({
             ...f,
-            valor: document.getElementById(f.id)?.value?.toLowerCase().trim() || ''
+            valor: normalizarTexto(document.getElementById(f.id)?.value || '')
         }));
 
         const obrasFiltradas = obrasOriginales.filter(obra => {
@@ -1218,10 +1227,10 @@ function filtrarObras() {
             const cumpleFiltrosTexto = filtros.every(({ campo, valor }) => {
                 if (!valor) return true;
                 
-                const valorObra = obra[campo]?.toString().toLowerCase().trim() || '';
+                const valorObra = normalizarTexto(obra[campo]);
                 
                 if (campo === 'Festivales' && valorObra.includes(',')) {
-                    const festivales = valorObra.split(',').map(f => f.trim());
+                    const festivales = valorObra.split(',').map(f => normalizarTexto(f.trim()));
                     return busquedaExacta 
                         ? festivales.some(f => f === valor)
                         : festivales.some(f => f.includes(valor));
