@@ -2251,22 +2251,16 @@ function showCustomTooltip(content, x, y) {
     tooltip.className = 'custom-tooltip';
     tooltip.innerHTML = content;
 
-    // Calcular la posición para que no se salga de la pantalla
-    const padding = 10;
-    const maxX = window.innerWidth - tooltip.offsetWidth - padding;
-    const maxY = window.innerHeight - tooltip.offsetHeight - padding;
-    
-    x = Math.min(Math.max(padding, x), maxX);
-    y = Math.min(Math.max(padding, y), maxY);
+    // Obtener el contenedor del network y su posición
+    const networkContainer = document.getElementById('network');
+    const networkRect = networkContainer.getBoundingClientRect();
 
+    // Agregar el tooltip al DOM
     document.body.appendChild(tooltip);
     
-    // Posicionar el tooltip después de agregarlo al DOM
-    const tooltipWidth = tooltip.offsetWidth;
-    const tooltipHeight = tooltip.offsetHeight;
-    
-    tooltip.style.left = `${x - tooltipWidth/2}px`;
-    tooltip.style.top = `${y - tooltipHeight - 10}px`;
+    // Posicionar el tooltip en la esquina superior izquierda del network
+    tooltip.style.left = `${networkRect.left + 10}px`; // 10px de padding
+    tooltip.style.top = `${networkRect.top + 10}px`; // 10px de padding
 }
 
 // Función para remover el tooltip
