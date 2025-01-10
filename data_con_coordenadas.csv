@@ -92,7 +92,7 @@ id|Autor/a|Obra|Fecha de estreno|Dirección|Compañía|Festivales|Lugar de estre
 91|Lope de Vega|El subterráneo; Olmedo caballero El de|5 de julio de 2013|Fernanda Muchico y Miguel Alcantud|Microteatro Por Dinero|Festival de Teatro Clásico de Almagro|Teatro Municipal de Almagro|05-07-2013|38.8903455|-3.7117528|ez8FQmKJ
 92|Lope de Vega|El perro del Hortelano|2 de noviembre de 2013|del Colectivo|Zamamur Producciones||||||o2igrrZu
 93|Lope de Vega|El perro del Hortelano||Manuel Carcedo Sama|Karpas Teatro||||||6h3wh9Ke
-94|Lope de Vega|El objeto de deseo; Olmedo caballero El de|5 de julio de 2013|Carlos Molinero|Microteatro Por Dinero|Festival de Teatro Clásico de Almagro|||||bgSMmjkK
+94|Lope de Vega|El objeto de deseo; Olmedo caballero El de|5 de julio de 2013|Carlos Molinero|Microteatro Por Dinero|Festival de Teatro Clásico de Almagro|||40.4822922|-3.3645504|bgSMmjkK
 95|Lope de Vega|El caballero de Olmedo|2013|Antonio Raposo|Viento Sur Teatro|||20-02-2013|||AUYTd7Xw
 96|Lope de Vega|El caballero de Olmedo|22 de marzo de 2013|Felype de Lima|Secuencia 3 Artes y Comunicación|Festivales de Cantabria|Palacio de Festivales de Cantabria|22-03-2013|43.4629796|-3.789499|n6uXx7cL
 97|Lope de Vega|Las flores de don Juan|2012|José Bornás|Apata Teatro|Festival Internacional de Teatro y Danza de San Javier|Festival Internacional de Teatro y Danza de San Javier|20-02-2012|37.8040686|-0.8331786|PArsUEVW
@@ -561,13 +561,13 @@ id|Autor/a|Obra|Fecha de estreno|Dirección|Compañía|Festivales|Lugar de estre
 560|Pedro Calderón de la Barca| No hay burlas con el amor| 29 de julio de 2020| No disponible| Lasardaproduce| Fiesta Corral Cervantes|Lasardaproduce|29-07-2020|||iVnPNJyr
 561|Lope de Vega, Pedro Calderón de la Barca, Tirso de Molina| Mujeres del Siglo de Oro| 18 de septiembre de 2020| No disponible| Teatro Corsario| No disponible|Teatro Corsario||||kyKsFFqY
 562|Pedro Calderón de la Barca| Céfalo y Pocris| 15 de julio de 2020| No disponible| Teatro del Velador| Festival Internacional de Teatro Clásico de Almagro|Teatro del Velador|15-07-2020|||9TNwMeAG
-563|Pedro Calderón de la Barca| Casa con dos puertas, mala es de guardar| 23 de julio de 2020| No disponible| Clásicos on the Road| Festival Internacional de Teatro Clásico de Almagro|ClÃ¡sicos on the Road|23-07-2020|||GL94HNBB
+563|Pedro Calderón de la Barca| Casa con dos puertas, mala es de guardar| 23 de julio de 2020| No disponible| Clásicos on the Road| Festival Internacional de Teatro Clásico de Almagro|Clásicos on the Road|23-07-2020|40.4822922|-3.3645504|GL94HNBB
 564|Agustín Moreto, Pedro Calderón de la Barca| Andanzas y entremeses de Juan Rana| 7 de febrero de 2020| No disponible| Ron Lalá Teatro S.L., Compañía Nacional de Teatro Clásico (CNTC)| No disponible|Ron Lalá Teatro S.L., Compañía Nacional de Teatro Clásico (CNTC)||||oAwQoPQv
 565|Pedro Calderón de la Barca| La crítica del amor| No disponible| No disponible| For the Fun of It| No disponible|For the Fun of It|28-02-2023|||ZzojtxzJ
 566|Pedro Calderón de la Barca| La cena del rey Baltasar| No disponible| No disponible| La Seca Espai Brossa| No disponible|La Seca Espai Brossa|31-05-2023|||c33v5oHJ
 567|Pedro Calderón de la Barca| Enrique VIII y la cisma de Inglaterra| 27 de febrero de 2015| No disponible| Compañía Nacional de Teatro Clásico (CNTC)| No disponible|CompaÃ±Ã­a Nacional de Teatro ClÃ¡sico (CNTC)|27-02-2015|||KTjGmsSP
 568|Pedro Calderón de la Barca| La vida es sueño| 23 de octubre de 2021| No disponible| Teatre Lliure| No disponible|Teatre Lliure|23-10-2021|||aZZ6uLrw
-569|Pedro Calderón de la Barca| La vida es sueño| 16 de julio de 2021| No disponible| Producciones La Folía| Festival de Teatro Clásico de Almagro|Producciones La FolÃ­a|16-07-2021|||FR3emXRF
+569|Pedro Calderón de la Barca| La vida es sueño| 16 de julio de 2021| No disponible| Producciones La Folía| Festival de Teatro Clásico de Almagro|Producciones La FolÃ­a|16-07-2021|40.4822922|-3.3645504|FR3emXRF
 570|Pedro Calderón de la Barca| No hay burlas con el amor| 27 de noviembre de 2021| No disponible| Butaca 78| No disponible|Butaca 78|27-11-2021|||FPQdF3qB
 571|Pedro Calderón de la Barca| La vida es sueño| 17 de febrero de 2021| No disponible| Compañía nacional de Teatro Clásico (CNTC)| No disponible|CompaÃ±Ã­a Nacional de Teatro ClÃ¡sico (CNTC)|17-02-2021|||SmCSaqfs
 572|Pedro Calderón de la Barca| No hay burlas con el amor (Reposición)| 10 de junio de 2021| No disponible| GG Producción y Distribución Escénica, Festival Clásicos en Alcalá| Festival Iberoamericano del Siglo de Oro, Clásicos en Alcalá|GG Producción y Distribución EscÃ©nica, Festival ClÃ¡sicos en AlcalÃ¡|10-06-2021|||JWWsxzQq
@@ -580,3 +580,6 @@ id|Autor/a|Obra|Fecha de estreno|Dirección|Compañía|Festivales|Lugar de estre
 579|Pedro Calderón de la Barca| La vida es sueño| 2 de julio de 2022| Mariano de Paco| Teatro Círculo||Monasterio Cisterciense de San Bernardo de AlcalÃ¡ de Henares, Madrid|27-06-2022|||PRZTdGLz
 580|Pedro Calderón de la Barca| La vida es sueño. Versión musical| 1 de julio de 2022| Macarena Baeza de la Fuente| Teatro la Calderona||Teatro la Calderona|01-07-2022|||cYQqJERE
 581|Pedro Calderón de la Barca| La vida es sueño en sus versos esenciales| 27 de julio de 2022|| Olmedo Clásico. Festival de Teatro Clásico de Olmedo|||27-07-2022|||33qUhaoL
+582|Bartolomé Torres Naharro|Comedia Aquilana|3 de marzo de 2018|Ana Zamora|Nao d´amores|Festival de Teatro Clásico de Almagro|Teatro de la Comedia. Compañía Nacional de Teatro Clásico||40.4822922|-3.3645504|dcsdcd
+583|Bartolomé Torres Naharro||20 de marzo de 2018|Agustín Iglesias|Compañía Teatro Guirigái||Teatro de la Comedia. Compañía Nacional de Teatro Clásico||40.4155336|-3.7003923|fdsfdsf
+584|Jerónimo Bermúdez|Nise, la tragedia de Inés de Castro|12 de diciembre de 2019|Ana Zamora|Nao d´amores|Festival de Teatro Clásico de Almagro|Teatro de la Abadía||40.4822922|-3.3645504|hkdfjgn
