@@ -493,21 +493,15 @@
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s ease;
-        z-index: 100;
-    }
-
-    .sidebar.collapsed {
-        transform: translateX(-100%);
     }
 
     .main-content {
-        margin-left: 300px;
-        transition: margin-left 0.3s ease;
-    }
-
-    .main-content.expanded {
-        margin-left: 0;
+        margin-left: 270px;
+        padding: 10px;
+        padding-top: 80px;
+        height: 100vh;
+        box-sizing: border-box;
+        overflow-y: auto;
     }
 
     /* Ajustes para los elementos del buscador en vertical */
@@ -895,58 +889,72 @@
         left: 0;
     }
 
-    /* Estilos para el sidebar colapsable */
-    .sidebar {
-        width: 300px;
-        height: calc(100vh - 80px);
-        position: fixed;
-        left: 0;
-        top: 80px;
-        background-color: white;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        padding: 20px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s ease;
-        z-index: 100;
-    }
+    /* Agregar estos estilos al final de la sección <style> */
 
-    .sidebar.collapsed {
-        transform: translateX(-100%);
-    }
+    /* Estilos para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+        /* Ocultar elementos de la versión desktop */
+        .main-content,
+        .visualizations-container,
+        .table-container,
+        .estadisticas-container {
+            display: none !important;
+        }
 
-    .main-content {
-        margin-left: 300px;
-        transition: margin-left 0.3s ease;
-    }
+        /* Ajustar el sidebar para ocupar toda la pantalla */
+        .sidebar {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 15px;
+        }
 
-    .main-content.expanded {
-        margin-left: 0;
-    }
+        /* Mostrar mensaje de versión móvil */
+        .sidebar::after {
+            content: "Versión móvil";
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #E09900;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
 
-    /* Botón para colapsar/expandir el sidebar */
-    .toggle-sidebar {
-        position: fixed;
-        left: 300px;
-        top: 90px;
-        background-color: #E09900;
-        color: white;
-        border: none;
-        border-radius: 0 4px 4px 0;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 101;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
+        /* Ajustar el padding del body */
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+        }
 
-    .toggle-sidebar.collapsed {
-        left: 0;
-    }
+        /* Ajustar las listas para mejor visualización en móvil */
+        .lista-unicos {
+            max-height: 150px;
+        }
 
-    .toggle-sidebar:hover {
-        background-color: #b30000;
+        /* Hacer los inputs más grandes para mejor interacción táctil */
+        #buscador input,
+        #buscador select,
+        .reset-btn {
+            height: 44px;
+            font-size: 16px;
+        }
+
+        /* Ajustar el tamaño de los botones para mejor interacción táctil */
+        .icon-btn {
+            padding: 10px;
+            font-size: 1.4em;
+        }
+
+        /* Ajustar el espacio entre elementos */
+        .grupo-busqueda {
+            margin-bottom: 20px;
+        }
     }
     </style>
     <!-- Agregar estos enlaces para Leaflet -->
